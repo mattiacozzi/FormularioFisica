@@ -362,7 +362,7 @@
   \end{table}  
 
   \item[Gradi e radianti] Ricordando che il procedimento generale per convertire tra gradi e radianti è la proporzione:
-  \[ \frac{\theta_{rad}}{\theta_{gradi}} = \frac{2\pi}{360^{\circ}} \]
+  \[ \frac{\theta_{rad}}{\theta_{gradi}} = \frac{2\pi}{360} \]
   Riportiamo in \Cref{tab:gradiradianti} alcune conversioni veloci.
   \begin{table}[htp]\centering
     \begin{tabular}{lcccccccc}\toprule
@@ -829,7 +829,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   Attrazione che un corpo esercita su un corpo posto sulla sua superficie: 
   \[ F_P = G \frac{m_{c} m_{T}}{r^2_{T}} =  m_{c} \left(\frac{G m_{T}}{r^2_{T}} \right) = m_{c} g \]
   
-  \item[Accelerazione di gravità sulla Terra] 
+  \item[Accelerazione di gravità sulla superficie della Terra] 
   \[ g =  9, 807 \, \frac{m}{s^2} \]
   
   \item[Vettore campo gravitazionale] 
@@ -957,6 +957,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \item[Massa e moli]
   Detti $ M $ la massa molare di una sostanza, $ n $  il numero di moli di quella sostanza e $ m_{[g]} $ la massa della sostanza espressa in grammi, vale: 
   \[ m_{[g]} = n M \]
+  Detto altrimenti, una mole di sostanza ha una massa numericamente uguale alla massa molare di quella sostanza, ma espressa in grammi.
   
   \item[Moli e numero di particelle]
   Detto $ n $ il numero di moli, $ N $ il numero di particelle e $ N_A $ il numero di Avogadro, vale: 
@@ -1076,7 +1077,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   Se il sistema compie lavoro (sull'ambiente), $ L $ è positivo; se il sistema subisce lavoro, $ L $ è negativo.
   
   \item[Trasformazioni cicliche e adiabatiche] 
-  Oltre alle trasformazioni già riportate in \Cref{tab:trasformazioni} a \cpageref{tab:trasformazioni}, aggiungiamo le trasformazioni \emph{adiabatiche} (senza scambi di calore con l'ambiente) e quelle \emph{cicliche} (che iniziano e finiscono con gli stessi valori delle variabili di stato).
+  Oltre alle trasformazioni già riportate in \Cref{tab:trasformazioni} a \cpageref{tab:trasformazioni}, aggiungiamo le trasformazioni \emph{adiabatiche} (senza scambi di calore con l'ambiente) e quelle \emph{cicliche} (che iniziano e si concludono con gli stessi valori delle variabili di stato).
   
   \item[Piano di Clapeyron] 
   È un piano volume/pressione su vengono rappresentate le trasformazioni termodinamiche.
@@ -1154,7 +1155,8 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \end{multicols}
   
   \item[Enunciato del rendimento] 
-  È impossibile realizzare una macchina termica che abbia rendimento uguale a 1. \[ 0 \leq \eta < 1 \]
+  È impossibile realizzare una macchina termica che abbia rendimento uguale a $ 1 $.
+  \[ 0 \leq \eta < 1 \]
   
   \item[Macchina reversibile] 
   Macchina ideale che compie una trasformazione ciclica reversibile.
@@ -1447,7 +1449,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
 \begin{table}[htb]\centering\footnotesize
 \begin{tabular}{p{0.11\textwidth} p{0.25\textwidth} p{0.25\textwidth} p{0.25\textwidth}}\toprule
 \textbf{Metodo} & \textbf{Descrizione} & \textbf{Meccanismo} & \textbf{Materiali} \\\midrule
-Strofinìo & Si ottiene strofinando tra loro due corpi. & Elettroni passano da un oggetto (che si carica positivamente) a un altro (che si carica negativamente). & Isolanti o conduttori impugnati con un manico isolante.\\\addlinespace[1em]
+Strofinìo & Si ottiene strofinando tra loro due corpi. & Elettroni passano da un oggetto (che si carica positivamente) ad un altro (che si carica negativamente). & Isolanti o conduttori impugnati con un manico isolante.\\\addlinespace[1em]
 Contatto & Si ottiene mettendo a contatto un corpo elettricamente neutro con uno caricato in precedenza. & Una parte delle cariche che si trovano sul corpo elettrizzato si sposta su quello che era neutro. & Avviene in maniera molto efficace tra corpi conduttori. Un corpo isolante può cedere solo le cariche che si trovano su quella parte che è in diretto contatto con il corpo neutro.\\\addlinespace[1em]
 Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore scarico (indotto) costruito in modo da poterlo suddividere in due parti. Senza allontanare il corpo induttore, si separano le due parti del conduttore indotto. & A causa dell’induzione elettrostatica le cariche del corpo neutro si separano: quelle dello stesso segno della carica inducente si allontanano da essa, quelle di segno opposto le si avvicinano. & Due conduttori posti dapprima vicini e poi allontanati.\\\bottomrule
 \end{tabular}
@@ -1460,8 +1462,8 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \[ F = k_0 \frac{q_1q_2}{r^2} \]
   \begin{multicols}{2}
   $ k_0 $ = costante elettrica del vuoto\\
-  $ q_1 $, $ q_2 $ = moduli delle due cariche\\
-  $ r $ = distanza tra le cariche
+  $ q_1 $, $ q_2 $ = moduli delle due cariche [$ C $]\\
+  $ r $ = distanza tra le cariche [$ m $]
   \end{multicols}
   
   \item[Costante elettrica del vuoto (costante di Coulomb)] 
@@ -1551,7 +1553,7 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   
   Quando questo accade diciamo che il campo è \emph{conservativo}, ovvero un campo in cui il valore dell'energia potenziale in un punto non dipende dal percorso scelto per arrivarci, ma solo dalla posizione del punto stesso. Una conseguenza di questo fatto è che nel campo si conserva l'energia meccanica.
   
-  Detto altrimenti, è possibile definire un potenziale in ogni punto dello spazio, in modo tale che considerando la differenza di potenziale tra due punti si possa vedere quanto lavoro è necessario per spostarsi dall'uno all'altro. 
+  Detto altrimenti, in un campo conservativo è possibile definire un potenziale in ogni punto dello spazio, in modo tale che considerando la differenza di potenziale tra due punti si possa vedere quanto lavoro è necessario per spostarsi dall'uno all'altro. 
   
   \item[Teorema di Coulomb] 
   Permette di calcolare il valore del campo elettrico in prossimità della superficie di un conduttore carico. Il campo elettrico risulta normale alla superficie.
@@ -1559,8 +1561,8 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   
   \item[Capacità di un condensatore]
   \[ C = \frac{Q}{\Delta V} \hspace*{3em} [F] = \left[ \sfrac{C}{V} \right] \]
-  $ Q $ = carica sulle armature ($ +Q $ su quella positiva, $ -Q $ su quella negativa) [$ C $]\\
-  $ \Delta V $ = differenza di potenziale tra le armature [$ V $]
+  $ Q $ = carica sulle armature ($ +Q $ su quella positiva, $ -Q $ su quella negativa)\\
+  $ \Delta V $ = differenza di potenziale tra le armature
   
   \item[Capacità di un condensatore piano]
   \[ C = \varepsilon_0 \frac{S}{d} \]
@@ -1587,9 +1589,9 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
 \subsection{Corrente elettrica}
 \begin{description}
   \item[Intensità di corrente elettrica]
-  \[ i = \frac{\Delta Q}{\Delta t} \hspace*{3em} [A] = \left[ \sfrac{C}{s} \right] \]
+  \[ i = \frac{\Delta q}{\Delta t} \hspace*{3em} [A] = \left[ \sfrac{C}{s} \right] \]
   Intensità istantanea di corrente:   
-  \[ \lim_{\Delta t \rightarrow 0} \frac{\Delta Q}{\Delta t} = \frac{dQ}{dt} = Q'(t) \]
+  \[ i_{ist} = \lim_{\Delta t \rightarrow 0} \frac{\Delta q}{\Delta t} = \frac{dq}{dt} = q'(t) \]
   
   L'intensità di corrente è la derivata della carica rispetto al tempo.
   
@@ -1654,7 +1656,7 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \item[Dipendenza della resistività dalla temperatura]
   \[ \Delta \rho = \alpha \rho_0 \Delta T  \]
   $ \alpha $ = coefficiente di temperatura della resistività [$ K^{-1} $]\\
-  $ \rho_0 $ = resistività a $ 293 \, K $.
+  $ \rho_0 $ = resistività a $ 293 \, K $
   
   Questa relazione vale da $ 100 \, K $ circa fino alla temperatura di fusione del metallo.
   
@@ -1684,7 +1686,7 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \begin{tabular}{ll}\toprule
      \textbf{Carica} & \textbf{Scarica}\\\midrule
      &\\
-     $ \displaystyle Q(t) = C \cdot f_{em} \cdot (1-e^{-\sfrac{t}{RC}}) \quad\quad$ & $ \displaystyle Q(t) = C \cdot f_{em} \cdot e^{-\sfrac{t}{RC}} $ \\
+     $ \displaystyle q(t) = C \cdot f_{em} \cdot (1-e^{-\sfrac{t}{RC}}) \quad\quad$ & $ \displaystyle q(t) = C \cdot f_{em} \cdot e^{-\sfrac{t}{RC}} $ \\
      &\\
      $ \displaystyle i(t) = \frac{f_{em}}{R} \cdot e^{-\sfrac{t}{RC}} $ & $ \displaystyle i(t) = - \frac{f_{em}}{R} \cdot e^{-\sfrac{t}{RC}} $ \\&\\\bottomrule
    \end{tabular}
@@ -2065,7 +2067,7 @@ Teorema di Ampère-Maxwell:
   
   Poiché $ v $ è sempre minore di $ c $, il coefficiente di dilatazione è sempre maggiore di $ 1 $.
   
-  Nota inoltre che
+  Notiamo inoltre che:
   \[ \lim_{v \rightarrow c^{-}} \frac{1}{\sqrt{1-(\frac{v}{c})^2}} = + \infty \]
   e che se $ v \ll c $ (come nei casi del mondo medio) il valore di $ \gamma $ tende a $ 1 $.
   
@@ -2105,13 +2107,13 @@ Teorema di Ampère-Maxwell:
   \[ (\Delta \sigma)^2 = (c\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2 \]
   Possiamo distinguere tre tipi di intervallo:
   \begin{itemize}
-    \item $ (\Delta \sigma)^2 > 0 $: intervallo di tipo tempo;
-    \item $ (\Delta \sigma)^2 < 0 $: intervallo di tipo spazio;
-    \item $ (\Delta \sigma)^2 = 0 $: intervallo di tipo luce.
+    \item $ (\Delta \sigma)^2 > 0 $: intervallo di tipo \emph{tempo};
+    \item $ (\Delta \sigma)^2 < 0 $: intervallo di tipo \emph{spazio};
+    \item $ (\Delta \sigma)^2 = 0 $: intervallo di tipo \emph{luce}.
   \end{itemize}
   
   \item[Spazio-tempo (spazio di Minkowski)]
-  Spazio quadridimensionale in cui l'intervallo invariante è quello della formula precedente.
+  Spazio quadridimensionale in cui l'intervallo invariante è dato dalla formula precedente.
   
   \item[Composizione relativistica delle velocità]
   Possiamo convertire la velocità di un corpo da un \textsc{sdr} $ S $ ad un altro \textsc{sdr} $ S' $.
@@ -2181,7 +2183,7 @@ Teorema di Ampère-Maxwell:
   Corpo capace di assorbire completamente onde elettromagnetiche di qualsiasi lunghezza d'onda.
   
   \item[Curve sperimentali per l'emissione di energia a diverse temperature]
-  Nella \Cref{img:radianza} la zona centrale indica lo spettro della luce visibile: alla sua sinistra la radiazione ultravioletta, alla sue destra i raggi infrarossi.
+  Nella \Cref{img:radianza} la zona evidenziata indica lo spettro della luce visibile; alla sua sinistra la radiazione ultravioletta, alla sue destra i raggi infrarossi.
   La previsione classica è data dalla legge di Rayleigh-Jeans.
  
   \begin{figure}[htpb]\centering

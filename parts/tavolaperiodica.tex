@@ -29,10 +29,10 @@
 			{\small {#4}} 
 		\end{minipage}
 	}
-	\tikzstyle{SBlock} = [fill=yellow!10]
-	\tikzstyle{PBlock} = [fill=blue!10]
-	\tikzstyle{DBlock} = [fill=red!10]
-	\tikzstyle{FBlock} = [fill=green!10]
+	\tikzstyle{SBlock} = [fill=colorSitoChiaro!15] %primo+elio
+	\tikzstyle{PBlock} = [fill=colorSitoScuro!5] %terzo
+	\tikzstyle{DBlock} = [fill=colorSito!30] %secondo
+	\tikzstyle{FBlock} = [fill=colorSitoScuro!35] %altri
 	
 	\begin{tikzpicture}[scale=0.4633, transform shape, rotate=90]
 	
@@ -209,5 +209,5 @@
 	\node[name=DoubleStar, below of=Star, Offsetter] {{\textbf{\Huge **}}};
 	
 	\node[name=Key, above of=Ti, Element, yshift=2.3cm] {\NaturalElementTextFormat{Z}{}{}{mass}{Sim}{Nome}{}};
-	\node[above of=Mn, name=keyvalues, KeysLabel, yshift=3.8cm]{Z = numero atomico,\\Sim = simbolo,\\Nome = nome dell'elemento,\\mass = massa atomica standard in \emph{unità di massa atomica}};
+	\node[above of=Mn, name=keyvalues, KeysLabel, yshift=3.8cm]{Z = numero atomico\\Sim = simbolo\\Nome = nome dell'elemento\\mass = massa atomica standard in \emph{unità di massa atomica}};
 	\end{tikzpicture}
