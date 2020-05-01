@@ -25,7 +25,7 @@
 \usepackage{pgf,tikz,pgfplots,bm,pgf-spectra,graphicx,timelines}
 \usepackage{circuitikz}
 \usetikzlibrary{angles,quotes,arrows,shapes,decorations.markings}
-\tikzset{fleche/.style args={#1:#2}{postaction=decorate,decoration={name=markings,mark=at position #1 with {\arrow[#2,scale=2]{>}}},},}
+\tikzset{fleche/.style args={#1:#2}{postaction=decorate,decoration={name=markings,mark=at position #1 with {\arrow[#2,scale=1.5]{latex}}},},}
 \pgfplotsset{compat=1.15}
 \usepgfplotslibrary{units,fillbetween}
 
@@ -33,6 +33,12 @@
 \title{\textbf{\Huge \color{colorSitoScuro}Formulario di Fisica}}
 \author{\emph{\LARGE \color{colorSitoScuro}Mattia Cozzi}}
 \date{}
+
+%%%--- riferimenti intelligenti
+\usepackage[noabbrev]{cleveref} %opzione capitalize per tutto maiuscolo
+
+%%%---righelli migliori per tabelle
+\usepackage{booktabs}
 
 %%%--- impostazioni dei colori
 \usepackage{xcolor}
@@ -46,8 +52,10 @@
 % \definecolor{colorSito}{rgb}{.612,.067,.192}
 % \definecolor{colorSitoChiaro}{rgb}{.69,.145,.271}
 % \definecolor{colorSitoScuro}{rgb}{.22,.0,.0}
-%
-\sectionfont{\color{colorSito}}  % sets colour of sections
-\subsectionfont{\color{colorSitoChiaro}}  % sets colour of subsections
-\subsubsectionfont{\color{colorSitoChiaro}}  % sets colour of subsubsections
-\setlist[description]{format=\textcolor{colorSitoScuro}} % sets colour of definition lists items
+
+\sectionfont{\color{colorSito}}  %imposta il colore delle sezioni
+\subsectionfont{\color{colorSitoChiaro}}  %imposta il colore delle sottosezioni
+\subsubsectionfont{\color{colorSitoChiaro}}  %imposta il colore delle sottosottosezioni
+\setlist[description]{format=\textcolor{colorSitoScuro}} %imposta il colore degli elementi di una lista di definizione
+
+%%%--- nuovi comandi
