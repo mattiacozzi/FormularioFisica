@@ -12,3 +12,5 @@ Comprende:
 - spiegazione delle cifre significative;
 - timelime dei fisici più importanti;
 - tavola periodica con masse atomiche.
+
+Tutte le tavole presenti sono realizzate con TikZ.
