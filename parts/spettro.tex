@@ -1,0 +1,35 @@
+\begin{axis}[
+    xlabel={$ \lambda $},    xticklabel style = {font=\scriptsize},
+    xmin=10^-14,     xmax=10^4,    x unit=m,    xmode=log,   width=30em,
+    ymin=0,         ymax=1,       yticklabels={},   ytick=\empty,
+    height=7em,     legend style={
+                    at={(1.5,-1.6)},
+                    anchor=south,
+                    legend columns=1,
+                    /tikz/every even column/.append style={column sep=0.3cm}
+                        },
+    legend cell align={left},
+    ]
+    \addplot[draw=none, name path=start, forget plot] coordinates{(10^-14,0)(10^-14,1)};
+    \addplot[draw=none, name path=gamma, forget plot] coordinates{(10^-12,0)(10^-12,1)};
+    \addplot[draw=none, name path=xrays, forget plot] coordinates{(10^-8,0)(10^-8,1)};
+    \addplot[draw=none, name path=uv, forget plot] coordinates{(4*10^-7,0)(4*10^-7,1)};
+    \addplot[draw=none, name path=visible, forget plot] coordinates{(7*10^-7,0)(7*10^-7,1)};
+    \addplot[draw=none, name path=ir, forget plot] coordinates{(10^-3,0)(10^-3,1)};
+    \addplot[draw=none, name path=microwave, forget plot] coordinates{(10^-2,0)(10^-2,1)};
+    \addplot[draw=none, name path=radiowave, forget plot] coordinates{(10^4,0)(10^4,1)};
+    \addplot[colorSito!100, area legend] fill between[of=start and gamma];
+    \addlegendentry{\footnotesize Raggi $\gamma$ ($ 10^{-14} \, m - 10^{-12} \, m $)}
+    \addplot[colorSito!85, area legend] fill between[of=gamma and xrays];
+    \addlegendentry{\footnotesize Raggi X ($ 10^{-12} \, m - 10^{-8} \, m $)}
+    \addplot[colorSito!70, area legend] fill between[of=xrays and uv];
+    \addlegendentry{\footnotesize Ultravioletto  ($ 10^{-8} \, m - 4 \cdot 10^{-7} \, m $)}
+    \addplot[colorSito!55, area legend] fill between[of=uv and visible];
+    \addlegendentry{\footnotesize Luce visibile ($ 4 \cdot 10^{-7} \, m - 7 \cdot 10^{-7} \, m $)}
+    \addplot[colorSito!40, area legend] fill between[of=visible and ir];
+    \addlegendentry{\footnotesize Infrarosso ($ 7 \cdot 10^{-7} \, m - 1 \, mm $)}
+    \addplot[colorSito!25, area legend] fill between[of=ir and microwave];
+    \addlegendentry{\footnotesize  Microonde ($ 1 \, mm - 10 \, cm $)}
+    \addplot[colorSito!10, area legend] fill between[of=microwave and radiowave];
+    \addlegendentry{\footnotesize Onde radio ($ 10 \, cm - 10 \, km $)}
+    \end{axis}

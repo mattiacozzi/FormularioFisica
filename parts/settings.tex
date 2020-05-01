@@ -1,0 +1,53 @@
+%%%--- impostazioni font
+\usepackage{sansmathfonts}
+\usepackage[scaled=0.85]{helvet}
+\renewcommand{\rmdefault}{\sfdefault}
+\usepackage[font=footnotesize,width=.75\textwidth]{caption}
+
+%%%--- frazioni carine \sfrac{}{}
+\usepackage{xfrac}
+
+%%%--- interlinea
+\usepackage{setspace}
+\setstretch{1.3}
+
+%%%--- multicolonna
+\usepackage{multicol}
+
+%%%--- figure in orizzontale
+\usepackage{rotating}
+
+%%%--- margini e bordo
+\usepackage[margin=2.7cm]{geometry}
+% \usepackage{showframe}
+
+%%%--- impostazioni tikz e grafici
+\usepackage{pgf,tikz,pgfplots,bm,pgf-spectra,graphicx,timelines}
+\usepackage{circuitikz}
+\usetikzlibrary{angles,quotes,arrows,shapes,decorations.markings}
+\tikzset{fleche/.style args={#1:#2}{postaction=decorate,decoration={name=markings,mark=at position #1 with {\arrow[#2,scale=2]{>}}},},}
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{units,fillbetween}
+
+%%%--- info documento
+\title{\textbf{\Huge \color{colorSitoScuro}Formulario di Fisica}}
+\author{\emph{\LARGE \color{colorSitoScuro}Mattia Cozzi}}
+\date{}
+
+%%%--- impostazioni dei colori
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{enumitem}
+%%%--- TEAL
+\definecolor{colorSito}{rgb}{.04,.212,.22}
+\definecolor{colorSitoChiaro}{rgb}{.20,.408,.416}
+\definecolor{colorSitoScuro}{rgb}{.0,.133,.141}
+%%%--- BORDEAUX
+% \definecolor{colorSito}{rgb}{.612,.067,.192}
+% \definecolor{colorSitoChiaro}{rgb}{.69,.145,.271}
+% \definecolor{colorSitoScuro}{rgb}{.22,.0,.0}
+%
+\sectionfont{\color{colorSito}}  % sets colour of sections
+\subsectionfont{\color{colorSitoChiaro}}  % sets colour of subsections
+\subsubsectionfont{\color{colorSitoChiaro}}  % sets colour of subsubsections
+\setlist[description]{format=\textcolor{colorSitoScuro}} % sets colour of definition lists items

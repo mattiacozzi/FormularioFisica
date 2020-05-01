@@ -1,0 +1,2103 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+
+\input{./parts/settings.tex}
+
+%%%---cerca NON NECESSARIO per trovare le formule commentate
+\begin{document}
+
+%%%---indice
+\maketitle
+\vspace{8em}
+\tableofcontents
+
+\newpage
+\section{Vettori}
+
+\begin{description}
+  \item[Scalari e vettori] Una grandezza può:
+\begin{itemize}
+  \item essere espressa completamente tramite un valore numerico, come la massa: è uno \textit{scalare};
+  \item richiedere l'esplicitazione anche di una direzione e di un verso, come la velocità o la forza: è un \textit{vettore}.
+\end{itemize}
+  Gli scalari sono indicati con lettere, i vettori con lettere sormontate da una freccia, come $ \vec{a} $.
+  
+  Il modulo del vettore $ \vec{a} $ viene indicato con $ |a| $ o più semplicemente con $ a $.
+  
+  \item[Versore] Un versore è un vettore di modulo 1. Vengono indicati con i simboli $ \hat{i}  $, $ \hat{j} $, $ \hat{k} $, $ \hat{n} $, ecc.
+  
+  I versori possono essere usati per rappresentare la direzione e il verso di un vettore, indicando poi con uno scalare il modulo.
+  
+  Esempio: $ \vec{a} = 5\hat{i}  $ indica un vettore $ \vec{a} $ con la stessa direzione e verso del versore $ \hat{i} $ e di modulo 5.
+  
+  Solitamente i versori $ \hat{i}  $, $ \hat{j} $ e $ \hat{k} $ sono usati per indicare gli assi cartesiani, mentre con $ \hat{n} $ si indica un versore normale (perpendicolare) ad un piano.
+  
+  \item[Seno e coseno] In un triangolo rettangolo, possiamo distinguere i due cateti in \emph{cateto opposto all'angolo $ \theta $} e \emph{cateto adiacente a $ \theta $}, in base alla posizione che occupano rispetto all'angolo $ \theta $.
+  
+  Definiamo le seguenti funzioni goniometriche:
+\begin{multicols}{3}
+  \begin{center}
+  $ \cos\theta = \dfrac{c_{adj}}{i} $
+  
+  $ \sin\theta = \dfrac{c_{opp}}{i} $
+  
+  $ \tan\theta = \dfrac{c_{opp}}{c_{adj}} $
+  \end{center}
+\end{multicols}
+  \begin{figure}[htb]\centering
+  \begin{tikzpicture}
+  \draw (0,0) -- (4,0);
+  \node [below] at (2,0) {$ c_{adj} $};
+  \draw (4,0) --(4,3);
+  \node [right] at (4,1.5) {$ c_{opp} $};
+  \draw (4,3) -- (0,0);
+  \node [above left] at (2,1.5) {$ i $};
+  \draw (0.4,0) arc [start angle=0,end angle=37,radius=0.4] node[pos=0.8,right]{$\theta$};
+  \end{tikzpicture}\caption{Notiamo che, essendo l'ipotenusa sempre maggiore di ognuno dei due cateti, seno e coseno di un angolo sono valori con modulo minore di 1.}
+  \end{figure}
+  
+  Quando si eseguono calcoli con le funzioni goniometriche, assicurarsi che gli angoli siano espressi con l'unità di misura desiderata. La calcolatrice dovrà riportare esplicitamente \colorbox{black}{\textcolor{white}{D}} per i gradi (\emph{degrees}) o \colorbox{black}{\textcolor{white}{R}} per i radianti (possiamo ignorare la dicitura \colorbox{black}{\textcolor{white}{G}}).
+  
+  \item[Scomposizione di un vettore] Una volta stabilito un sistema di riferimento, possiamo determinare l'angolo che un vettore $ \vec{a} $ forma con l'asse $ x $ (la cui direzione è data dal versore $ \hat{i} $).
+  
+  Chiamiamo tale angolo $ \theta $ e calcoliamo le componenti cartesiane del vettore (ovvero le sue proiezioni sugli assi cartesiani) utilizzando le formule precedenti:
+  \[ a_x = a  \cos\theta \quad\quad\quad\quad a_y = a  \sin\theta \]
+  
+  \begin{figure}[htb]\centering
+    \begin{tikzpicture}
+    \draw [dashed] (4,0) --(4,3);
+    \draw [dashed] (0,3) -- (4,3);
+    \draw [->](-.5,0) -- (5,0);
+    \draw [->](0,-.5) -- (0,4);
+    \draw [colorSitoChiaro!50,thick](.7,0) arc [start angle=0,end angle=37,radius=.7,thick] node[pos=0.8,right]{$\theta$};
+    \node [below] at (5,0) {{\small $ x $}};
+    \node [left] at (0,4) {{\small $ y $}};
+    \node [below] at (4,0) {{\small $ a_x $}};
+    \node [left] at (0,3) {{\small $ a_y $}};
+    \draw [->,ultra thick,colorSito!80](0,0) -- (4,0);
+    \draw [->,ultra thick,colorSito](0,0) -- (4,3);
+    \node [left,colorSito] at (0,1.5) {$ \vec{a}_y $};
+    \node [below,colorSito!80] at (2,0) {$ \vec{a}_x $};
+    \draw [->,ultra thick,colorSito!80] (0,0) -- (0,3);
+    \node [above left,colorSito] at (2,1.5) {$ \vec{a} $};
+    \node [left,colorSitoScuro] at (-.07,.8) {$ \hat{j} $};
+    \node [below,colorSitoScuro] at (.8,-.07) {$ \hat{i} $};
+    \draw [line cap=round,->,ultra thick,colorSitoScuro] (0,0) -- (1,0);
+    \draw [line cap=round,->,ultra thick,colorSitoScuro] (0,0) -- (0,1);
+    \end{tikzpicture}
+    \caption{La scomposizione di un vettore nelle sue componenti lungo gli assi cartesiani (determinati dai versori $ \hat{i} $ e $ \hat{j} $).}
+  \end{figure}
+  
+  
+  Possiamo ora esprimere il vettore $ \vec{a} $ mediante le sue componenti sugli assi.
+  \[ \vec{a} = a_x \hat{i} + a_y \hat{j} \]
+  
+  \item[Modulo e direzione di un vettore, note le componenti] Dato un vettore $ \vec{a} = a_x \hat{i} + a_y \hat{j}  $ possiamo risalire al suo modulo con il teorema di Pitagora:
+  \[ a = \sqrt{(a_x)^2 + (a_y)^2} \]
+  Per ottenere l'angolo  formato con l'asse $ x $ possiamo usare una tra le seguenti formule (che utilizzano le funzioni inverse delle funzioni goniometriche):
+  \[ \theta  = \arccos\left( \frac{a_x}{a} \right) = \arcsin\left( \frac{a_y}{a} \right) = \arctan\left( \frac{a_y}{a_x} \right) \]
+  Sulle calcolatrici scientifiche, le funzioni inverse delle funzioni goniometriche sono solitamente indicate come $ \cos^{-1} $, $ \sin^{-1} $ e $ \tan^{-1} $.
+\end{description}
+
+\subsection{Operazioni coi vettori}
+
+\begin{description}
+  \item[Somma tra vettori, metodo grafico] Regola del parallelogramma, mostrata in Figura \ref{img:parallelogramma}.
+
+\begin{figure}[htb]\centering
+\begin{tikzpicture}
+\draw [dashed] (0,0) -- (2,3);
+\draw [dashed] (2,3) -- (6,3);
+\draw [line cap=round,->,colorSitoScuro,ultra thick] (0,0) -- (4,0);
+\node [below,colorSitoScuro] at (2,0) {$ \vec{a} $};
+\draw [line cap=round,->,colorSitoScuro,ultra thick] (4,0) -- (6,3);
+\node [below right,colorSitoScuro] at (5,1.5) {$ \vec{b} $};
+\draw [line cap=round,->,colorSito,ultra thick] (0,0) -- (6,3);
+\node [below right,colorSito] at (3,1.5) {$ \vec{c} $};
+\end{tikzpicture}\caption{Regola del parallelogramma: $ \vec{a} + \vec{b} = \vec{c} $.}
+\label{img:parallelogramma}
+\end{figure}
+
+  \item[Somma tra vettori, metodo algebrico] Dati due vettori $ \vec{a} = a_x \hat{i} + a_y \hat{j} $ e  $ \vec{b} = b_x \hat{i} + b_y \hat{j} $ il vettore somma sarà: 
+  \[ \vec{a} + \vec{b} =  (a_x + b_x) \hat{i} + (a_y + b_y) \hat{j}  \]
+  È sufficiente sommare le componenti sui rispettivi assi.
+  
+  \item[Differenza tra vettori] Graficamente, basta invertire il verso del vettore da sottrarre e procedere come per la somma. Algebricamente:
+  \[ \vec{a} - \vec{b} =  (a_x - b_x) \hat{i} + (a_y - b_y) \hat{j} \]
+  
+  \item[Attenzione!] La moltiplicazione è un'operazione che ha senso solo su numeri (scalari). Quando abbiamo a che fare con dei vettori, parliamo di ``prodotto tra vettori''. 
+  
+  Esistono tre tipi di prodotto che utilizzano i vettori. In nessun caso dobbiamo leggere i simboli $ \cdot $ e $ \times $ come dei ``per''.
+  
+  \item[Prodotto di uno scalare per un vettore] Il prodotto di uno scalare per un vettore è un vettore che ha:
+  \begin{itemize}
+    \item la stessa direzione del vettore;
+    \item stesso verso del vettore se lo scalare è positivo, verso opposto se lo scalare è negativo;
+    \item modulo uguale al prodotto dello scalare per il modulo del vettore.
+  \end{itemize}
+  Intuitivamente, se eseguo il prodotto tra lo scalare 5 e il vettore $ \vec{v} $, otterrò un vettore orientato come $ \vec{v} $ ma cinque volte più lungo. Vedi la Figura \ref{img:prodottoscalarevettore}.
+  
+  Algebricamente: 
+  \[ a \vec{v} = (a v_x)\hat{i} + (a v_y)\hat{j} \]
+  Solitamente il prodotto di uno scalare per un vettore non viene indicato con alcun simbolo.
+  
+\begin{figure}[htb]\centering
+\begin{tikzpicture}
+\draw [line cap=round,->,colorSitoChiaro,ultra thick] (0,0) -- (2,0);
+\node [above,colorSitoChiaro] at (1,0) {$ \vec{a} $};
+\draw [line cap=round,->,colorSitoScuro,ultra thick] (0,-.66) -- (6,-.66);
+\node [above,colorSitoScuro] at (3,-.66) {$ 3\vec{a} $};
+\end{tikzpicture}\caption{Prodotto del vettore $ \vec{a} $ per lo scalare $ 3 $.}
+\label{img:prodottoscalarevettore}
+\end{figure}
+  
+  \item[Prodotto scalare] Il prodotto scalare (simbolo $ \cdot $) si esegue tra due vettori e dà come risultato uno scalare.
+  
+  Si moltiplica il modulo del primo vettore per la componente del secondo lungo il primo (o viceversa: il prodotto scalare è commutativo).
+  
+  Se indichiamo con $ \theta $ l'angolo tra i due vettori $ \vec{a} $ e $ \vec{b} $, allora: 
+  \[ \vec{a} \cdot \vec{b} = ab\cos\theta \]
+
+\begin{figure}[htb]\centering
+\begin{tikzpicture}
+\draw [colorSitoChiaro!50,thick] (0.4,0) arc [start angle=0,end angle=57,radius=0.4] node[pos=0.2,above right,colorSitoChiaro!50]{$\theta$};
+\draw [dashed,thick] (2,0) -- (2,3);
+\node [below,colorSito] at (1,0) {$ b \cos \theta $};
+\draw [line cap=round,->,colorSitoScuro,ultra thick] (0,0) -- (4,0);
+\node [below,colorSitoScuro] at (2.5,0) {$ \vec{a} $};
+\draw [line cap=round,colorSito,ultra thick] (-.05,-.05) -- (2,-.05);
+\draw [line cap=round,->,colorSito,ultra thick] (-.05,-.05) -- (2,3);
+\node [above left,colorSito] at (1,1.5) {$ \vec{b} $};
+\end{tikzpicture}\caption{Rappresentazione del prodotto scalare.}
+\end{figure}
+
+%%%---NON NECESSARIO
+%   Aggiungiamo che, conoscendo le componenti del vettore, è possibile dimostrare che vale: 
+%   \[ \vec{a} \cdot \vec{b} = a_x b_x + a_y b_y \]
+  
+  \item[Prodotto vettoriale] Il prodotto vettoriale (simbolo $ \times  $) si esegue tra due vettori e dà come risultato un vettore.
+  
+  Il modulo del vettore $ \vec{a} \times \vec{b} $ è dato dall'area del parallelogramma costruito coi vettori $ \vec{a} $ e $ \vec{b} $.
+  
+  Se indichiamo con $ \theta $ l'angolo tra i due vettori $ \vec{a} $ e $ \vec{b} $, allora: 
+  \[ | \vec{a} \times \vec{b} | = ab\sin\theta \]
+
+\begin{figure}[htb]\centering
+\begin{tikzpicture}
+\fill[fill=colorSitoChiaro!10] (0,0) -- (4,0) -- (6,3) -- (2,3) -- cycle;
+\draw [thick,colorSitoChiaro] (0.7,0) arc [start angle=0,end angle=57,radius=0.7] node[pos=0.2,above right]{$\theta$};
+\draw [dashed,thick] (2,0) -- (2,3);
+\node [right] at (2.05,1) {$ b \sin \theta $};
+\draw [line cap=round,->,colorSitoScuro,ultra thick] (0,0) -- (4,0);
+\node [below,colorSitoScuro,thick] at (2,0) {$ \vec{a} $};
+\draw [dashed] (4,0) -- (6,3);
+\draw [line cap=round,->,colorSitoScuro,ultra thick] (0,0) -- (2,3);
+\node [above left,colorSitoScuro] at (1,1.5) {$ \vec{b} $};
+\node [above left,colorSito] at (4,1.5) {$ |\vec{a}\times\vec{b}| $};
+\draw [dashed] (2,3) -- (6,3);
+\end{tikzpicture}\caption{Il modulo del prodotto vettoriale come area del parallelogramma.}
+\end{figure}
+
+  Poiché il risultato dell'operazione è un vettore, dobbiamo ancora indicarne direzione e verso:
+  \begin{itemize}
+    \item la direzione del prodotto vettoriale di $ \vec{a} $ e $ \vec{b} $ è perpendicolare al piano da essi formato;
+    \item il verso è dato dalla regola della mano destra, ovvero si pone il pollice della mano destra nel verso del vettore $ \vec{a} $ e le altre dita nel verso di $ \vec{b} $, il vettore $ \vec{a} \times \vec{b} $ è uscente dal palmo della mano.
+  \end{itemize}
+  
+\begin{figure}[htpb]\centering
+\begin{tikzpicture}
+\fill[fill=colorSitoChiaro!10] (0,0) -- (4,0) -- (3,-1) -- (-1,-1) -- cycle;
+\draw (.3,0) -- (.3,.3);
+\draw (.3,.3) -- (0,.3);
+\draw (0,.3) -- (-.2,.1);
+\draw (-.2,.1) -- (-.2,-.2);
+\draw [colorSitoChiaro,thick](0.4,0) arc [start angle=0,end angle=-135,radius=0.4] node[pos=0.5,below]{$\theta$};
+\draw [->,colorSito,ultra thick,line cap=round] (0,0) -- (0,3);
+\draw [->,ultra thick,colorSitoScuro,line cap=round] (0,0) -- (4,0);
+\node [above,colorSitoScuro] at (2,0) {$ \vec{b} $};
+\draw [->,ultra thick,colorSitoScuro,line cap=round] (0,0) -- (-1,-1);
+\node [above left,colorSitoScuro] at (-.5,-.5) {$ \vec{a} $};
+\node [left,colorSito] at (0,1.5) {$ \vec{a} \times \vec{b} $};
+\node [above,colorSito] at (1.5,-.8) {$ |\vec{a} \times \vec{b} |$};
+\end{tikzpicture}\caption{Rappresentazione tridimensionale del vettore ottenuto con il prodotto vettoriale.}
+\end{figure}
+\end{description}
+
+
+\newpage
+\section{Misura}
+
+\subsection{Unità di misura e costanti}
+
+\begin{description}
+  \item[Unità di misura del Sistema Internazionale (SI)] Tutto ciò che in Fisica viene misurato, viene misurato utilizzando le sette unità di misura riportate in Tabella \ref{tab:udmSI} oppure unità di misura da esse derivate.
+  \begin{table}[htp]\centering
+  \begin{tabular}{|l|l|l|}\hline
+    \textbf{Quantità misurata} & \textbf{Nome} & \textbf{Simbolo} \\\hline
+    lunghezza & metro & $ m $ \\
+    massa & chilogrammo & $ kg $ \\
+    tempo, durata & secondo & $ s $ \\
+    corrente elettrica  & ampere & $ A $ \\
+    temperatura assoluta & kelvin & $ K $ \\
+    quantità di sostanza & mole & $ mol $ \\
+    intensità luminosa & candela & $ cd $ \\\hline
+  \end{tabular}
+  \caption{Le sette unità di misura del SI.}
+  \label{tab:udmSI}
+  \end{table}
+ 
+ \item[Unità derivate] È importante conoscere, oltre alle unità di misura derivate riportate in Tabella \ref{tab:udmderivate}, anche la loro definizione in termini di grandezze del SI. Questo permette di eseguire correttamente i calcoli in Fisica.
+ 
+  \begin{table}[htp]\centering
+    \begin{tabular}{|l|l|l|l|}\hline
+    \textbf{Quantità misurata} & \textbf{Nome} & \textbf{Simbolo} & \textbf{Definizione} \\\hline\rule{0pt}{3ex}
+    area &  & $ m^2 $ & $ m^2 $ \\\rule{0pt}{3ex}
+    volume &  & $ m^3 $ & $ m^3 $ \\\rule{0pt}{3ex}
+    velocità &  & $ \frac{m}{s} $ & $ \frac{m}{s} $ \\\rule{0pt}{3ex}
+    accelerazione  &  & $ \sfrac{m}{s^2} $ & $ \sfrac{m}{s^2} $\\\rule{0pt}{3ex}
+    frequenza & hertz & $ Hz $ & $ \sfrac{1}{s} $, $ s^{-1} $ \\\rule{0pt}{3ex}
+    angolo & radiante & rad & \\\rule{0pt}{3ex}
+    forza & Newton & $ N $ & $ kg \cdot \sfrac{m}{s^2} $ \\\rule{0pt}{3ex}
+    pressione & Pascal & $ Pa $ & $ \sfrac{N}{m^2} $ \\\rule{0pt}{3ex}
+    energia, lavoro, calore & Joule & $ J $  & $ N \cdot m $ \\\rule{0pt}{3ex}
+    potenza & Watt & $ W $ & $ \sfrac{J}{s} $ \\\rule{0pt}{3ex}
+    carica elettrica & Coulomb & $ C $ & $ A \cdot s $ \\\rule{0pt}{3ex}
+    potenziale elettrico & Volt & $ V $ & $ \sfrac{J}{C} $, $ \sfrac{W}{A} $\\\rule{0pt}{3ex}
+    capacità & Farad & $ F $ & $ \sfrac{C}{V} $\\\rule{0pt}{3ex}
+    resistenza & Ohm & $ \Omega $ & $ \sfrac{V}{A} $\\\rule{0pt}{3ex}
+    campo magnetico & Tesla & $ T $ & $ \sfrac{N}{A \cdot m} $\\\rule{0pt}{3ex}
+    flusso magnetico & Weber & $ Wb $ & $ T \cdot m^2 $\\
+    \hline
+  \end{tabular}
+  \caption{Alcune tra le più importanti unità di misura derivate.}
+  \label{tab:udmderivate}
+  \end{table}
+  
+  \item[Multipli e sottomultipli della unità di misura] Il SI prevede l'utilizzo di opportuni multipli e sottomultipli delle unità di misura (riportati in Tabella \ref{tab:multipliesottomultipli}), poiché in molti casi le unità di misura si dimostrano troppo grandi o troppo piccole per una determinata misura.
+  \begin{table}[htp]\centering
+    \begin{tabular}{|c|c|r|}\hline
+      \textbf{Prefisso} & \textbf{Simbolo} & \textbf{Fattore di conversione} \\\hline\rule{0pt}{3ex}
+      femto- & f- & $ \sfrac{1}{1\,000\,000\,000\,000\,000} = 10^{-15} $\\\rule{0pt}{3ex}
+      pico- & p- & $ \sfrac{1}{1\,000\,000\,000\,000} = 10^{-12} $\\\rule{0pt}{3ex}
+      nano- & n- & $ \sfrac{1}{1\,000\,000\,000} = 10^{-9} $\\\rule{0pt}{3ex}
+      micro- & $ \mu $- & $ \sfrac{1}{1\,000\,000} = 10^{-6} $\\\rule{0pt}{3ex}
+      milli- & m- & $ \sfrac{1}{1\,000} = 10^{-3} $\\\rule{0pt}{3ex}
+      centi- & c- & $ 10^{-2} $\\\rule{0pt}{3ex}
+      deci- & d- & $ 10^{-1} $\\\rule{0pt}{3ex}
+      deca- & da- & $ 10^{1} $\\\rule{0pt}{3ex}
+      etto- & h- & $ 10^{2} $\\\rule{0pt}{3ex}
+      kilo- & k- & $ 10^{3} $\\\rule{0pt}{3ex}
+      mega- & M- & $ 10^{6} $\\\rule{0pt}{3ex}
+      giga- & G- & $ 10^{9} $\\\rule{0pt}{3ex}
+      tera- & T- & $ 10^{12} $\\\rule{0pt}{3ex}
+      peta- & P- & $ 10^{15} $\\\hline      
+    \end{tabular}
+  \caption{Multipli e sottomultipli più usati.}
+    \label{tab:multipliesottomultipli}
+  \end{table}
+  
+  \item[Costanti fisiche fondamentali] In Tabella \ref{tab:costantimportanti} sono riportati nomi, simboli e valori di alcune costanti.
+  
+  \begin{table}[htp]\centering
+    \begin{tabular}{|l|l|}\hline
+      \textbf{Nome} & \textbf{Valore e unità di misura}\\\hline\rule{0pt}{3ex}
+      velocità della luce nel vuoto & $ c = 299\,  792\, 458\,	\sfrac{m}{s} \simeq 3,0 \times 10^8 \,	\sfrac{m}{s} $ \\\rule{0pt}{3ex}
+      costante dielettrica del vuoto & $ \varepsilon_0 = 8,85\times 10^{-12} \, \sfrac{C^2}{N \cdot m^2} $ \\\rule{0pt}{3ex}
+      costante di Coulomb & $ k_0 = 8,99 \times 10^9 \, \sfrac{N \cdot m^2}{C^2} $ \\\rule{0pt}{3ex}
+      permeabilità magnetica del vuoto & $ \mu_0 = 4\pi \times 10^{-7} \, \sfrac{N}{A^2} $ \\\rule{0pt}{3ex}
+      costante di gravitazione universale & $ G = 6,672 \times 10^{-11} \, \sfrac{N \cdot m^2}{kg^2} $ \\\rule{0pt}{3ex}
+      carica elementare & $ e = 1,602 \times 10^{-19} \, C $ \\\rule{0pt}{3ex}
+      massa dell'elettrone & $ m_e = 9,109 \times 10^{-31} \, kg $ \\\rule{0pt}{3ex}
+      massa del protone & $ m_p = 1,673 \times 10^{-27} \, kg $ \\\rule{0pt}{3ex}
+      massa del neutrone & $ m_n = 1,675 \times 10^{-27} \, kg $ \\\rule{0pt}{3ex}
+      numero di Avogadro & $ N_A = 6,022 \times 10^{23} \, mol^{-1} $ \\\rule{0pt}{3ex}
+      costante di Boltzmann & $ k_B = 1,38 \times 10^{-23} \, \sfrac{J}{K} $ \\\rule{0pt}{3ex}
+      costante dei gas & $ R = 8,314 \, \sfrac{J}{mol \cdot K} $ \\\rule{0pt}{3ex}
+      costante di Planck & $ h = 6,62607 \times 10^{-34} \, J\cdot s $ \\\hline
+    \end{tabular}
+  \caption{Simboli e valori delle più importanti costanti fisiche.}
+    \label{tab:costantimportanti}
+  \end{table}  
+
+  \item[Dati su alcuni corpi del Sistema Solare] In Tabella \ref{tab:datisistemasolare} sono riportati alcuni dati utili per esercizi ed esempi.
+
+  \begin{table}[htp]\centering
+    \begin{tabular}{|l|l|}\hline
+      \textbf{Nome} & \textbf{Valore e unità di misura}\\\hline\rule{0pt}{3ex}
+      massa della Terra & $ m_T = 5,98 \times 10^{24} \, kg	$ \\\rule{0pt}{3ex}
+      raggio della Terra & $ r_T = 6 \, 378 \, km $ \\\rule{0pt}{3ex}
+      massa della Luna & $ m_L = 7,35 \times 10^{22} \, kg $ \\\rule{0pt}{3ex}
+      raggio della Luna & $ r_L = 1 \, 737 \, km $ \\\rule{0pt}{3ex}
+      massa del Sole & $ m_S = 1,99 \times 10^{30} \, kg $ \\\rule{0pt}{3ex}
+      raggio del Sole & $ r_S = 695 \, 508 \, km $ \\\rule{0pt}{3ex}
+      massa di Marte & $ m_M = 6,24 \times 10^{26} \, kg $ \\\rule{0pt}{3ex}
+      raggio di Marte & $ r_M = 3 \, 397 \, km $ \\\hline
+    \end{tabular}
+  \caption{Dati sul Sistema Solare.}
+    \label{tab:datisistemasolare}
+  \end{table}  
+
+  \item[Gradi e radianti] Ricordando che il procedimento generale per convertire tra gradi e radianti è la proporzione:
+  \[ \frac{\theta_{rad}}{\theta_{gradi}} = \frac{2\pi}{360^{\circ}} \]
+  Riportiamo in Tabella \ref{tab:gradiradianti} alcune conversioni veloci.
+  \begin{table}[htp]\centering
+    \begin{tabular}{|l|llllllll|}\hline\rule{0pt}{3ex}
+        $ \theta_{gradi} $ & $ 0^{\circ} $ & $ 30^{\circ} $ & $ 45^{\circ} $ & $ 60^{\circ} $ & $ 90^{\circ} $ & $ 180^{\circ} $ & $ 270^{\circ} $ & $ 360^{\circ} $\\\hline\rule{0pt}{3ex}
+        $ \theta_{rad} $ & $ 0 $ & $ \sfrac{\pi}{6} $ & $ \sfrac{\pi}{4} $ & $ \sfrac{\pi}{3} $ & $ \sfrac{\pi}{2} $ & $ \pi $ & $ \sfrac{3\pi}{2} $ & $ 2\pi $\\\hline
+    \end{tabular}
+    \caption{È possibile ottenere velocemente anche i multipli degli angoli indicati. Ad esempio: $ 120^{\circ} = 2\cdot 60^{\circ} \rightarrow 2 \cdot \dfrac{\pi}{3} = \dfrac{2\pi}{3} $.}\label{tab:gradiradianti}
+  \end{table}
+\end{description}
+
+\subsection{Cifre significative ed errori nella misura}
+
+\begin{description}
+  \item[Riconoscere le cifre significative (CS)] Le CS di una misura sono tutti i numeri che vi compaiono \emph{tranne gli zeri iniziali}. Gli zeri finali sono significativi.
+  \begin{multicols}{3}
+  \begin{itemize}
+    \item $ 12,00 $ ha quattro CS;
+    \item $ 12,0 $ ha tre CS;
+    \item $ 0,012 $ ha due CS.
+  \end{itemize}
+  \end{multicols}
+
+  \item[Cifre significative e cifre decimali] Attenzione a non confondere le cifre significative con le cifre decimali. Le CS comprendono anche la parte intera del numero (tranne gli zeri iniziali), le cifre decimali sono semplicemente quelle dopo la virgola.
+
+  \item[Regole per i calcoli sulle CS] A seconda che si stiano eseguendo somme/sottrazioni oppure prodotti/quozienti si stabilisce il numero di CS del risultato in base alle seguenti regole:\begin{itemize}
+    \item prodotti di numeri interi o frazioni per una misura: il risultato ha tante CS quante la misura di partenza;
+    \item somme e sottrazioni tra misure: nel risultato sono significative tutte le cifre ottenute sommando o sottraendo cifre significative;
+    \item prodotti tra misure: nel risultato si hanno tante CS quante se ne hanno nella misura che possiede meno CS.
+    
+    Regola da applicare \emph{con giudizio}. Ad esempio: 
+    \[ 9,8 \cdot 1,03 = 10,1 \]
+    perché in questo caso $ 9,8  $ ha sì due CS, ma è un numero molto prossimo ad averne tre, per cui il prodotto potrebbe essere anche efficacemente espresso con tre CS.
+  \end{itemize}
+  
+  \item[Arrotondamento] Quando si esegue un calcolo con il corretto numero di CS, dobbiamo arrotondare il risultato. Se la cifra successiva all'ultima cifra che dobbiamo scrivere è:
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item $ 0 $, $ 1 $, $ 2 $, $ 3 $, $ 4 $ si arrotonda per \emph{difetto};
+    \item $ 5 $, $ 6 $, $ 7 $, $ 8 $, $ 9 $ si arrotonda per \emph{eccesso}.
+  \end{itemize}
+  \end{multicols}
+  Ad esempio:
+  \begin{itemize}
+    \item $ 3,257 $ con \emph{una} CS diventa $ 3 $;
+    \item $ 3,257 $ con \emph{due} CS diventa $ 3,3 $;
+    \item $ 3,257 $ con \emph{tre} CS diventa $ 3,26 $.
+  \end{itemize}
+
+%%%---NON NECESSARIO
+%   \item[Errore assoluto] Differenza in modulo tra il valore teorico della misura effettuata e il valore effettivamente misurato. Ogni misura viene espressa come:\[ (m \pm \epsilon_a) \, u \]
+%   \begin{multicols}{2}
+%   $ m $ = misura teorica\\
+%   $ \epsilon_a $ = errore assoluto, incertezza della misura\\
+%   $ u $ = unità di misura
+%   \end{multicols}
+%   
+%   \item[Errore relativo] 
+%   \[ \epsilon_{r} = \frac{\epsilon_a}{m} \]
+%   
+%   \item[Errore percentuale] 
+%   \[ \epsilon_\% = \epsilon_r \cdot 100 \]
+%   
+%   \item[Regole per i calcoli sugli errori] Si seguono le seguenti regole di calcolo quando si considerano gli errori:
+%   \begin{itemize}
+%     \item prodotti di numeri esatti per misura: l'errore \emph{assoluto} del risultato è il prodotto tra il numero e l'errore assoluto della misura;
+%     \item somme e sottrazioni tra misure: l'errore \emph{assoluto} del risultato è la somma degli errori assoluti delle misure;
+%     \item prodotti tra misure: l'errore \emph{relativo} del risultato è la somma degli errori relativi delle misure.
+%   \end{itemize}
+\end{description}
+
+
+\newpage
+\section{Meccanica}
+
+\subsection{Definizioni fondamentali}
+
+\begin{description}
+  \item[Densità] 
+  \[ d = \frac{m}{V} \hspace*{3em} \left[ \frac{kg}{m^3} \right] \]
+  \begin{multicols}{2}
+  m = massa del corpo [$ kg $]\\
+  $ V $ = volume del corpo [$ m^3 $]
+  \end{multicols}
+  \item[Variazione $ \mathbf{\Delta} $] Data una grandezza $ g $, il simbolo $ \Delta g = g_2 - g_1 $ indica la variazione di $ g $ quando essa varia da $ g_1 $ a $ g_2 $.
+  \item[Velocità media]
+  \[ \overline{v} = \frac{\Delta s}{\Delta t} \hspace*{3em} \left[ \frac{m}{s} \right] \]
+  \begin{multicols}{2}
+  $ \Delta s $ = spostamento [$ m $]\\
+  $ \Delta t $ = durata dello spostamento [$ s $]
+  \end{multicols}
+  
+  \item[Conversione tra $ \sfrac{\mathbf{m}}{\mathbf{s}} $ e $ \sfrac{\mathbf{km}}{\mathbf{h}} $] ~
+  \begin{multicols}{2}\begin{center}
+  $ \frac{km}{h} \xrightarrow{: 3,6} \frac{m}{s} $
+   
+  $ \frac{m}{s} \xrightarrow{\cdot 3,6} \frac{km}{h} $
+  \end{center}\end{multicols}
+  
+  \item[Accelerazione media] 
+  \[ \overline{a} = \frac{\Delta v}{\Delta t} \hspace*{3em} \left[ \frac{m}{s^2} \right]  \]
+  \begin{multicols}{2}
+  $ \Delta v $ = variazione di velocità [$ \sfrac{m}{s}$]\\
+  $ \Delta t $ = durata della variazione $ [s] $
+  \end{multicols}
+  
+  \item[Definizione operativa] Una definizione operativa è il procedimento con cui si introducono le grandezze fisiche. È composta da:
+  \begin{itemize}
+    \item descrizione degli strumenti di misura che si utilizzano per misurare la grandezza in esame; 
+    \item specificazione di un «protocollo di misura», cioè la procedura corretta con cui utilizzare gli strumenti.
+  \end{itemize}
+\end{description}
+
+
+
+\subsection{Cinematica}
+\subsubsection{Moto rettilineo uniforme}
+\begin{description}
+  \item[Legge oraria] 
+  \[ s(t) = v  t + s_0 \]
+  \begin{multicols}{2}
+  $ v $ = velocità del moto [$ \sfrac{m}{s} $]\\
+  $ s_0 $ = posizione iniziale nel SDR [$ m $]
+  \end{multicols}
+\end{description}
+
+\subsubsection{Moto uniformemente accelerato}
+\begin{description}
+  \item[Legge oraria] 
+  \[ s(t) = \frac{1}{2} a t^2 + v_0 t + s_0 \] 
+  \[ v(t) = at + v_0 \]
+  \begin{multicols}{2}
+  $ a $ = accelerazione del moto [$ \sfrac{m}{s^2} $]\\
+  $ v_0 $ = velocità iniziale del moto [$ \sfrac{m}{s} $]\\
+  $ s_0 $ = posizione iniziale nel SDR [$ m $]
+  \end{multicols}
+  
+  \item[Moto parabolico] È la composizione di un moto rettilineo uniforme sull'asse orizzontale con un moto uniformemente accelerato ($ a=g=9,81 \, \sfrac{m}{s^2} $) sull'asse verticale. Per la posizione nel sistema di riferimento:
+  \[
+  \left\{ 
+  \begin{array}{l}
+  x = v_{0x}t + x_0 \\ 
+  y = \dfrac{1}{2}gt^2 + v_{0y}t + y_0
+  \end{array}
+  \right.
+  \]
+Per le componenti della velocità in ogni istante del moto:
+  \[
+  \left\{ 
+  \begin{array}{l}
+  v_x = v_{0x} \\ 
+  v_y = gt + v_{0y}
+  \end{array}
+  \right.
+  \]
+Gittata e altezza massima si ottengono ponendo condizioni su queste equazioni.
+
+Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfrac{\pi}{4} $.
+
+\end{description}
+
+\subsubsection{Moto circolare uniforme}
+\begin{description}
+  \item[Periodo] Durata di un giro completo della traiettoria circolare. 
+  \[ T \hspace*{3em} [s] \]
+  
+  \item[Frequenza] Numero di periodi nell'unità di tempo. 
+  \[ f = \frac{1}{T} \hspace*{3em} [s^{-1}] = [ Hz] \]
+  
+  \item[Velocità angolare (pulsazione)] Angolo spazzato nell'unità di tempo. 
+  \[ \omega = \frac{\Delta\alpha}{\Delta t} = \frac{2 \pi}{T} \hspace*{3em} \left[ \frac{rad}{s} \right] \]
+  
+  \item[Velocità tangenziale] Velocità sempre tangente alla traiettoria circolare. 
+  \[ v = \frac{2 \pi r}{T} = 2\pi r f = \omega r  \hspace*{3em} \left[ \frac{m}{s} \right]\]
+  
+  \item[Accelerazione centripeta] Accelerazione necessaria a modificare la direzione del vettore velocità tangenziale. È sempre perpendicolare alla velocità tangenziale, cioè rivolta verso il centro della circonferenza. 
+  \[ a_c = \frac{v^2}{r} = \omega^2 r \hspace*{3em} \left[ \frac{m}{s^2} \right] \]
+  
+  \item[Forza centripeta] Forza necessaria ad avere l'accelerazione centripeta. 
+  \[ F_c = m  a_c = m  \frac{v^2}{r} \hspace*{3em} \left[ N \right] \]
+\end{description}
+
+\subsubsection{Moto armonico}
+\begin{description}
+  \item[Legge oraria]  
+  \[ s(t) = r \cos(\omega t) \] 
+  \[ v(t) = - \omega r  \sin(\omega t) \] 
+  \[ a(t) = - \omega^2 r  \cos(\omega t) \]
+\end{description}
+
+
+
+\subsection{Dinamica}
+\begin{description}
+  \item[Primo principio della dinamica (principio d'inerzia)] Un punto materiale mantiene la propria velocità costante se e solo se è soggetto ad una forza totale nulla.\[ \sum \vec{F} = 0 \Longleftrightarrow \vec{a}= 0 \]
+  $ \sum $ è il simbolo di \emph{sommatoria} e che ci permette di esprimere la somma di un certo numero di addendi. Nella formula precedente, leggeremo: ``somma (vettoriale) di tutte le forze''.
+  
+  \item[Sistema di riferimento inerziale] Sistema di riferimento in cui vale il primo principio della dinamica.
+  
+  \item[Principio di relatività galileiana] Le leggi della meccanica sono le stesse in tutti i SDR inerziali.
+  
+  \item[Trasformazioni di Galileo] Permettono di convertire la posizione di un corpo/punto in due diversi SDR.
+  
+  Le quantità con apice sono misurate in un SDR $ S' $ in moto a velocità $ \vec{v} $ rispetto ad un SDR $ S $.
+  \[
+  \left\{ 
+  \begin{array}{l}
+  s = s' + vt\\
+  u = u' + v\\
+  t = t'
+  \end{array}
+  \right. 
+  \]
+  \begin{multicols}{2}
+  $ s = $ posizione di un corpo/punto in $ S $ \\
+  $ s' = $ posizione di un corpo/punto in $ S' $ \\
+  $ u = $ velocità del corpo/punto in $ S $\\
+  $ u' = $ velocità del corpo/punto in $ S' $\\
+  $ t = $ istante di tempo in $ S $\\
+  $ t' = $ istante di tempo in $ S' $
+  \end{multicols}
+  
+  \item[Secondo principio della dinamica (legge fondamentale della dinamica)] Un corpo subisce un'accelerazione direttamente proporzionale alla forza che viene esercitata su di esso.
+  \[ \vec{F} = m  \vec{a}   \hspace*{3em} \left[ N \right] = \left[ kg \cdot \sfrac{m}{s^2} \right] \]
+  \begin{multicols}{2}
+  $ \vec{F}  $ = forza sul corpo [$ N $]\\
+  $ m $ = massa inerziale del corpo [$ kg $]\\
+  $ \vec{a}  $ = accelerazione [$ \sfrac{m}{s^2} $]
+  \end{multicols}
+  
+  \item[Terzo principio della dinamica (principio di azione e reazione)] Se un corpo A agisce con una forza su un corpo B, anche il corpo B esercita una forza sul corpo A: le due forze hanno lo stesso modulo, la stessa direzione e versi opposti.
+  \[ \vec{F}_{A \rightarrow B} = - \vec{F}_{B \rightarrow A}\]
+  
+  \item[Condizione di equilibrio per corpi puntiformi]
+  \[ \sum\vec{F} = 0 \]
+  
+  \item[Forza peso] Forza di attrazione che un corpo di massa $ m $ subisce per effetto del pianeta su cui si trova, sempre rivolta verso il centro del pianeta.
+  \[ \vec{P} = m \vec{g} \]
+  $ \vec{g} $ = intensità del campo gravitazionale o accelerazione di gravità (sulla Terra, $ g=9,81 \, \sfrac{m}{s^2} $)
+  
+  \item[Attrito statico] La forza di attrito ha sempre verso tale da opporsi al moto che il corpo avrebbe se non ci fosse attrito.
+  
+  La sua intensità massima vale:
+  \[ \vec{F}_{A \, max} = \mu_s \vec{F}_\perp  \]
+  \begin{multicols}{2}
+  $ \mu_s $ = coefficiente di attrito statico (numero puro)\\
+  $ \vec{F}_\perp $ = forza premente sulla superficie [$ N $]
+  \end{multicols}
+  
+  \item[Forza di richiamo di una molla (legge di Hooke)]
+  \[ \vec{F} = - k \vec{x} \]
+  \begin{multicols}{2}
+  $ k $ = costante elastica della molla [$ \sfrac{N}{m} $]\\
+  $ \vec{x} $ = spostamento da posizione di equilibrio [$ m $]
+  \end{multicols}
+  
+  \item[Sistema massa-molla] Sistema meccanico con una massa $ m $ collegata ad una molla con costante elastica $ k $. La forza della molla è una forza di richiamo proporzionale allo spostamento dalla posizione di equilibrio. Senza attrito, la massa si muove di moto armonico con periodo:
+  \[ T = 2\pi\sqrt{\frac{m}{k}} \]
+  
+  \item[Pendolo] Sistema meccanico formato da una massa $ m $ collegata ad un filo di lunghezza $ L $ che oscilla per effetto della forza di gravità. Segue le leggi del moto armonico, con una forza di richiamo direttamente proporzionale allo spostamento dalla posizione di equilibrio. Il periodo di oscillazione vale:
+  \[ T = 2\pi\sqrt{\frac{L}{g}} \]
+\end{description}
+
+
+
+
+
+
+\subsection{Lavoro ed energia meccanica}
+
+\begin{description}
+  \item[Lavoro] È la variazione di energia di un corpo, ottenuta esercitando su di esso una forza.
+  
+  È il prodotto scalare tra la forza esercitata e lo spostamento del corpo. 
+  \[ L = \vec{F} \cdot \vec{s} = F s \cos\theta \hspace*{3em} [J] = [N\cdot m] \]
+  $ \theta $ = angolo tra i vettori $ \vec{F} $ e $ \vec{s} $ [$ rad $]
+  
+  In particolare:\begin{itemize}
+    \item se $ 0 \leq \theta < \sfrac{\pi}{2} $ il lavoro è positivo e viene detto \emph{lavoro motore};
+    \item se $ \sfrac{\pi}{2} < \theta \leq \pi $ il lavoro è negativo e viene detto \emph{lavoro resistente};
+    \item se $ \theta = \sfrac{\pi}{2} $ il lavoro è nullo.
+  \end{itemize}
+  
+  \item[Potenza media] 
+  \[ \overline{P} = \frac{L}{\Delta t} \hspace*{3em} \left[ W \right] = \left[ \sfrac{J}{s} \right] \]
+  
+  \item[Energia cinetica di traslazione] È quella forma di energia che un corpo possiede in virtù della sua velocità.
+  \[ K = \frac{1}{2} mv^2 \hspace*{3em} \left[ J \right]\]
+  \begin{multicols}{2}
+  $ m $ = massa del corpo [$ kg $]\\
+  $ v $ = velocità del corpo [$ \sfrac{m}{s} $]
+  \end{multicols}
+  
+  \item[Energia potenziale gravitazionale] È l'energia che un corpo possiede in virtù della sua posizione in un campo gravitazionale.
+  
+  Ricordando che il punto ad energia potenziale nulla (cioè rispetto al quale calcolare $ h $) può essere scelto in modo arbitrario: 
+  \[ U_g = mgh \hspace*{3em} [J] \]
+  
+  \item[Variazione di energia potenziale gravitazionale] È il lavoro che una forza compie \textit{contro} la forza peso per portare un corpo da una certa altezza A ad un'altra altezza B. 
+  \[ \Delta U_g = -L_{A\rightarrow B} = L_{B\rightarrow A} \]
+  
+  \item[Energia potenziale elastica] Energia immagazzinata in un corpo elastico (ad esempio una molla):
+  \[ U_{elastica} = \frac{1}{2} k (\Delta s)^2 \hspace*{3em} [J] \]
+  \begin{multicols}{2}
+  $ k $ = costante elastica della molla [$ \sfrac{N}{m} $]\\
+  $ \vec{x} $ = spostamento da posizione di equilibrio [$ m $]
+  \end{multicols}
+  
+  \item[Conservazione dell'energia meccanica totale] In un sistema isolato si conserva l'energia meccanica. 
+  \[ U_0 + K_0 = U_1 + K_1 \]
+\end{description}
+
+
+
+\subsection{Quantità di moto e momento angolare}
+
+\begin{description}
+  \item[Quantità di moto] 
+  \[ \vec{p} = m \vec{v}\] 
+  
+  \item[Teorema dell'impulso] È una diversa formulazione del secondo principio della dinamica.
+  \[ \Delta \vec{p} = \vec{I} = \vec{F} \Delta t \]
+  
+  \item[Urti su una retta] La quantità di moto totale iniziale è uguale alla quantità di moto totale finale.
+  \[ m_1 v_0 + m_2 w_0 = m_1 v_1 + m_2 w_1 \]
+  \begin{multicols}{2}
+  $ m_1 $, $ m_2 $ = masse dei due corpi\\
+  $ v $, $ w $ = velocità dei due corpi
+  \end{multicols}
+  
+  \item[Urti elastici] Urti in cui si conservano sia la quantità di moto totale sia l'energia cinetica.
+  
+  \item[Urti anelastici] In cui si conserva solo la quantità di moto totale, ma non l'energia cinetica (che viene dissipata).
+  
+  \item[Urti completamente anelastici] Urti in cui i due corpi rimangono uniti l'uno all'altro e si muovono dopo l'urto alla stessa velocità.
+  \[ v_{finale} = \frac{m_1 v_0 + m_2 w_0}{m_1 + m_2} \]
+  
+  \item[Momento di una forza (momento torcente)]
+  \[ \vec{M} = \vec{r} \times \vec{F} \]
+  $ \vec{r} $ = vettore da un punto al punto di applicazione della forza
+  
+  \item[Condizioni di equilibrio per corpi rigidi]
+  \[ \sum \vec{F} = 0 \quad\quad\textrm{e}\quad\quad \sum \vec{M} = 0 \]
+  
+  \item[Momento angolare] È un vettore che permette di descrivere, rispetto ad un punto $ O $, la rotazione di un punto materiale.
+  
+  È il prodotto vettoriale tra il vettore $ \vec{r} $ (dal punto $ O $ al punto materiale) e la quantità di moto della particella:
+  \[ \vec{L} = \vec{r} \times \vec{p} \]
+  In quanto prodotto vettoriale, $ \vec{L} $ è perpendicolare al piano formato da $ \vec{r} $ e $ \vec{p} $ e, detto $ \theta $ l'angolo tra $ \vec{r} $ e $ \vec{p} $, il suo modulo vale: 
+  \[ L = rp\sin\theta \]
+  Nel caso del moto circolare uniforme $ \vec{r} $ e $ \vec{p} $ sono perpendicolari e vale:
+  \[ L = rp = rmv \]
+  
+  \item[Conservazione del momento angolare] Il momento angolare di un sistema di corpi si conserva nel tempo se è nullo il momento totale delle forze esterne che agiscono su di esso.
+  
+  \item[Variazione del momento angolare] Se sul sistema agisce un momento di una forza $ \vec{M} $ per un tempo $ \Delta t $, la variazione del momento angolare vale:
+  \[ \Delta \vec{L} = \vec{M}\Delta t \]
+  
+  \item[Momento d'inerzia] Intuitivamente, indica quanto è difficile cambiare il moto angolare di un corpo attorno ad un asse di rotazione. Il calcolo del momento d'inerzia $ I $ dipende dalla forma del corpo, come mostrato in Tabella \ref{tab:momentoinerzia}.
+  
+  \begin{table}[htp]\centering
+    \begin{tabular}{|c|c|}\hline
+     \textbf{Corpo} & \textbf{Momento d'inerzia} \\\hline\rule{0pt}{3ex}
+     Guscio cilindrico rispetto al suo asse & $ I = mr^2 $ \\\rule{0pt}{3ex}
+     Cilindro pieno rispetto al suo asse & $ I = \sfrac{1}{2} mr^2 $ \\\rule{0pt}{3ex}
+     Sfera piena rispetto a un diametro & $ I = \sfrac{2}{5} mr^2 $ \\\hline
+    \end{tabular}
+    \caption{Il momento d'inerzia di alcuni corpi rigidi.}
+    \label{tab:momentoinerzia}
+  \end{table}
+  Vale la seguente relazione:
+  \[ L = I\omega \]
+  e, ovviamente:
+  \[ \Delta L = I\Delta\omega = M \Delta t \]
+  $ \omega $ = velocità angolare $ [\sfrac{rad}{s}] $
+  
+  \item[Energia cinetica di un corpo in rotazione]
+  \[ K = \frac{1}{2}I\omega^2 \]
+  
+  \item[Accelerazione angolare]
+  \[ \alpha = \frac{\Delta \omega}{\Delta t} \hspace*{3em} \left[ \frac{rad}{s^2} \right] \]
+  
+  \item[Momento torcente e momento d'inerzia]
+  \[ M = I \alpha \]
+  
+  \item[Confronto tra moti traslazionali e moti rotatori] Le quantità e le relazioni individuate per i moti traslazionali hanno un analogo per i moti rotazionali, come mostrato in Tabella \ref{tab:traslazionalirotazionali}.
+
+  \begin{table}[htp]\centering
+    \begin{tabular}{|c|c|}\hline
+     \textbf{Traslazione} & \textbf{Rotazione} \\\hline\rule{0pt}{3ex}
+     velocità tangenziale $ v $ & velocità angolare $ \omega $ \\\rule{0pt}{3ex}
+     accelerazione tangenziale $ a $ & accelerazione angolare $ \alpha $\\\rule{0pt}{3ex}
+     massa $ m $ & momento d'inerzia $ I $\\\rule{0pt}{3ex}
+     forza $ \vec{F} $ & momento torcente $ \vec{M} $\\\rule{0pt}{3ex}
+     quantità di moto $ \vec{p} $ & momento angolare $ \vec{L} $\\\rule{0pt}{3ex}
+     $ F = ma $ & $ M = I \alpha  $ \\\rule{0pt}{3ex}
+     $ K = \frac{1}{2}mv^2 $ & $ K = \frac{1}{2} I\omega^2 $ \\\rule{0pt}{3ex}
+     $ \Delta p = F\Delta t $ & $ \Delta L = M\Delta t $\\\hline
+    \end{tabular}
+    \caption{Confronto tra i due tipi di moto.}
+    \label{tab:traslazionalirotazionali}
+  \end{table}  
+  
+\end{description}
+
+
+\subsection{Gravitazione}
+
+\begin{description}
+  \item[Prima legge di Keplero]  I pianeti descrivono orbite ellittiche di cui il Sole occupa uno dei due fuochi.
+  
+  \item[Seconda legge di Keplero] Il raggio vettore che va dal Sole ad un pianeta spazza aree uguali in tempi uguali.
+  
+  \item[Terza legge di Keplero] Il rapporto tra il cubo del semiasse maggiore dell'orbita e il quadrato del periodo di rivoluzione è lo stesso per tutti i pianeti del Sistema Solare.
+  
+  \item[Legge di gravitazione universale] La forza è sempre attrattiva e agisce lungo la congiungente tra i due centri di massa. 
+  \[ F = G \frac{m_1 m_2}{r^2} \]
+  $ G $ = costante di gravitazione universale = $ 6,672 \times 10^{-11} \, \sfrac{Nm^2}{kg^2} $
+  
+  \item[Forza peso] Attrazione che un corpo esercita su un corpo posto sulla sua superficie: 
+  \[ F_P = G \frac{m_{c} m_{T}}{r^2_{T}} =  m_{c} \left(\frac{G m_{T}}{r^2_{T}} \right) = m_{c} g \]
+  
+  \item[Accelerazione di gravità sulla Terra] 
+  \[ g =  9, 807 \, \frac{m}{s^2} \]
+  
+  \item[Vettore campo gravitazionale] 
+  \[ \vec{g} = \frac{\vec{F}}{m} \]
+  
+  \item[Campo gravitazionale di una massa puntiforme] È un vettore rivolto sempre verso la massa puntiforme $ M $.
+  \[ g = G \frac{M}{r^2} \]
+
+%%%---NON NECESSARIO
+%   \item[Satelliti] Sono proiettili sparati ad una velocità tale da non atterrare più: la forza di gravità funge da forza centripeta per un moto circolare.
+%   
+%   Possiamo calcolare la velocità del satellite in orbita:
+%   \[ v = \sqrt{\frac{GM}{R}} \]
+%   \begin{multicols}{2}
+%   $ M $ = massa del pianeta\\
+%   $ R $ = distanza tra il satellite e il centro del pianeta
+%   \end{multicols}
+%   
+%   La velocità di fuga è quella che permette ad un satellite di sfuggire all'attrazione gravitazionale di un pianeta.
+%   \[ v_{fuga} = \sqrt{\frac{2GM}{R}} \]
+  
+  \item[Energia potenziale gravitazionale di un sistema di due masse] 
+  \[ U(r) = - G \frac{m_1m_2}{r} \]
+\end{description}
+
+
+\subsection{Meccanica dei fluidi}
+
+\begin{description}
+  \item[Pressione] Se una forza $ \vec{F} $ agisce su una superficie $ S $, essa esercita una pressione:
+  \[ p = \frac{F}{S} \hspace*{3em} [Pa] = \left[ \sfrac{N}{m^2} \right] \]
+  
+  \item[Pressione atmosferica]
+  \[ 1 \, atm = 1,01 \times 10^5 \, Pa \]
+  
+  \item[Principio di Pascal] Una variazione di pressione applicata ad un liquido chiuso in un contenitore viene trasmessa integralmente in ogni punto del liquido e alle pareti del contenitore.
+  
+  \item[Legge di Stevino]
+  \[ p = dgh + p_{atm} \]
+  \begin{multicols}{2}
+  $ d $ = densità del liquido\\
+  $ h $ = profondità
+  \end{multicols}
+  
+  \item[Principio di Archimede] Un corpo immerso in un fluido riceve una spinta verso l'alto pari al peso del volume di fluido spostato dal corpo. Tale spinta vale:\[ S = g \cdot d_{fluido} \cdot V_{corpo} \]
+  Se la spinta è maggiore del peso del corpo, il corpo galleggia nel fluido.
+  
+  \item[Corrente] Una corrente in un fluido è un movimento ordinato di particelle.
+  
+  \item[Portata]
+  \[ q = \frac{\Delta V}{\Delta t} = Sv \]
+  $ \Delta V $ = volume di fluido che attraversa una sezione trasversale della conduttura nel tempo $ \Delta t $ [$ m^3 $]\\
+  $ S $ = area di una sezione trasversale della conduttura [$ m^2 $]\\
+  $ v $ = velocità del fluido [$ \sfrac{m}{s} $]
+
+%%%---NON NECESSARIO
+%   \item[Corrente stazionaria] Corrente con portata costante nel tempo.
+%   
+%   \item[Equazione di continuità] Per un liquido che scorre in una conduttura senza sorgenti né pozzi, vale:
+%   \[ S_A v_A = S_B v_B  \]
+%   \begin{multicols}{2}
+%   $ S_A $, $ S_B $ = aree delle sezioni della conduttura\\
+%   $ v_A $, $ v_B $ = velocità del fluido nelle due sezioni
+%   \end{multicols}
+%   
+%   \item[Equazione di Bernoulli] Se un fluido scorre in una conduttura di diametro e altezza variabile, vale:
+%   \[ p + \frac{1}{2}dv^2 + dgy = costante \]
+%   \begin{multicols}{2}
+%   $ p $ = pressione [$ Pa $]\\
+%   $ d $ = densità del fluido [$ \sfrac{kg}{m^3} $]\\
+%   $ y $ = quota [$ m $]
+%   \end{multicols}
+%   
+%   Come conseguenza, tra un punto $ A $ e un punto $ B $:
+%   \[ p_A + \frac{1}{2}dv_A^2 + dgy_A = p_B + \frac{1}{2}dv_B^2 + dgy_B \]
+%   
+%   \item[Regime laminare] Nella condizione laminare, il fluido si muove come se fosse formato da sottili lamine fluide che scivolano una sull’altra. La forza necessaria per mantenere in moto laminare uno strato di fluido, con un valore della velocità $ v $ costante, è:
+%   \[ F = \eta\frac{Sv}{d} \]
+%   \begin{multicols}{2}
+%   $ \eta $ = coefficiente di viscosità del fluido [$ Pa\cdot s $]\\
+%   $ S $ = area della lamina\\
+%   $ d $ = distanza tra la lamina e la parete fissa
+%   \end{multicols}
+%   
+%   \item[Legge di Stokes] L'attrito viscoso di una sfera di raggio $ r $ in moto a velocità $ v $ in un fluido vale:
+%   \[ F_v = 6 \pi \eta r v \]
+%   
+%   \item[Velocità limite di caduta in un fluido] Per una sfera, vale:
+%   \[ v = \frac{mg}{6 \pi \eta r} \]
+\end{description}
+
+
+
+\newpage
+\section{Termologia e termodinamica}
+
+\subsection{Temperatura e dilazione termica}
+
+\begin{description}
+  \item[Celsius e kelvin] Detta $ T_K $ la temperatura assoluta (in kelvin) e $ T_{^{\circ}C} $ la temperatura in gradi centigradi:
+  \[ T_K = T_{^{\circ}C} + 273,15 \]
+  \[ T_{{\circ}C} = T_{K} - 273,15 \]
+  \[ \Delta T_K = \Delta T_{^{\circ}C} \]
+  
+  \item[Dilatazione lineare dei solidi] 
+  \[ \Delta \ell = \ell_0 \lambda \Delta T \] 
+  \[ \ell_1 = \ell_0 (1 + \lambda \Delta T) \]
+  $ \lambda $ = coefficiente di dilatazione lineare [$ ^{\circ}C^{-1} $ o $ K^{-1} $]
+  
+  \item[Dilatazione volumica dei solidi e dei liquidi] 
+  \[ \Delta V = V_0 \alpha \Delta T \] 
+  \[ V_1 = V_0 (1 + \alpha \Delta T) \]
+  $ \alpha $ = coefficiente di dilatazione volumica (per i solidi, $ \alpha = 3 \lambda $) [$ ^{\circ}C^{-1} $ o $ K^{-1} $]
+\end{description}
+
+\subsection{Gas perfetti}
+
+\begin{description}
+  \item[Massa e moli] Detti $ M $ la massa molare di una sostanza, $ n $  il numero di moli di quella sostanza e $ m_{[g]} $ la massa della sostanza espressa in grammi, vale: 
+  \[ m_{[g]} = n M \]
+  
+  \item[Moli e numero di particelle] Detto $ n $ il numero di moli, $ N $ il numero di particelle e $ N_A $ il numero di Avogadro, vale: 
+  \[ n = \frac{N}{N_A} \]
+  $ N_A $ = numero di Avogadro = $ 6,022 \times 10^{23} \, mol^{-1} $
+  
+  \item[Trasformazioni dei gas] Distinguiamo le trasformazioni che un gas può subire in base alla variabile di stato (pressione, volume, temperatura) che rimane costante, come riportato in Tabella \ref{tab:trasformazioni}.
+  
+  \begin{table}[htb]\centering
+  \begin{tabular}{|c|c|c|c|c|}\hline
+     \textbf{Nome} & \textbf{Q.tà costante} & \textbf{Legge sperimentale} & \textbf{Formula} & \textbf{Legge}\\\hline\rule{0pt}{3ex}
+     Isoterma & temperatura & Legge di Boyle & $ pV= $ costante & $ p_0V_0 = p_1V_1  $\\\rule{0pt}{3ex}
+     Isòbara & pressione & I legge di Gay-Lussac & $ \sfrac{V}{T} = $ costante & $ \sfrac{V_0}{T_0} = \sfrac{V_1}{T_1} $\\\rule{0pt}{3ex}
+     Isocòra & volume & II legge di Gay-Lussac & $ \sfrac{p}{T} = $ costante & $ \sfrac{p_0}{T_0} = \sfrac{p_1}{T_1} $\\\hline
+   \end{tabular}
+   \caption{Tre trasformazioni dei gas.}
+  \label{tab:trasformazioni}
+   \end{table}
+  
+  \item[Formula dei gas perfetti] Ricordando che è possibile utilizzare una qualunque unità di misura adatta per pressione e volume, mentre la temperatura deve essere espressa in kelvin, vale: 
+  \[ \dfrac{p_0 V_0}{T_0} = \dfrac{p_1 V_1}{T_1} \]
+  
+  \item[Equazione di stato dei gas perfetti]
+  \[ pV = nRT \]
+  \begin{multicols}{2}
+  $ p $ = pressione [$ Pa $]\\
+  $ V $ = volume [$ m^3 $]\\
+  $ n $ = numero di moli [$ mol $]\\
+  $ T $ = temperatura assoluta [$ K $]\\
+  $ R $ = costante dei gas = $ 8,314 \, \sfrac{J}{mol \cdot K} $
+  \end{multicols}
+\end{description}
+
+\subsection{Calore}
+
+\begin{description}
+  \item[Joule e calorie] $ 1 \, cal = 4,186 \, J $, mentre $ 1 \, Cal = 1 \, kcal = 4186 \, J $.
+  
+  \item[Legge fondamentale della calorimetria]
+  \[ Q = cm \Delta T \]
+  \begin{multicols}{2}
+  $ Q $ = calore scambiato [$ J $]\\
+  $ c $ = calore specifico [$ \sfrac{J}{kg\cdot K} $]\\
+  $ m $ = massa del corpo [$ kg $]\\
+  $ \Delta T $ = variazione di temperatura [$ K $]
+  \end{multicols}
+  
+  \item[Calore specifico dell'acqua] 
+  \[ c_{H_2O} = 4,186 \times 10^3 \, \frac{J}{kg \cdot K}\]
+  
+  \item[Potere calorifico] Misura quanto calore $ Q $ è prodotto nella combustione completa di una massa di $ 1 \, kg $ di combustibile.
+  \[ P_c = \frac{Q}{m} \]
+  
+  \item[Propagazione del calore] Il calore può propagarsi per conduzione, convezione o irraggiamento.
+
+%%%---NON NECESSARIO
+%   \item[Conduzione] La conduzione è un meccanismo di propagazione del calore in cui si ha trasporto di energia senza spostamento di materia. È resa dalla relazione:
+%   \[ \frac{Q}{\Delta t} = \lambda S\frac{\Delta T}{d} \]
+%   $ \lambda $ = conducibilità termica del materiale [$ \frac{W}{mK} $]\\
+%   $ S $ = superficie\\
+%   $ d $ = spessore del materiale
+  
+  \item[Passaggi di stato] Per la fusione vale:
+  \[ Q = L_f m \]
+  $ L_f $ = calore latente di fusione [$ \sfrac{J}{kg} $]
+  
+  Per la vaporizzazione:
+  \[ Q = L_v m \]
+  $ L_v $ = calore latente di vaporizzazione [$ \sfrac{J}{kg} $]
+\end{description}
+
+\subsection{Modello microscopico della materia}
+\begin{description}
+  \item[Energia cinetica media di un gas] L'energia cinetica di una particella di gas dipende dalla sua struttura molecolare.
+  \begin{itemize}
+    \item $ \overline{K} = \dfrac{3}{2}k_B T $ per gas con tre gradi di libertà (monoatomici);
+    \item $ \overline{K} = \dfrac{5}{2}k_B T $ per gas con cinque gradi di libertà (biatomici);
+    \item $ \overline{K} = 6 k_B T $ per strutture molecolari non lineari.
+  \end{itemize}
+  $ k_B $ = costante di Boltzmann = $ 1,38 \times 10^{-23} \, \sfrac{J}{K} $
+
+%%%---NON NECESSARIO
+%   \item[Pressione di un gas perfetto] 
+%   \[ p = \frac{2 N \overline{K}}{3 V} = \frac{2 n N_A \overline{K}}{3 V} \]
+%   \begin{multicols}{2}
+%   $ N $ = numero di particelle\\
+%   $ n $ = numero di moli [$ mol $]
+%   \end{multicols}
+%   
+%   \item[Velocità quadratica media delle particelle di un gas] 
+%   \[ v_{qm} = \sqrt{\frac{3 k_B T}{m}} \]
+%   $ m $ = massa della particella
+  
+  \item[Energia interna di un gas perfetto] Indicando con $ \ell $ il numero dei gradi di libertà del gas, vale:
+  \[ U = \frac{\ell}{2} N k_B T = \frac{\ell}{2} n R T  \]
+\end{description}
+
+\subsection{Primo principio della termodinamica}
+
+\begin{description}
+  \item[Principio zero della termodinamica] Se un corpo A è in equilibrio termico con un corpo B e il corpo B è in equilibrio termico con un corpo C, allora A e C sono in equilibrio termico tra loro.
+  
+  \item[Primo principio della termodinamica (PPT)] La variazione di energia interna è uguale alla differenza tra il calore scambiato e il lavoro.
+  \[ \Delta U = Q - L \]
+  Se il sistema riceve calore, $ Q $ è positivo; se il sistema cede calore $ Q $ è negativo.
+  
+  Se il sistema compie lavoro (sull'ambiente), $ L $ è positivo; se il sistema subisce lavoro, $ L $ è negativo.
+  
+  \item[Trasformazioni e rappresentazione] Oltre alle trasformazioni già riportate in Tabella \ref{tab:trasformazioni} a p.~\pageref{tab:trasformazioni}, aggiungiamo le trasformazioni \emph{adiabatiche} (senza scambi di calore con l'ambiente) e quelle \emph{cicliche} (che iniziano e finiscono con gli stessi valori delle variabili di stato).
+  
+  \item[Piano di Clapeyron] È un piano volume/pressione su vengono rappresentate le trasformazioni termodinamiche.
+  
+  \item[Lavoro termodinamico] Il lavoro compiuto durante una trasformazione termodinamica è uguale all'area sottesa dalla curva nel piano di Clapeyron.
+  
+  Particolarmente evidente e facile nel caso delle trasformazioni isobare.
+  
+  \item[Trasformazione isobara] Il PPT assume la forma $ \Delta U = Q - p \Delta V $. Grafico in Figura \ref{img:isobara}.
+  
+\begin{figure}[htp]\centering
+\input{./parts/isobara.tex}
+\caption{Una trasformazione isobara è rappresentata da un segmento orizzontale, pertanto il lavoro termodinamico è uguale all'area del rettangolo sotteso alla curva.}
+\label{img:isobara}
+\end{figure}
+  
+  \item[Trasformazione isocora] Il PPT assume la forma $ \Delta U = Q $. Grafico in Figura \ref{img:isocora}.
+
+\begin{figure}[htp]\centering
+\input{./parts/isocora.tex}
+\caption{Una trasformazione isocora è rappresentata da un segmento verticale, e pertanto il lavoro termodinamico è nullo.}
+\label{img:isocora}
+\end{figure}
+
+  \item[Trasformazione isoterma] Il PPT assume la forma $ Q = L $. Grafico in Figura \ref{img:isoterma}.
+
+\begin{figure}[htp]\centering
+\input{./parts/isoterma.tex}
+\caption{Una trasformazione isoterma è rappresentata da un ramo di iperbole.}
+\label{img:isoterma}
+\end{figure}
+
+  \item[Trasformazione adiabatica] Il PPT assume la forma. $ \Delta U = - L $. Grafico in Figura \ref{img:adiabatica}.
+
+\begin{figure}[htp]\centering
+\input{./parts/adiabatica.tex}
+\caption{Una trasformazione adiabatica è rappresentata da una curva che unisce due punti delle isoterme corrispondenti all'inizio e alla fine della trasformazione.}
+\label{img:adiabatica}
+\end{figure}
+
+  \item[Trasformazione ciclica] Il PPT assume la forma  $ Q = L $. Grafico in Figura \ref{img:ciclica}.
+
+\begin{figure}[htp]\centering
+\input{./parts/ciclica.tex}
+\caption{Una trasformazione ciclica è rappresentata da una linea chiusa.}
+\label{img:ciclica}
+\end{figure}
+\end{description}
+
+\subsection{Secondo principio della termodinamica}
+
+\begin{description}
+  \item[Enunciato di Lord Kelvin] È impossibile realizzare una trasformazione termodinamica il cui \emph{unico} risultato sia quello di assorbire una certa quantità di calore da un'\emph{unica} sorgente e trasformarla \emph{integralmente} in lavoro.
+  
+  Una macchina termica reale assorbe calore $ Q_2 $ dalla sorgente calda, compie un lavoro $ L< Q_2 $ e cede l'energia rimanente alla sorgente fredda.
+  \item[Enunciato di Clausius] È impossibile realizzare una trasformazione termodinamica il cui \emph{unico} risultato sia quello di trasferire calore da un corpo più freddo a uno più caldo.
+   
+   Soltanto un lavoro esterno provoca il passaggio di calore da un corpo a temperatura minore ad un corpo a temperatura maggiore.
+
+  \item[Rendimento di una macchina termica]
+  \[ \eta = \frac{L}{Q_2} = 1 - \frac{|Q_1|}{Q_2} \]
+  \begin{multicols}{2}
+  $ L $ = lavoro in un ciclo\\
+  $ Q_1 $ = calore ceduto in un ciclo\\
+  $ Q_2 $ = calore assorbito in un ciclo
+  \end{multicols}
+  
+  \item[Enunciato del rendimento] È impossibile realizzare una macchina termica che abbia rendimento uguale a 1. \[ 0 \leq \eta < 1 \]
+  
+  \item[Macchina reversibile] Macchina ideale che compie una trasformazione ciclica reversibile.
+  
+  \item[Teorema di Carnot] Il rendimento di una macchina reversibile è sempre maggiore o uguale al rendimento di una macchina qualunque che lavora tra le stesse temperature:
+  \[ \eta_R \leq \eta_S \]
+  
+  \item[Ciclo di Carnot] È un ciclo composto da quattro trasformazioni termodinamiche reversibili:
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item espansione isoterma;
+    \item espansione adiabatica;
+    \item compressione isoterma;
+    \item compressione adiabatica.
+  \end{enumerate}
+  \end{multicols}
+
+  \item[Rendimento della macchina di Carnot] 
+  \[ \eta = 1 - \frac{T_1}{T_2} \]
+
+  \item[Disuguaglianza di Clausius] 
+  \[ \frac{\Delta Q_1}{T_1} + \frac{\Delta Q_2}{T_2} + ... + \frac{\Delta Q_n}{T_n} \leq 0  \]
+  Se la macchina è reversibile il membro di sinistra è uguale a zero.
+
+  \item[Entropia]
+  \[ \Delta S = S(B) - S(A) = \left( \sum_i \frac{\Delta Q_i}{T_i} \right)^{rev}_{A \rightarrow B} \hspace*{3em} \left[ \frac{J}{K} \right]\]
+  L'entropia è una funzione di stato: la sua variazione non dipende dal tipo di trasformazione, ma solo dallo stato $ B $ e dallo stato $ A $.
+  
+  Come l'energia potenziale, il suo valore zero può essere scelto in modo arbitrario.
+  
+  Se nel sistema avvengono solo trasformazioni reversibili, l'entropia rimane costante. L'entropia aumenta se le trasformazioni sono irreversibili.
+
+%%%---NON NECESSARIO
+%   \item[Terzo principio della termodinamica] È impossibile raffreddare un corpo fino allo zero assoluto mediante una procedura che contenga un numero finito di trasformazioni.
+\end{description}
+
+
+
+\newpage
+\section{Onde}
+
+\subsection{Onde elastiche}
+
+\begin{description}
+  \item[Onda trasversale] Si ha quando gli elementi del mezzo materiale si spostano perpendicolarmente al moto dell'onda.
+  
+  \item[Onda longitudinale] Si ha quando gli elementi del mezzo materiale si spostano parallelamente al moto dell'onda.
+  
+  \item[Onda elastica] È un'onda che si propaga grazie alle proprietà elastiche del mezzo materiale che le fa da supporto.
+  
+  \item[Fronte d'onda] Insieme di tutti i punti in cui l'onda vibra allo stesso modo, cioè la grandezza che oscilla ha lo stesso valore.
+  
+  \item[Raggi dell'onda] Sono le rette perpendicolari ai fronti d'onda.
+  
+  \item[Onda periodica] È un'onda che si ripete identica dopo un intervallo di tempo costante.
+  
+  \item[Periodo] Tempo che un punto del mezzo materiale impiega per compiere un'oscillazione completa.
+  \[ T \hspace*{3em} [s] \]
+  
+  \item[Frequenza] Numero di oscillazioni al secondo.
+  \[ f = \frac{1}{T} \hspace*{3em} [s^{-1}]=[ Hz] \]
+  
+  \item[Pulsazione dell'onda]
+  \[ \omega = \frac{2\pi}{T} = 2\pi f \]
+  
+  \item[Velocità di propagazione dell'onda] 
+  \[ v = \frac{\lambda}{T} = \lambda f  \]
+  $ \lambda $ = lunghezza d'onda [$ m $]
+  
+  \item[Legge oraria delle onde in un punto fissato] Il grafico è mostrato in Figura \ref{img:graficoonde1}.
+  \[ y = a \cos\left(\frac{2 \pi}{T}t + \varphi_0\right) = a \cos\left(\omega t + \varphi_0\right) \]
+  \begin{multicols}{2}
+  $ a $ = ampiezza dell'oscillazione\\
+  $ \varphi_0 $ = sfasamento\\
+  $ \omega $ = pulsazione
+  \end{multicols}
+  
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[xscale=.5,yscale=1.6]
+\node [below] at (4*pi,0) {{\scriptsize $ t $}};
+\node [left] at (0,1.5) {{\scriptsize $ y $}};
+\node [above] at (1.5*pi,1) {{\scriptsize $ T $}};
+\draw [->] (-4,0) -- (4*pi,0);
+\draw [|<->|, dashed, thick] (.5*pi,1) -- (2.5*pi,1);
+\draw [|<->|, dashed, thick] (2.5*pi,0) -- (2.5*pi,1);
+\node [right] at (2.5*pi,.5) {{\scriptsize $ a $}};
+\draw [->] (0,-1.5) -- (0,1.5);
+\draw[smooth, colorSitoChiaro!60, ultra thick, domain=-pi:3.5*pi] plot (\x, {sin(\x r)});
+\end{tikzpicture}
+\caption{Grafico della legge oraria delle onde armoniche in un punto fissato.}
+\label{img:graficoonde1}
+\end{figure}
+  
+  \item[Legge delle onde in un istante fissato] Il grafico è mostrato in Figura \ref{img:graficoonde2}.
+  \[ y = a \cos\left(\frac{2 \pi}{\lambda}x + \varphi_0\right) \]
+
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[xscale=.5,yscale=1.6]
+\node [below] at (4*pi,0) {{\scriptsize $ x $}};
+\node [left] at (0,1.5) {{\scriptsize $ y $}};
+\node [above] at (1.5*pi,1) {{\scriptsize $ \lambda $}};
+\draw [->] (-4,0) -- (4*pi,0);
+\draw [|<->|, dashed, thick] (.5*pi,1) -- (2.5*pi,1);
+\draw [|<->|, dashed, thick] (2.5*pi,0) -- (2.5*pi,1);
+\node [right] at (2.5*pi,.5) {{\scriptsize $ a $}};
+\draw [->] (0,-1.5) -- (0,1.5);
+\draw[smooth, colorSito, ultra thick, domain=-pi:3.5*pi] plot (\x, {sin(\x r)});
+\end{tikzpicture}
+\caption{Grafico della legge delle onde armoniche in un istante fissato.}
+\label{img:graficoonde2}
+\end{figure}
+
+  \item[Principio di sovrapposizione] Due o più onde che si propagano nello stesso mezzo generano una perturbazione che è la somma delle perturbazioni che ciascuna onda produrrebbe da sola.
+  
+  \item[Interferenza costruttiva] Gli effetti di due o più onde si rafforzano a vicenda.
+  
+  \item[Interferenza distruttiva] Gli effetti di due o più onde si annullano a vicenda.
+\end{description}
+
+\subsection{Suono}
+
+\begin{description}
+  \item[Definizione] Il suono è un'onda longitudinale generata da successive rarefazioni e compressioni del mezzo in cui si propaga. La sorgente del suono è un corpo che vibra.
+
+  \item[Velocità del suono nell'aria] Alla pressione atmosferica e a $ 293 \, K $ vale circa $ 340 \, \sfrac{m}{s} $.
+
+  \item[Altezza] Distingue un suono più acuto da uno più grave e cresce all'aumentare della frequenza dell'onda sonora.
+
+  \item[Intensità]
+  \[ I = \frac{E}{A \Delta t} \hspace*{3em} \left[ \frac{W}{m^2} \right]\]
+  $ E $ = energia che attraversa la superficie $ A $ nel tempo $ \Delta t $
+  
+  Distingue un suono ad un volume basso da un suono a volume alto. Cresce all'aumentare dell'ampiezza dell'onda sonora.
+
+  \item[Timbro] Distingue il suono prodotto da strumenti diversi. Dipende dalla particolare legge periodica con cui oscilla l'onda sonora.
+
+  \item[Limiti di udibilità] L'orecchio umano può percepire suoni con frequenza compresa tra $ 20 $ e $ 20\, 000 \, Hz $. A frequenze inferiori si trovano gli infrasuoni, a frequenze superiori si trovano gli ultrasuoni.
+
+  \item[Livello di intensità sonora]
+  \[ L_s = 10 \log_{10} \left(\frac{I}{I_0}\right) \hspace*{3em} [dB] \]
+  $ I_0 $ = minima intensità sonora udibile = $ 10^{-12} \, \sfrac{W}{m^2} $
+  
+  Si assegna il valore $ 0 \, dB $ alla soglia di udibilità, il valore $ 130 \, dB $ alla soglia del dolore.
+
+  \item[Effetto Doppler] La frequenza di un'onda periodica, rilevata da un ricevitore in modo rispetto alla sorgente dell'onda, è diversa da quella rilevata da un ricevitore in quiete rispetto alla sorgente.
+  
+  \item[Sorgente ferma e ricevitore in moto]
+  \[ f' = \frac{v_s \pm  v}{v_s}f \]
+  \begin{multicols}{2}
+  $ f' $ = frequenza rilevata\\
+  $ v_s $ = velocità del suono\\
+  $ v $ = velocità del ricevitore\\
+  $ f $ = frequenza emessa
+  \end{multicols}
+  
+  Usiamo il segno $ + $ se il ricevitore si avvicina alla sorgente (la frazione vale più di 1 e $ f' > f $), il segno $ - $ se il ricevitore si allontana dalla sorgente (la frazione vale meno di 1 e $ f' < f $).
+  
+  \item[Sorgente in moto e ricevitore fermo]
+  \[ f' = \frac{v_s }{v_s \pm  v}f \]
+  Usiamo il segno $ + $ se la sorgente si allontana dal ricevitore (la frazione vale meno di uno e $ f' < f $), il segno $ - $ se la sorgente si avvicina al ricevitore (la frazione vale più di uno e $ f' > f $).
+\end{description}
+
+
+
+\subsection{Onde luminose e ottica geometrica}
+
+\begin{description}
+  \item[Natura della luce] A seconda delle situazioni, la luce può essere descritta come un'onda elettromagnetica (modello ondulatorio) costituita da campi elettrici e magnetici oscillanti che si propagano anche nel vuoto, o come un insieme di corpuscoli chiamati fotoni (modello corpuscolare).
+  
+  \item[Legge della riflessione] Il raggio incidente, il raggio riflesso e la perpendicolare alla superficie riflettente nel punto di incidenza appartengono allo stesso piano.
+  
+  L'angolo di incidenza è uguale all'angolo di riflessione.
+  
+  \item[Indice di rifrazione] Rapporto tra la velocità della luce nel vuoto e la velocità della luce nel mezzo materiale.
+  \[ n = \frac{c}{v} \]
+  Poiché la luce ha la sua massima velocità nel vuoto, l'indice di rifrazione è sempre maggiore di uno.
+  
+  \item[Legge della rifrazione (legge di Snell)]
+  \[ \frac{\sin \hat{i} }{\sin \hat{r}} = \frac{n_2}{n_1} \]
+  \begin{multicols}{2}
+  $ \hat{i} $, $ \hat{r} $ = angolo di incidenza e rifrazione\\
+  $ n_1 $, $ n_2 $ = indici di rifrazione dei due mezzi
+  \end{multicols}
+  
+  \item[Riflessione totale] Fenomeno per cui oltre un certo angolo di incidenza (detto angolo limite) non si ha più alcun raggio rifratto. L'angolo limite si ottiene dalla legge di Snell ponendo $ \hat{r} = \frac{\pi}{2} $ (cioè $ \sin \hat{r} = 1 $) e quindi:
+  \[ \sin \hat{i}_{lim} = \frac{n_2}{n_1} \]
+  da cui:
+  \[ \hat{i}_{lim} = \arcsin \left( \frac{n_2}{n_1} \right) \]
+  
+  \item[Spettro visibile] Insieme delle lunghezze d'onda tra i $ 380 \, nm $ (violetto) e i $ 750 \, nm $ (rosso) circa, mostrato in Figura \ref{img:spettrovisibile}.
+  
+  \begin{figure}[htb]\centering
+    \pgfspectra[axis,axis step=30,end=750]
+    \caption{Corrispondenza tra colori della luce visibile e lunghezze d'onda.}
+    \label{img:spettrovisibile}
+  \end{figure}
+  
+  \item[Specchi sferici concavi] La distanza focale di uno specchio sferico concavo è pari alla metà del raggio dello specchio.
+  \[ f = \frac{R}{2} \]
+  
+  \item[Formula dei punti coniugati per gli specchi]
+  \[ \frac{1}{p} +\frac{1}{i} = \frac{1}{f} = \frac{2}{R} \]
+  \begin{multicols}{2}
+  $ p $ = distanza dell'oggetto dallo specchio\\
+  $ i $ = distanza dell'immagine dallo specchio\\
+  $ f $ = distanza focale
+  \end{multicols}
+  Se $ i $ è positivo l'immagine è situata di fronte allo specchio (immagine reale), se $ i $ è negativo l'immagine si trova dietro di esso (immagine virtuale).
+  
+  \item[Ingrandimento]
+  \[ M = \frac{i}{p} \]
+  Se $ |M| < 1$, l'immagine è rimpicciolita rispetto all'oggetto, se $ |M| >1 $ l'immagine è ingrandita. Se $ M > 0 $, l'immagine è dritta rispetto all'oggetto, se $ M<0 $, l'immagine è capovolta rispetto all'oggetto.
+  
+  \item[Formula dei punti coniugati per le lenti sottili]
+  \[ \frac{1}{p} +\frac{1}{i} = \frac{1}{f} \]
+  Se l'oggetto a distanza $ p $ è reale, $ p $ è positivo, altrimenti è negativo.
+  
+  Se l'immagine a distanza $ i $ è reale, $ i $ è positivo, se è virtuale è negativo.
+  
+  Se la lente è convergente, $ f $ è positivo, se la lente invece è divergente è negativo.
+
+%%%---NON NECESSARIO
+%   \item[Equazione dei fabbricanti di lenti]
+%   \[ \frac{1}{f} = (n-1) \left( \frac{1}{R_1} - \frac{1}{R_2} \right) \]
+%   $ n $ = rapporto tra l'indice di rifrazione del materiale di cui è fatta la lente e l'indice di rifrazione della sostanza che la circonda\\
+%   $ R_1 $ = raggio di curvatura della superficie frontale\\
+%   $ R_2 $ = raggio di curvatura della superficie retrostante
+%   
+%   I due raggi sono positivi se le superfici sono convesse rispetto alla superficie incidente e negativi se sono concave.
+  
+  \item[Diffrazione] Fenomeno per cui le onde sono in grado di aggirare un ostacolo e passare nella zona posta al di là dell'ostacolo stesso. La diffrazione è notevole quando il diametro dell'ostacolo è confrontabile con la lunghezza d'onda delle onde.
+  
+  \item[Principio di Huygens] Ogni punto su di un fronte d'onda funge da sorgente puntiforme di nuove onde.
+  
+  \item[Interferenza con due sorgenti (esperimento di Young)] Quando due sorgenti luminose sono separate da una distanza $ d $ ed emettono identiche onde in fase, si osserva interferenza costruttiva tra le onde nelle direzioni date da:
+  \[ \sin \theta_m = \frac{m\lambda}{d} \]
+  e interferenza distruttiva nelle direzioni date da:
+  \[ \sin \theta_m = \frac{(m + \frac{1}{2})\lambda}{d} \]
+  L'angolo $ \theta $ è misurato a partire dall'asse del segmento avente le sorgenti come estremi. $ m $ è un numero intero, il cui valore è chiamato ordine dell'interferenza costruttiva.
+
+%%%---NON NECESSARIO
+%   \item[Cammino ottico equivalente] Un tratto lungo $ L $ in un materiale avente indice di rifrazione $ n $ ha un cammino ottico equivalente la cui lunghezza è:
+%   \[ L_{ottico} = n L \]
+%   Ne consegue che in un tratto $ L $ del materiale è contenuto il medesimo numero di onde che si trovano in un tratto pari a $ L_{ottico} $ nel vuoto.
+  
+  \item[Sfasamento delle onde riflesse] Quando un'onda che si propaga in un mezzo con indice di rifrazione $ n_1 $ viene riflessa da un mezzo con indice di rifrazione $ n_2 $, se $ n_2 > n_1 $ l'onda riflessa subisce uno sfasamento di mezzo ciclo rispetto all'onda incidente. Se invece $ n_2 < n_1 $, la riflessione non provoca sfasamento.
+\end{description}
+
+
+\newpage
+\section{Fenomeni elettrici e magnetici}
+
+\subsection{Elettrostatica}
+
+\begin{description}
+  \item[Elettrizzazione di un corpo] In Tabella \ref{tab:elettrizzazione} sono riassunti i tre modi di elettrizzare un corpo, ovvero portare ad uno squilibrio tra cariche positive e negative.
+
+\begin{table}[htb]\centering\footnotesize
+\begin{tabular}{|p{0.11\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}\hline
+\textbf{Metodo} & \textbf{Descrizione} & \textbf{Meccanismo} & \textbf{Materiali} \\\hline 
+Strofinìo & Si ottiene strofinando tra loro due corpi. & Elettroni passano da un oggetto (che si carica positivamente) a un altro (che si carica negativamente). & Isolanti o conduttori impugnati con un manico isolante.\\\hline 
+Contatto & Si ottiene mettendo a contatto un corpo elettricamente neutro con uno caricato in precedenza. & Una parte delle cariche che si trovano sul corpo elettrizzato si sposta su quello che era neutro. & Avviene in maniera molto efficace tra corpi conduttori. Un corpo isolante può cedere solo le cariche che si trovano su quella parte che è in diretto contatto con il corpo neutro.\\\hline 
+Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore scarico (indotto) costruito in modo da poterlo suddividere in due parti. Senza allontanare il corpo induttore, si separano le due parti del conduttore indotto. & A causa dell’induzione elettrostatica le cariche del corpo neutro si separano: quelle dello stesso segno della carica inducente si allontanano da essa, quelle di segno opposto le si avvicinano. & Due conduttori posti dapprima vicini e poi allontanati.\\\hline
+\end{tabular}
+\caption{I metodi di elettrizzazione.}
+\label{tab:elettrizzazione}
+\end{table}
+  
+  \item[Legge di Coulomb] Fornisce il modulo della forza, attrattiva o repulsiva, tra due cariche elettriche. Tale forza ha come direzione la congiungente tra le due cariche e vale:
+  \[ F = k_0 \frac{q_1q_2}{r^2} \]
+  \begin{multicols}{2}
+  $ k_0 $ = costante elettrica del vuoto\\
+  $ q_1 $, $ q_2 $ = moduli delle due cariche\\
+  $ r $ = distanza tra le cariche
+  \end{multicols}
+  
+  \item[Costante elettrica del vuoto (costante di Coulomb)] 
+  \[ k_0 = 8,99 \times 10^9 \, \frac{N\cdot m^2}{C^2} \]
+  
+  \item[Costante dielettrica del vuoto (permettività elettrica del vuoto)]
+  \[ \varepsilon_0 = 8,85\times 10^{-12} \, \frac{C^2}{N \cdot m^2} \]
+  Tra $ k_0 $ e $ \varepsilon_0 $ vale la seguente relazione:
+  \[ k_0 = \frac{1}{4 \pi \varepsilon_0} \]
+  
+  \item[Costante dielettrica di un mezzo] È il rapporto tra la forza di Coulomb nel vuoto e la forza nel mezzo. Essendo la forza massima nel vuoto, tale rapporto è sempre superiore a uno.
+  \[ \varepsilon_r = \frac{F_{vuoto}}{F_{mezzo}} \]
+  Viene sostanzialmente affiancata a $ \varepsilon_0 $ quando non si lavora nel vuoto.
+
+  \item[Campo elettrico] Il campo elettrico è una funzione che ad ogni punto dello spazio circostante una carica (identificato con la sua distanza $ r $ da essa) associa una forza elettrica. Vale:
+  \[ \vec{E}  = \frac{\vec{F}}{q_P} \hspace*{3em} \left[ \frac{N}{C} \right] \]
+  \begin{multicols}{2}
+  $ q_P $ = carica di prova, positiva\\
+  $ \vec{F}  $ = forza subita dalla carica di prova
+  \end{multicols}
+  
+  L'intensità del campo elettrico può essere espressa in funzione della carica sorgente ($ Q_S $) e della distanza da essa ($ r $):
+  \[ E = k_0 \frac{Q_S}{r^2}  \]
+    
+  \item[Flusso del campo elettrico] È il prodotto scalare del vettore campo elettrico $ \vec{E} $ e del vettore superficie $ \vec{S} $.
+  \[ \Phi_S(E) = \vec{E} \cdot \vec{S} = ES \cos \theta \hspace*{3em} \left[ \frac{N\cdot m^2}{C} \right] \]
+  $ \theta $ = angolo tra i vettori $ \vec{E} $ e $ \vec{S} $
+  
+  Intuitivamente, indica quanto e come le linee di campo attraversano una superficie.
+    
+  \item[Teorema di Gauss per il campo elettrico] Il flusso del campo elettrico attraverso la superficie chiusa/gaussiana $ S $ è direttamente proporzionale alla quantità di carica racchiusa all'interno della superficie.
+  \[ \Phi_S(E) = \frac{Q_{tot}}{\varepsilon_0} \]
+  
+%%%---NON NECESSARIO
+%   \item[Particolari distribuzioni di carica] Valori dei campi elettrici generati in particolari situazioni: 
+%     \begin{itemize}
+%     \item distribuzione piana infinita: 
+%       \[ E = \frac{\sigma}{2 \varepsilon_0} \]
+%       $ \sigma $ = densità superficiale di carica [$ \sfrac{C}{m^2} $]
+%     \item distribuzione lineare infinita: 
+%       \[ E = \frac{\lambda}{2 \pi \varepsilon_0 r} \]
+%       \begin{multicols}{2}
+%       $ \lambda $ = densità lineare di carica [$ \sfrac{C}{m} $]\\
+%       $ r $ = distanza dal filo
+%       \end{multicols}
+%     \item distribuzione sferica:
+%       \[ E = \frac{Q}{4 \pi \varepsilon_0 r^2} \]
+%       \begin{multicols}{2}
+%       $ Q $ = carica racchiusa\\
+%       $ r $ = raggio della sfera
+%       \end{multicols}
+%   \end{itemize}
+  
+  \item[Lavoro in un campo elettrico] Assumendo un campo elettrico $ \vec{E} $ di intensità costante, per portare una carica $ q $ da un punto A fino ad un punto B è necessario un lavoro, cioè:
+  \[ L = \vec{F} \cdot \vec{s} = q \vec{E} \cdot \vec{s}  \]
+  
+  \item[Energia potenziale elettrica in \textit{A} (rispetto a \textit{B})] È il lavoro che una forza compie \textit{contro} al campo elettrico per portare un corpo da una certo punto $ B $ ad un altro punto $ A $.
+  \[ U_A = L_{B\rightarrow A} \]
+  
+  \item[Energia potenziale elettrica di un sistema di due cariche] Se vogliamo porre due cariche nel vuoto a distanza $ r $ l'una dall'altra, notiamo che per porre la prima non è necessario lavoro, mentre per porre la seconda dovremo avere un lavoro pari a:
+  \[ L = \Delta U = k_0 \frac{q_1 q_2}{r}  \]
+  Questo lavoro è l'energia potenziale del sistema di cariche. Nel caso di sistemi di più cariche, basta sommare le energie potenziali calcolate per tutte le possibili coppie di cariche.
+  
+  \item[Potenziale elettrico in un punto \textit{A}]
+  \[ V_A = \frac{U_A}{q_P} \hspace*{3em} [V] =  \left[ \sfrac{J}{C} \right] \]
+  $ U_A $ = energia potenziale della carica di prova $ q_P $ nel punto $ A $
+  
+  Utilissima una conseguenza di questa formula, che permette di calcolare l'energia $ \Delta U $ guadagnata da una carica $ q $ sottoposta ad una differenza di potenziale (tensione) $ \Delta V $:
+  \[ \Delta U = q \cdot \Delta V \]
+  
+  \item[Differenza di potenziale (tensione) tra i punti \textit{A} e \textit{B}]
+  \[  \Delta V_{AB} = \frac{\Delta U_{AB}}{q_P} = \frac{L_{B \rightarrow A}}{q_P} = - \vec{E} \cdot \vec{s} \]
+  
+  \item[Potenziale elettrico generato da una carica \textit{Q} a distanza \textit{r}]
+  \[ V(r) = k_0 \frac{Q}{r}  \]
+  
+  \item[Circuitazione del campo elettrico lungo una linea chiusa  $ \mathscr{L} $]
+  \[ \Gamma_\mathscr{L}(E) = \sum_i  \vec{E}_i \cdot \Delta\vec{\ell}_i = \sum_i E_i \Delta \ell_i \cos \theta_i = - \sum_i \Delta V_i = 0 \]
+  La circuitazione del campo elettrostatico lungo una \emph{qualsiasi} linea chiusa è uguale a zero.
+  
+  Quando questo accade diciamo che il campo è \emph{conservativo}, ovvero un campo in cui il valore dell'energia potenziale in un punto non dipende dal percorso scelto per arrivarci, ma solo dalla posizione del punto stesso. Una conseguenza di questo fatto è che nel campo si conserva l'energia meccanica.
+  
+  Detto altrimenti, è possibile definire un potenziale in ogni punto dello spazio, in modo tale che considerando la differenza di potenziale tra due punti si possa vedere quanto lavoro è necessario per spostarsi dall'uno all'altro. 
+  
+  \item[Teorema di Coulomb] Permette di calcolare il valore del campo elettrico in prossimità della superficie di un conduttore carico. Il campo elettrico risulta normale alla superficie.
+  \[ E = \frac{\sigma}{\varepsilon_0} \]
+  
+  \item[Capacità di un condensatore]
+  \[ C = \frac{Q}{\Delta V} \hspace*{3em} [F] = \left[ \sfrac{C}{V} \right] \]
+  $ Q $ = carica sulle armature ($ +Q $ su quella positiva, $ -Q $ su quella negativa) [$ C $]\\
+  $ \Delta V $ = differenza di potenziale tra le armature [$ V $]
+  
+  \item[Capacità di un condensatore piano]
+  \[ C = \varepsilon_0 \frac{S}{d} \]
+  \begin{multicols}{2}
+  $ S $ = superficie dell'armatura [$ m^2 $]\\
+  $ d $ = distanza tra le armature [$ m $]
+  \end{multicols}
+  
+  \item[Capacità totale per condensatori in parallelo] I condensatori sono collegati in modo da essere sottoposti alla stessa tensione.
+  \[ C_{tot} = C_1 + C_2 + \ldots + C_n \]
+  
+  \item[Capacità totale per condensatori in serie] I condensatori sono collegati in modo che su ogni armatura si trovi la medesima carica: $ +Q $ per l'armatura positiva, $ -Q $ per quella negativa.
+  \[ \frac{1}{C_{tot}} = \frac{1}{C_1} + \frac{1}{C_2} + \ldots + \frac{1}{C_n}  \]
+  
+  \item[Campo elettrico all'interno di un condensatore]
+  \[ E = \frac{\sigma}{\varepsilon_0} \]
+  
+  \item[Energia immagazzinata in un condensatore]
+  \[ E = L_{carica} = \frac{1}{2} QV = \frac{1}{2} CV^2 = \frac{1}{2} \frac{Q^2}{C} \]
+\end{description}
+
+\subsection{Corrente elettrica}
+\begin{description}
+  \item[Intensità di corrente elettrica]
+  \[ i = \frac{\Delta Q}{\Delta t} \hspace*{3em} [A] = \left[ \sfrac{C}{s} \right] \]
+  Intensità istantanea di corrente:   
+  \[ \lim_{\Delta t \rightarrow 0} \frac{\Delta Q}{\Delta t} = \frac{dQ}{dt} = Q'(t) \]
+  
+  L'intensità di corrente è la derivata della carica rispetto al tempo.
+  
+  \item[Prima legge di Ohm]
+  \[ i = \frac{\Delta V}{R} \]
+  $ R $ = resistenza elettrica [$ \Omega$] = [$\sfrac{V}{A} $]
+  
+  \item[Resistenza totale per resistori in serie] I resistori sono collegati in modo da essere attraversati dalla stessa corrente.
+  \[ R_{tot} = R_1 + R_2 + \ldots + R_n \]
+  
+  \item[Resistenza totale per resistori in parallelo] I resistori sono collegati in modo da essere sottoposti alla stessa tensione.
+  \[ \frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots + \frac{1}{R_n}  \]
+  
+  \item[Princìpi di Kirchhoff] Due leggi utilizzate nella risoluzione dei circuiti:
+  \begin{itemize}
+    \item legge dei nodi: la somma delle correnti entranti in un nodo è uguale alla somma delle correnti uscenti (conseguenza del principio di conservazione della carica);
+    \item legge delle maglie: la somma algebrica delle differenze di potenziale lungo una maglia è uguale a zero (conseguenza del principio di conservazione dell'energia).
+  \end{itemize}
+  
+  \item[Potenza dissipata da una resistenza]
+  \[ P = \frac{L}{\Delta t} = i \Delta V = i^2 R = \frac{V^2}{R} \hspace*{3em} [W] \]
+  La differenza di energia prima e dopo il passaggio di corrente è causa dell'effetto Joule.
+  
+  \item[Effetto Joule] È la trasformazione di energia potenziale elettrica in energia termica. Viene dissipata una quantità di energia pari a:
+  \[ L = P \Delta t = i^2 R \Delta t \]
+  
+  \item[Kilowattora] Un kilowattora è l’energia assorbita in un'ora da un dispositivo che dissipa la potenza di $ 1000 \, W $.
+  \[ 1 \, kWh = 3,6 \times 10^6 \, J \]
+  
+  \item[Forza elettromotrice di un generatore di tensione] Volendo mantenere una differenza di potenziale tra i due poli di un generatore, è necessario un lavoro per il trasporto delle cariche verso i rispettivi poli.
+  
+  Definiamo forza elettromotrice la differenza di potenziale ai capi di un generatore ideale (senza cioè resistenza interna) o di un generatore reale non connesso ad un circuito.
+  \[ f_{em} = \frac{L}{q} \hspace*{3em} [V] \]
+  La $ f_{em} $ altro non è se non la circuitazione lungo una linea non chiusa (da un polo all'altro), che pertanto risulta diversa da zero.
+  
+  \item[Resistenza interna e generatore reale] La resistenza interna misura l’impedimento al moto delle cariche che si ha all’interno del generatore, pertanto un generatore reale di tensione è modellizzato come un generatore ideale di tensione collegato in serie ad una opportuna resistenza interna.
+  
+  La tensione di un generatore reale vale:
+  \[ \Delta V = \frac{R}{R+r} f_{em} \]
+  e si genera una corrente:
+  \[ i = \frac{f_{em}}{R+r} \]
+  \begin{multicols}{2}
+  $ R $ = resistenza del circuito [$ \Omega $]\\
+  $ r $ = resistenza interna del generatore [$ \Omega $]
+  \end{multicols}
+  
+  \item[Seconda legge di Ohm] 
+  \[ R = \rho \frac{L}{S} \]
+  \begin{multicols}{2}
+  $ \rho $ = resistività, dipende dal materiale [$ \Omega \cdot m $]\\
+  $ L $ = lunghezza del resistore [$ m $]\\
+  $ S $ = sezione del conduttore [$ m^2 $]
+  \end{multicols}
+  
+  \item[Dipendenza della resistività dalla temperatura]
+  \[ \Delta \rho = \alpha \rho_0 \Delta T  \]
+  $ \alpha $ = coefficiente di temperatura della resistività [$ K^{-1} $]\\
+  $ \rho_0 $ = resistività a $ 293 \, K $.
+  
+  Questa relazione vale da $ 100 \, K $ circa fino alla temperatura di fusione del metallo.
+  
+  \item[Superconduttività] A temperature molto basse la resistività di alcuni materiali cala bruscamente fino ad arrivare praticamente a zero. In questo caso il materiale passa allo stato di superconduttività.
+  
+  La temperatura alla quale ciò avviene è detta temperatura critica (per il mercurio è circa $ 4 \, K $).
+  
+  \item[Circuito RC] Consiste di un generatore che fornisce una certa $ f_{em} $, una resistore con resistenza $ R $ e un condensatore con capacità $ C $.
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[battery1, a=$f_{em}$](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[R, l=$ R $] (3,3);
+\draw (3,3) to[C, l=$ C $] (6,3);
+\draw (6,3) to[nos] (6,0);
+\end{circuitikz}
+\caption{Schema di un circuito RC.}\label{img:tc}
+\end{figure}
+  
+  Ricordando che un condensatore viene considerato praticamente carico/scarico dopo un tempo $ t = 5 RC $, le formule per la carica presente sulle armature e per la corrente nel circuito al tempo $ t $ sono riportate in Tabella \ref{tab:caricascarica}.
+  
+    \begin{table}[htb]\centering
+  \begin{tabular}{|c|c|}\hline
+     \textbf{Carica} & \textbf{Scarica}\\\hline
+     &\\
+     $ \displaystyle Q(t) = C \cdot f_{em} \cdot (1-e^{-\sfrac{t}{RC}}) $ & $ \displaystyle Q(t) = C \cdot f_{em} \cdot e^{-\sfrac{t}{RC}} $ \\
+     &\\
+     $ \displaystyle i(t) = \frac{f_{em}}{R} \cdot e^{-\sfrac{t}{RC}} $ & $ \displaystyle i(t) = - \frac{f_{em}}{R} \cdot e^{-\sfrac{t}{RC}} $ \\&\\\hline
+   \end{tabular}
+   \caption{Formule per il circuito RC (carica e scarica di un condensatore).}
+  \label{tab:caricascarica}
+   \end{table}
+   
+  \item[Elettronvolt] Un elettronvolt ($ eV $) è l’energia acquistata da una carica con modulo pari alla carica elementare $ e $ quando è accelerata da una differenza di potenziale di un volt.
+  \[ 1 \, eV = 1,60 \times 10^{-19} \, J \]
+\end{description}
+
+
+
+\subsection{Elettromagnetismo}
+
+\begin{description}
+  \item[Legge di Ampère]
+  \[ F = k\cdot  \frac{i_1 i_2}{d}\cdot L = \frac{\mu_0}{2\pi} \cdot \frac{i_1 i_2}{d}\cdot L \]
+  \begin{multicols}{2}
+  $ F $ = forza subita dai due fili\\
+  $ i_1 $, $ i_2 $ = correnti nei due fili\\
+  $ d $ = distanza tra i fili\\
+  $ L $ = lunghezza dei fili
+  \end{multicols}
+  
+  \item[Legge di Biot-Savart] Una corrente genera intorno a sé un campo magnetico la cui intensità è data da:
+  \[ B = \frac{\mu_0}{2\pi r} i \hspace*{3em} [T] = \left[ \sfrac{N}{A\cdot m} \right] \]
+  \begin{multicols}{2}
+  $ B $ = intensità del campo magnetico\\
+  $ i $ = corrente nel filo\\
+  $ r $ = distanza dal filo
+  \end{multicols}
+  
+  \item[Permeabilità magnetica del vuoto]
+  \[ \mu_0 = 4\pi \times 10^{-7} \, \frac{N}{A^2} \]
+  
+  \item[Forza subita da un filo in un campo magnetico] Se il campo $ B $ e la corrente $ i $ che scorre in un filo lungo $ \ell $ sono perpendicolari, vale:\[ F = Bi\ell \]
+  Isolando $ B $ in questa relazione otteniamo la definizione dell'intensità del campo magnetico:
+  \[ B = \frac{F}{i\ell} \]
+  Se la corrente e il campo non sono perpendicolari, dobbiamo calcolare la componente di $ \vec{B} $ perpendicolare al filo ($ \vec{\ell} $):
+  \[ F = B_{\perp } i\ell = Bi\ell\sin\theta\]
+  $ \theta $ = angolo tra $ \vec{B} $ e $ \vec{\ell} $
+  
+  Possiamo facilmente esprimere questa formula con il prodotto vettoriale:
+  \[ F = i \vec{\ell} \times \vec{B} \]
+  
+  \item[Campo al centro di una spira]
+  \[ B = \mu_0 \frac{i}{2r} \]
+  $ r $ = raggio della spira
+  
+  \item[Campo al centro di un solenoide lungo $ \ell $ con \textit{N} spire]
+  \[ B = \mu_0 \frac{Ni}{\ell}\]
+  
+  \item[Forza di Lorentz] È la forza subita da una carica in moto in un campo magnetico.
+  \[ \vec{F} = q \vec{v} \times \vec{B} \]
+  Indicando con $ \theta $ l'angolo tra $ \vec{v} $ e $ \vec{B} $, il modulo della forza vale:
+  \[ F = qvB\sin \theta \]
+  Se la carica è positiva si usa la regola della mano destra, da invertire nel caso di una carica negativa.
+  
+  \item[Raggio della traiettoria della carica] La forza di Lorentz, essendo perpendicolare alla velocità della carica, agisce da forza centripeta, determinando una traiettoria circolare di raggio:
+  \[ r = \frac{mv}{qB} \]
+  $ m $ = massa della particella
+
+%%%---NON NECESSARIO
+%   \item[Massa di una carica in uno spettrometro di massa]
+%   \[ m = \frac{qB^2r^2}{2 \Delta V} \]
+%   $  \Delta V $ = tensione che accelera la carica
+  
+  \item[Flusso del campo magnetico] Analogamente al flusso del campo elettrico.
+  \[ \Phi_S(B) = \vec{B} \cdot \vec{S} = B S \cos \theta \hspace*{3em} [Wb] = \left[ T \cdot m^2 \right] \]
+  
+  \item[Teorema di Gauss per il campo magnetico] Il flusso del campo magnetico attraverso la superficie chiusa/gaussiana $ S $ è sempre nullo, poiché non esistono monopoli magnetici.
+  \[ \Phi_S(B) = 0 \]
+  
+  \item[Circuitazione del campo magnetico lungo la linea chiusa $ \mathscr{L} $]
+  \[ \Gamma_\mathscr{L}(B) = \sum_i \vec{B}_i \cdot \Delta\vec{\ell_i} = \sum_i B_i \Delta \ell_i \cos \theta_i \]
+  Se suddividiamo $ \mathscr{L} $ in un numero infinito di parti:
+  \[ \Gamma_\mathscr{L}(B) = \oint_\mathscr{L} \vec{B} \cdot d\vec{\ell} \]
+  
+  \item[Teorema di Ampère] Ci dice che il campo magnetico non è conservativo, poiché la sua circuitazione può essere diversa da zero.
+  \[ \Gamma_\mathscr{L}(B) = \mu_0 \sum_k i_k \]
+  $ i_k $ = correnti concatenate a $ \mathscr{L} $
+\end{description}
+
+\subsection{Induzione elettromagnetica}
+
+\begin{description}
+  \item[Legge di Faraday-Neumann] Permette di calcolare la $ f_{em} $ indotta da una variazione del flusso del campo magnetico.
+  \[ f_{em \, ind} =  - \frac{\Delta \Phi(B)}{\Delta t} \]
+  
+  \item[Forza elettromotrice indotta istantanea] 
+  \[ f_{em \, ind \, ist} =  \lim_{\Delta t \rightarrow 0}- \frac{\Delta \Phi(B)}{\Delta t} = - \frac{d\Phi(B)}{dt} = - \Phi'(t) \]
+  
+  \item[Legge di Lenz] Il verso della corrente indotta è tale da opporsi alla variazione di flusso che la genera. Possiamo leggere questo fatto nel segno meno delle due formule precedenti.
+  
+  \item[Induttanza] È la costante di proporzionalità tra il flusso del campo magnetico e la corrente che fluisce nel circuito. Il valore di $ L $ dipende da come è fatto un circuito e dal materiale di cui è composto.
+  \[ L =  \frac{\Phi(B)}{i} \hspace*{3em} [H] = \left[ \sfrac{Wb}{A} \right] \]
+  
+  \item[Autoinduzione] Se in un circuito è presente un'induttanza $ L $ avremo una forza elettromotrice autoindotta:
+  \[ f_{em \, auto} =  - \frac{\Delta \Phi(B)}{\Delta t} = - L \frac{\Delta i}{\Delta t} \]La frazione indica la velocità con cui varia la corrente nel circuito.
+  
+  \item[Circuito RL] Indicando con $ i_0 = \sfrac{f_{em}}{R} $ la corrente che si avrebbe senza induttanza, valgono:
+
+\begin{multicols}{2}
+\begin{center}
+alla chiusura del circuito
+\[ i(t) = i_0 \cdot \left( 1 - e^{-\frac{R}{L}t} \right) \]
+all'apertura del circuito
+\[ i(t) = i_0 \cdot e^{-\frac{R}{L}t} \]
+\end{center}
+\end{multicols}
+  In entrambi i casi si ha un asintoto orizzontale se il tempo tende a infinito.
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[battery1, a=$f_{em}$](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[R, l=$ R $] (3,3);
+\draw (3,3) to[L, l=$ L $] (6,3);
+\draw (6,3) to[nos] (6,0);
+\end{circuitikz}
+\caption{Schema di un circuito RL.}\label{img:rl}
+\end{figure}
+
+%%%---NON NECESSARIO
+%   \item[Mutua induzione]
+%   \[ f_{em}^{1 \rightarrow 2} = - M \frac{\Delta i_1}{\Delta t} \]
+%   $ f_{em}^{1 \rightarrow 2} $ = forza elettromotrice nel secondo circuito causata dalla variazione di corrente $ \Delta i_1 $ nel primo circuito\\
+%   $ M $ = coefficiente di mutua induzione tra i due circuiti [$ H $]
+  
+  \item[Forza elettromotrice in corrente alternata]
+  \[ f_{em} (t)  = f_{em \, 0} \cdot \sin (\omega t) \]
+  $ f_{em \, 0} $ = valore massimo della forza elettromotrice (ampiezza dell'oscillazione)\\
+  $ \omega $ = velocità angolare della spira
+  
+  \item[Corrente in regime alternato]
+  \[ i (t)  = i_0 \cdot \sin (\omega t) \]
+  $ i_0 $ = valore massimo della forza elettromotrice
+  
+  \item[Valori efficaci della corrente alternata] ~
+  \begin{itemize}
+    \item corrente efficace, cioè la corrente continua che erogherebbe la stessa potenza della corrente alternata:
+    \[ i_{\mathit{efficace}} = \frac{i_0}{\sqrt{2}} \]
+    \item tensione efficace, cioè la tensione in regime di corrente continua con cui si erogherebbe la stessa potenza erogata in regime di corrente alternata:
+    \[ f_{em \, \mathit{efficace}} = \frac{f_{em \, 0}}{\sqrt{2}} \]
+  \end{itemize}
+  
+  \item[Circuito ohmico (resistivo)] Nel circuito resistivo la $ f_{em} $ e la corrente sono in fase. Le due funzioni sono legate dalla prima legge di Ohm:
+  \[ i(t) = \frac{f_{em} (t)}{R} \]  
+  
+  Tra le ampiezze delle funzioni vale:
+  \[ i_0 = \frac{f_{em \, 0}}{R} \]  
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[vco, a=$f_{em} (t)$](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[R, l=$ R $] (6,3);
+\draw (6,3) to (6,0);
+\end{circuitikz}
+\caption{Schema di un circuito resistivo.}\label{img:resistivo}
+\end{figure}
+  
+  \item[Circuito induttivo] Nel circuito induttivo la corrente è in ritardo di un quarto di periodo rispetto alla $ f_{em} $.
+  \[ i(t) = \frac{f_{em \, 0}}{\omega L} \cdot \sin\left( \omega t - \frac{\pi}{2} \right) \]
+  La corrente massima è:
+  \[ i_0 = \frac{f_{em \, 0}}{\omega L} \]
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[vco, a=$f_{em} (t)$](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[L, l=$ L $] (6,3);
+\draw (6,3) to (6,0);
+\end{circuitikz}
+\caption{Schema di un circuito induttivo.}\label{img:induttivo}
+\end{figure}
+
+  \item[Circuito capacitivo] Nel circuito capacitivo la corrente è in anticipo di un quarto di periodo rispetto alla $ f_{em} $.
+  \[ i(t) = \omega  C f_{em \, 0} \cdot \sin\left( \omega t + \frac{\pi}{2} \right) \]
+  
+  La corrente massima è:
+  \[ i_0 = \omega  C f_{em \, 0} \]
+  
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[vco, a=$f_{em} (t)$](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[C, l=$ C $] (6,3);
+\draw (6,3) to (6,0);
+\end{circuitikz}
+\caption{Schema di un circuito capacitivo.}\label{img:capacitivo}
+\end{figure}
+
+  \item[Circuito RLC] In un circuito RLC la $ f_{em \, \mathit{eff}} $ è direttamente proporzionale alla $ i_{\mathit{eff}} $:
+  \[ f_{em \, \mathit{eff}} = Z \cdot i_{\mathit{eff}} \]  
+  La costante di proporzionalità è l'impedenza del circuito:
+  \[  Z = \sqrt{R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2} \hspace*{3em} [\Omega]\]
+  \begin{multicols}{2}
+  $ R $ = resistenza del circuito [$ \Omega $]\\
+  $ \omega $ = pulsazione della $ f_{em} $ [$ \sfrac{rad}{s} $]\\
+  $ L $ = induttanza del circuito [$ H $]\\
+  $ C $ = capacità del condensatore [$ F $]\\
+  $ \omega L $ = reattanza induttiva [$ \Omega $]\\
+  $ \frac{1}{\omega C} $ = reattanza capacitiva [$ \Omega $]
+  \end{multicols}
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[vco, a=$f_{em} (t)$](6,0);
+\draw (0,0) to[R, l=$ R $] (0,3);
+\draw (0,3) to[L, l=$ L $] (6,3);
+\draw (6,3) to[C, l=$ C $] (6,0);
+\end{circuitikz}
+\caption{Schema di un circuito RLC.}\label{img:rlc}
+\end{figure}
+  
+  \item[Risonanza] Condizione di risonanza in un circuito RLC:
+  \[ \omega = \frac{1}{\sqrt{LC}} \]
+
+  \item[Circuito LC] Carica sulle armature del condensatore:
+  \[ q(t) = Q \cdot \cos (\omega t) \]
+  $ Q $ = carica massima (iniziale)
+  
+  Corrente nel circuito:
+  \[ i(t) = \omega Q \cdot \sin (\omega t) \]
+  $ \omega Q = i_0 $ = ampiezza della corrente
+  
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[L, a=$ L $](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[C, l=$ C $] (6,3);
+\draw (6,3) to[nos] (6,0);
+\end{circuitikz}
+\caption{Schema di un circuito LC.}\label{img:lc}
+\end{figure}
+
+  \item[Potenza media prodotta in corrente alternata] \[ \overline{P} = f_{em \, \mathit{eff}} \cdot i_{\mathit{eff}} \]
+  
+  \item[Trasformatori] Sono dispositivi capaci di modificare il valore della tensione e della corrente alternata. Se indichiamo con $ n_1 $ e $ n_2 $ il numero di spire del circuito primario e secondario, vale:
+  \[ \frac{f_{em 2 \, \mathit{eff}}}{f_{em 1 \, \mathit{eff}}} = \frac{n_2}{n_1} \]
+  Inoltre si dimostra che, se il trasformatore è ideale (non avvengono fenomeni dissipativi):
+  \[ \overline{P}_1 = f_{em 1 \, \mathit{eff}} \cdot i_{1 \, \mathit{eff}} =  f_{em 2 \, \mathit{eff}} \cdot i_{2 \, \mathit{eff}} = \overline{P}_2 \]
+\end{description}
+
+\subsection{Equazioni di Maxwell e onde elettromagnetiche}
+
+\begin{description}
+  \item[Circuitazione del campo elettrico indotto] Il campo elettrico indotto non è conservativo in quanto la circuitazione non necessariamente è uguale a zero.
+  \[ \Gamma_\mathscr{L}(E) = - \frac{\Delta \Phi_S(B)}{\Delta t}  \]
+  $ \mathscr{L} $ = linea chiusa che racchiude la superficie $ S $ del circuito
+  
+  \item[Corrente di spostamento] 
+  \[ i_s = \varepsilon_0 \frac{\Delta \Phi_S(E)}{\Delta t} \hspace*{3em} [A]\]
+  
+  \item[Equazioni nel caso statico] Se non si hanno variazioni di flusso del campo elettrico e magnetico, valgono le seguenti equazioni:
+\begin{multicols}{2}
+Teorema di Gauss per il campo elettrico:
+  \[ \Phi_S(E) = \frac{Q}{\varepsilon_0}  \]
+
+Teorema di Gauss per il campo magnetico:
+  \[ \Phi_S(B) = 0 \]
+
+Legge di FNL (legge delle maglie):
+  \[ \Gamma_\mathscr{L}(E) = 0 \]
+
+Teorema di Ampère:
+  \[ \Gamma_\mathscr{L}(B) = \mu_0 i \]
+\end{multicols}  
+
+  \item[Equazioni nel caso generale] Se si hanno variazioni di flusso del campo elettrico e magnetico nel tempo, valgono le seguenti equazioni:
+\begin{multicols}{2}
+Teorema di Gauss per il campo elettrico:
+  \[ \Phi_S(E) = \frac{Q}{\varepsilon_0}  \]
+
+Teorema di Gauss per il campo magnetico:
+  \[ \Phi_S(B) = 0 \]
+
+Legge di FNL:
+  \[ \Gamma_\mathscr{L}(E) = - \frac{\Delta\Phi_S(B)}{\Delta t} \]
+
+Teorema di Ampère-Maxwell:
+  \[ \Gamma_\mathscr{L}(B) = \mu_0 \left( i + i_s \right) = \mu_0 \left( i + \varepsilon_0 \frac{\Delta\Phi_S(E)}{\Delta t} \right) \]
+\end{multicols}
+  
+  \item[Onde elettromagnetiche] Dalle equazioni di Maxwell si deduce l'esistenza di onde elettromagnetiche: variazioni sinusoidali del campo elettrico e del campo magnetico su piani perpendicolari, mostrate in Figura \ref{img:ondaelettromagnetica}.
+  \begin{figure}[htp]\centering
+  \input{./parts/ondaem.tex}
+  \caption{Rappresentazione di un'onda elettromagnetica.}
+  \label{img:ondaelettromagnetica}
+  \end{figure}
+  
+  \item[Velocità di un'onda elettromagnetica nel vuoto] È la velocità della luce nel vuoto (perché la luce è un'onda elettromagnetica).
+  \[ c = \frac{1}{\sqrt{\varepsilon_0\cdot \mu_0}} =299\,  792\, 458\,	\sfrac{m}{s} \simeq 3,0 \times 10^8 \,	\sfrac{m}{s} \]
+  
+  \item[Spettro elettromagnetico] Le onde elettromagnetiche si distinguono per la lunghezza d'onda $ \lambda $ e per la frequenza $ f $, legate dalla relazione:
+  \[ \lambda = c f \]
+  I diversi tipi di onde con le relative lunghezze d'onda sono mostrati in Figura \ref{img:spettroelettromagnetico}.
+
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[fill between/on layer={axis grid}]
+\input{./parts/spettro.tex}
+\end{tikzpicture}
+\caption{Lo spettro elettromagnetico, rappresentato in scala logaritmica. La porzione del visibile (compresa tra $ 380 $ e $ 750 \, nm $ circa) è mostrata a p.~\pageref{img:spettrovisibile} in Figura \ref{img:spettrovisibile}.}
+\label{img:spettroelettromagnetico}
+\end{figure}
+  
+  \item[Densità media di energia di un'onda] Un'onda elettromagnetica trasporta energia con densità media, per unità di volume, pari a: 
+  \[ \overline{W} = \frac{1}{2} \varepsilon_0 E_0^2 \]
+  $ E_0 $ = ampiezza di oscillazione del campo elettrico
+  
+  \item[Irradiamento di un'onda elettromagnetica]
+  \[ E_e = \frac{1}{2} c \varepsilon_0 E_0^2 \]
+\end{description}
+
+
+\newpage
+\section{Fisica moderna}
+
+\subsection{Relatività di spazio e tempo}
+
+\begin{description}
+  \item[Principio di relatività ristretta] Le leggi e i principi della Fisica hanno la stessa forma in tutti i sistemi di riferimento inerziali.
+  
+  \item[Principio di invarianza di \textit{c}] La velocità della luce è la stessa in tutti i SDR inerziali, indipendentemente dal moto del sistema stesso o della sorgente da cui la luce è emessa.
+  
+  \item[Simultaneità] Due fenomeni che avvengono nei punti $ P_1 $ e $ P_2 $ sono simultanei se la luce che essi emettono giunge nello stesso istante in un punto equidistante dai due fenomeni.
+  
+  \item[Sincronizzazione degli orologi] Due orologi sono sincronizzati se il secondo di essi, nell'istante in cui riceve il lampo di luce emesso dal primo, segna il valore:
+  \[ t = t_0 + \frac{D}{c} \]
+  \begin{multicols}{2}
+  $ t_0 $ = tempo segnato dal primo orologio\\
+  $ D $ = distanza tra i due orologi
+  \end{multicols}
+  
+  \item[Coefficiente di dilatazione (fattore di Lorentz)]
+  \[ \gamma = \frac{1}{\sqrt{1-\beta^2}} \qquad \mathrm{con} \quad \beta = \frac{v}{c} \]
+  $ v $ = velocità del corpo nel SDR $ S $
+  
+  Poiché $ v $ è sempre minore di $ c $, il coefficiente di dilatazione è sempre maggiore di 1.
+  
+  Nota inoltre che
+  \[ \lim_{v \rightarrow c^{-}} \frac{1}{\sqrt{1-(\frac{v}{c})^2}} = + \infty \]
+  e che se $ v \ll c $ (come nei casi del mondo medio) il valore di $ \gamma $ tende a 1.
+  
+  \item[Dilatazione dei tempi]
+  \[ \Delta t' = \gamma \Delta t \]
+  \begin{multicols}{2}
+  $ \Delta t $ = durata del fenomeno in $ S $\\
+  $ \Delta t' $ = durata del fenomeno in $ S' $
+  \end{multicols}
+  
+  \item[Intervallo di tempo proprio] Intervallo di tempo misurato in un SDR solidale con il fenomeno.
+  
+  \item[Contrazione delle lunghezze parallele al moto] 
+  \[ \Delta x' = v \Delta t' = \frac{\Delta x}{\gamma} \]
+  \begin{multicols}{2}
+  $ \Delta x $ = lunghezza del segmento in $ S $\\
+  $ \Delta x' $ = lunghezza del segmento in $ S' $
+  \end{multicols}
+  
+  \item[Lunghezza propria] Lunghezza di un segmento misurata in un SDR solidale con il segmento.
+  
+  \item[Trasformazioni di Lorentz] Sono le trasformazioni sotto le quali le equazioni dell'elettromagnetismo rimangono invarianti nel passare da un sistema ad un altro in moto con velocità $ \vec{v} $ rispetto al primo. Sono riportate nel caso in cui $ \vec{v} $ sia parallelo all'asse $ x $.
+  \[
+  \left\{ 
+  \begin{array}{l}
+  x' = \gamma (x -vt) \\ 
+  y' = y \\ 
+  z' = z \\
+  t' = \gamma \left(  t - \frac{\beta}{c}x  \right)
+  \end{array}
+  \right. 
+  \]
+  \item[Intervallo invariante tra due eventi] 
+  \[ (\Delta \sigma)^2 = (c\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2 \]
+  Possiamo distinguere tre tipi di intervallo:
+  \begin{itemize}
+    \item $ (\Delta \sigma)^2 > 0 $: intervallo di tipo tempo;
+    \item $ (\Delta \sigma)^2 < 0 $: intervallo di tipo spazio;
+    \item $ (\Delta \sigma)^2 = 0 $: intervallo di tipo luce.
+  \end{itemize}
+  
+  \item[Spazio-tempo (spazio di Minkowski)] Spazio quadridimensionale in cui l'intervallo invariante è quello della formula precedente.
+  
+  \item[Composizione relativistica delle velocità]
+  \[ u' = \frac{u - v}{1- \dfrac{u v}{c^2}} \]
+  \begin{multicols}{2}
+  $ u $ = velocità del corpo in $ S $\\
+  $ u' $ = velocità del corpo in $ S' $\\
+  $ v $ = velocità di $ S' $ rispetto a $ S $
+  \end{multicols}
+  
+  \item[Effetto Doppler relativistico] Variazione di frequenza ricevuta se ricevitore ($ S' $) e sorgente ($ S $) sono in moto l'uno rispetto all'altro.
+  \begin{multicols}{2}
+  Se $ S' $ si allontana da $ S $ con velocità $ v $:
+  \[ f' = f \sqrt{\frac{1 - \beta}{1 + \beta}} \]
+  Se $ S' $ si avvicina a $ S $ con velocità $ v $:
+  \[ f' = f \sqrt{\frac{1 + \beta}{1 - \beta}} \]
+  \end{multicols}
+  
+  \item[Redshift e blueshift]
+  \[ z = \frac{f}{f'} - 1 \]
+  
+  Se osservatore e sorgente si allontanano si ha $ f'>f $, cioè uno spostamento verso il rosso.
+  
+  Se osservatore e sorgente si avvicinano si ha $ f'<f $, cioè uno spostamento verso il blu.
+  
+  \item[Equivalenza massa-energia]
+  \[ \Delta m = \frac{\Delta E}{c^2} \]
+  Se un corpo assorbe energia la sua massa aumenta, se la perde la massa diminuisce.
+  
+  \item[Energia di quiete] Un corpo fermo non soggetto a forze possiede energia per il solo fatto di avere massa.
+  \[ E = m_0 c^2 \]
+  $ m_0 $ = massa a riposto del corpo (cioè misurata in un SDR in cui esso è in quiete)
+  
+    \item[Massa relativistica]
+  \[ m = \gamma m_0 \]
+  Se $ v = 0 $ (cioè se il corpo è fermo nel SDR), allora $ \gamma = 1 $ e $ m=m_0 $.
+  
+  \item[Energia totale di una particella relativistica (relazione di Einstein)]
+  \[ E = \gamma m_0 c^2 = mc^2\]
+  Quando la velocità di un corpo si avvicina indefinitamente a quella della luce, la sua energia totale tende a diventare infinitamente grande.
+  
+  Per accelerare un corpo alla velocità della luce bisogna fornire ad esso una quantità di energia infinita: nessun corpo massivo può quindi raggiungere o superare $ c $.
+  \item[Energia cinetica relativistica] 
+  \[ K_r = (\gamma -1) m_0 c^2 \]
+
+  \item[Quantità di moto relativistica] 
+  \[ \vec{p}_r = m \vec{v} = \gamma m_0 \vec{v} \]
+
+  \item[Quantità di moto della luce] È la quantità di moto posseduta da un'onda elettromagnetica che trasporta un'energia $ E $.
+  \[ p = \frac{E}{c} \]
+
+  \item[Quadrivettore energia-quantità di moto]
+  \[ \left( \frac{E}{c}; p_x ; p_y ; p_z \right) \]
+  Nello spazio di Minkowski il suo modulo quadrato è invariante e vale $ m_0^2 c^2 $.
+  
+  \item[Principio di equivalenza] In una zona limitata dello spazio-tempo è sempre possibile scegliere un SDR in modo da simulare l'esistenza di un dato campo gravitazionale uniforme o, al contrario, in modo da eliminare l'effetto di una forza di gravità costante.
+  
+  \item[Principio di relatività generale] Le leggi della Fisica hanno la stessa forma in tutti i sistemi di riferimento.
+\end{description}
+
+\subsection{Fisica quantistica}
+
+\begin{description}
+  \item[Corpo nero] Corpo capace di assorbire completamente onde elettromagnetiche di qualsiasi lunghezza d'onda.
+  
+  \item[Curve sperimentali per l'emissione di energia a diverse temperature] Nella Figura \ref{img:radianza} la zona centrale indica lo spettro visibile: alla sua sinistra la radiazione ultravioletta, alla sue destra i raggi infrarossi. La previsione classica è data dalla legge di Rayleigh-Jeans.
+ 
+  \begin{figure}[htpb]\centering
+    \begin{tikzpicture}[samples=100, scale=1]
+    \begin{axis}[
+        xmin=0,
+        xlabel={{\footnotesize $\lambda \, [nm]$}},
+        ymin=0,
+        ymax=pi,
+        ylabel={{\footnotesize $\rho (\lambda; T) \, [\sfrac{W}{m^2}]$}},
+        xtick={2,6},
+        xticklabels={{\tiny $350 \, nm$},{\tiny $700 \, nm$}},
+        x tick label style ={rotate=35,anchor=east},
+        ytick=\empty,
+        no markers,
+        grid=both,domain=0.1:40,
+        style={}]
+        \addplot[fill=colorSitoScuro,fill opacity=.25,thick,colorSitoScuro] {(x^3)/((pi^2)*(exp(2000*x/(3000))-1))};
+        \addlegendentryexpanded{{\footnotesize $T = 3000 \, K$}}
+        \addplot[fill=colorSito,fill opacity=.25,thick,colorSito] {(x^3)/((pi^2)*(exp(2000*x/(4000))-1))};
+        \addlegendentryexpanded{{\footnotesize $T = 4000 \, K$}}
+        \addplot[fill=colorSitoChiaro,fill opacity=.25,thick,colorSitoChiaro] {(x^3)/((pi^2)*(exp(2000*x/(5000))-1))};
+        \addlegendentryexpanded{{\footnotesize $T = 5000 \, K$}}
+        \addplot[thick,colorSitoChiaro!60,dashed,domain=9.5:40] {(12/((x-5.6))- .3)};
+        \addlegendentryexpanded{{\footnotesize previsione classica}}
+        \draw[black!30] (2,0)--(2,pi);
+        \draw[black!30] (6,0)--(6,pi);
+    \end{axis}
+    \end{tikzpicture}
+  \caption{Dati sperimentali per la quantità di energia emessa nelle diverse lunghezze d'onda. L'area sottesa dalla curva fornisce l'energia totale emessa.}
+  \label{img:radianza}
+  \end{figure}
+  
+  \item[Legge di Wien] Fornisce la lunghezza d'onda per cui sia ha il picco di intensità di radiazione in funzione della temperatura.
+  \[ \lambda_{max} = \frac{0,2898}{T} \, cm \]
+  
+  \item[Legge di Stefan-Boltzmann] La radianza spettrale è la quantità di energia emessa dall'unità di superficie nell'unità di tempo.
+  \[ R_{sp} = \sigma T^4 \]
+  $ \sigma $ = costante di Stefan-Boltzmann = $ 5,6693 \times 10^{-8} \, \sfrac{W}{m^2 \cdot K^4} $
+  
+  \item[Costante di Planck]
+  \[ h = 6,62607 \times 10^{-34} \, J\cdot s \]
+  
+  \item[Energia di un quanto del campo elettromagnetico]
+  \[ E=nhf \]
+  $ n $ = numero intero positivo
+  
+  \item[Fotoni] Ogni fotone ha massa nulla ed energia quantizzata pari a:
+  \[ E=hf \]
+  Anche la quantità di moto è quantizzata:
+  \[ p = \frac{E}{c} = \frac{hf}{c} \]
+  
+  \item[Effetto Compton] Inviando raggi X su un bersaglio di grafite la radiazione diffusa mostra, oltre ai raggi X con la stessa lunghezza d'onda, anche raggi con lunghezza d'onda maggiore.
+  \[ \Delta \lambda = \lambda' - \lambda = \frac{h}{m_e c} (1 - \cos \varphi) \]
+  \begin{multicols}{2}
+  $ m_e $ = massa dell'elettrone = $ 9,11 \times 10^{-31} \, kg $\\
+  $ \varphi  $ = angolo di diffusione del fotone
+  \end{multicols}
+  
+  \item[Serie di Balmer] Permette di calcolare le frequenze delle diverse onde elettromagnetiche emesse dall'atomo di idrogeno.
+  \[ f = c R_H \left( \frac{1}{m^2} - \frac{1}{n^2} \right) \]
+  $ R_H $ = costante di Rydberg dell'idrogeno = $ 1,097 \times 10^7 \, m^{-1}$\\
+  $ m $, $ n $ = numeri naturali, con $ n>m $
+  
+  \item[Esperimento di Millikan] Scopre la carica dell'elettrone, $ -e $:
+  \[ e = 1,602 \times 10^{-19} \, C \]
+  
+  \item[Principio di esclusione di Pauli] Su una stessa orbita non possono muoversi più di due elettroni.
+  
+  \item[Raggi delle orbite di Bohr]
+  \[ r_n = n^2 \cdot \frac{\varepsilon_0 h^2}{\pi m_e e^2} = (5,29 \times 10^{-11} \, m)\cdot n^2 \]
+  $ n $ = numero quantico principale
+  
+  \item[Relazione di De Broglie] Ad una particella con quantità di moto $ p $ è associata una lunghezza d'onda:
+  \[ \lambda = \frac{h}{p} \] Tale lunghezza d'onda è detta lunghezza d'onda di De Broglie della particella.
+  
+  \item[Dualismo onda-particella] Sia la radiazione elettromagnetica sia le particelle subatomiche mostrano in alcuni fenomeni natura ondulatoria, in altri natura corpuscolare.
+  
+  \item[Costante di Planck ridotta] 
+  \[ \hbar = \frac{h}{2 \pi} \simeq 10^{-34} \, J\cdot s \]
+  
+  \item[Principio di indeterminazione di Heisenberg] Può essere formulato in due modi equivalenti: 
+  \[ \Delta x \Delta p \simeq \hbar \]
+  \[ \Delta t \Delta E \simeq \hbar \]
+  Non è possibile conoscere con precisione dove l'elettrone si trova senza impartirgli una quantità di moto non determinabile. Inoltre, più breve è la misura dell'energia effettuata su un sistema, più impreciso è il valore dell'energia misurato.
+  
+  \item[Funzione d'onda $ \mathbf{\Psi} $] È la soluzione dell'equazione di Schrödinger del sistema in esame. Esprime un'ampiezza di probabilità e dipende dalle tre componenti spaziali e da quella temporale.
+  
+  Permette di calcolare la probabilità che la particella alla quale è associata si trovi in un volume di spazio in un certo intervallo di tempo.
+  
+  La probabilità di osservare la particella è proporzionale al quadrato di $ \Psi $.
+\end{description}
+
+
+\newpage
+\section{Timeline}
+\begin{turn}{90}
+\begin{minipage}{\linewidth}
+\scalebox{.66}{\input{./parts/timeline.tex}}
+\end{minipage}
+\end{turn}
+
+\newpage
+\section{Tavola periodica degli elementi}
+\input{./parts/tavolaperiodica.tex}
+
+
+\end{document}
