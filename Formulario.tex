@@ -20,7 +20,8 @@
 \section{Vettori}
 
 \begin{description}
-  \item[Scalari e vettori] Una grandezza può:
+  \item[Scalari e vettori] 
+  Una grandezza può:
 \begin{itemize}
   \item essere espressa completamente tramite un valore numerico, come la massa: è uno \textit{scalare};
   \item richiedere l'esplicitazione anche di una direzione e di un verso, come la velocità o la forza: è un \textit{vettore}.
@@ -29,15 +30,19 @@
   
   Il modulo del vettore $ \vec{a} $ viene indicato con $ |a| $ o più semplicemente con $ a $.
   
-  \item[Versore] Un versore è un vettore di modulo 1. Vengono indicati con i simboli $ \hat{i}  $, $ \hat{j} $, $ \hat{k} $, $ \hat{n} $, ecc.
+  \item[Versore]
+  Un versore è un vettore di modulo 1. Vengono indicati con i simboli $ \hat{i}  $, $ \hat{j} $, $ \hat{k} $, $ \hat{n} $, ecc.
   
   I versori possono essere usati per rappresentare la direzione e il verso di un vettore, indicando poi con uno scalare il modulo.
   
   Esempio: $ \vec{a} = 5\hat{i}  $ indica un vettore $ \vec{a} $ con la stessa direzione e verso del versore $ \hat{i} $ e di modulo 5.
   
-  Solitamente i versori $ \hat{i}  $, $ \hat{j} $ e $ \hat{k} $ sono usati per indicare gli assi cartesiani, mentre con $ \hat{n} $ si indica un versore normale (perpendicolare) ad un piano.
+  Solitamente i versori $ \hat{i}  $, $ \hat{j} $ e $ \hat{k} $ sono usati per indicare gli assi cartesiani, 
+  mentre con $ \hat{n} $ si indica un versore normale (perpendicolare) ad un piano.
   
-  \item[Seno e coseno] In un triangolo rettangolo, possiamo distinguere i due cateti in \emph{cateto opposto all'angolo $ \theta $} e \emph{cateto adiacente a $ \theta $}, in base alla posizione che occupano rispetto all'angolo $ \theta $.
+  \item[Seno e coseno]
+  In un triangolo rettangolo, possiamo distinguere i due cateti in \emph{cateto opposto all'angolo $ \theta $} 
+  e \emph{cateto adiacente a $ \theta $}, in base alla posizione che occupano rispetto all'angolo $ \theta $.
   
   Definiamo le seguenti funzioni goniometriche:
 \begin{multicols}{3}
@@ -61,14 +66,16 @@
   \end{tikzpicture}\caption{Notiamo che, essendo l'ipotenusa sempre maggiore di ognuno dei due cateti, seno e coseno di un angolo sono valori con modulo minore di 1.}
   \end{figure}
   
-  Quando si eseguono calcoli con le funzioni goniometriche, assicurarsi che gli angoli siano espressi con l'unità di misura desiderata. La calcolatrice dovrà riportare esplicitamente \colorbox{black}{\textcolor{white}{D}} per i gradi (\emph{degrees}) o \colorbox{black}{\textcolor{white}{R}} per i radianti (possiamo ignorare la dicitura \colorbox{black}{\textcolor{white}{G}}).
+  Quando si eseguono calcoli con le funzioni goniometriche, assicurarsi che gli angoli siano espressi con l'unità di misura desiderata. 
+  La calcolatrice dovrà riportare esplicitamente \colorbox{black}{\textcolor{white}{D}} per i gradi (\emph{degrees}) o \colorbox{black}{\textcolor{white}{R}} per i radianti (possiamo ignorare la dicitura \colorbox{black}{\textcolor{white}{G}}).
   
-  \item[Scomposizione di un vettore] Una volta stabilito un sistema di riferimento, possiamo determinare l'angolo che un vettore $ \vec{a} $ forma con l'asse $ x $ (la cui direzione è data dal versore $ \hat{i} $).
+  \item[Scomposizione di un vettore]
+  Una volta stabilito un sistema di riferimento, possiamo determinare l'angolo che un vettore $ \vec{a} $ forma con l'asse $ x $ (la cui direzione è data dal versore $ \hat{i} $).
   
   Chiamiamo tale angolo $ \theta $ e calcoliamo le componenti cartesiane del vettore (ovvero le sue proiezioni sugli assi cartesiani) utilizzando le formule precedenti:
   \[ a_x = a  \cos\theta \quad\quad\quad\quad a_y = a  \sin\theta \]
   
-  \begin{figure}[htb]\centering
+    \begin{figure}[htb]\centering
     \begin{tikzpicture}
     \draw [dashed] (4,0) --(4,3);
     \draw [dashed] (0,3) -- (4,3);
@@ -91,13 +98,14 @@
     \draw [line cap=round,->,ultra thick,colorSitoScuro] (0,0) -- (0,1);
     \end{tikzpicture}
     \caption{La scomposizione di un vettore nelle sue componenti lungo gli assi cartesiani (determinati dai versori $ \hat{i} $ e $ \hat{j} $).}
-  \end{figure}
+    \end{figure}
   
   
   Possiamo ora esprimere il vettore $ \vec{a} $ mediante le sue componenti sugli assi.
   \[ \vec{a} = a_x \hat{i} + a_y \hat{j} \]
   
-  \item[Modulo e direzione di un vettore, note le componenti] Dato un vettore $ \vec{a} = a_x \hat{i} + a_y \hat{j}  $ possiamo risalire al suo modulo con il teorema di Pitagora:
+  \item[Modulo e direzione di un vettore, note le componenti]
+  Dato un vettore $ \vec{a} = a_x \hat{i} + a_y \hat{j}  $ possiamo risalire al suo modulo con il teorema di Pitagora:
   \[ a = \sqrt{(a_x)^2 + (a_y)^2} \]
   Per ottenere l'angolo  formato con l'asse $ x $ possiamo usare una tra le seguenti formule (che utilizzano le funzioni inverse delle funzioni goniometriche):
   \[ \theta  = \arccos\left( \frac{a_x}{a} \right) = \arcsin\left( \frac{a_y}{a} \right) = \arctan\left( \frac{a_y}{a_x} \right) \]
@@ -107,7 +115,8 @@
 \subsection{Operazioni coi vettori}
 
 \begin{description}
-  \item[Somma tra vettori, metodo grafico] Regola del parallelogramma, mostrata in Figura \ref{img:parallelogramma}.
+  \item[Somma tra vettori, metodo grafico]
+  Regola del parallelogramma, mostrata in Figura \ref{img:parallelogramma}.
 
 \begin{figure}[htb]\centering
 \begin{tikzpicture}
@@ -123,18 +132,22 @@
 \label{img:parallelogramma}
 \end{figure}
 
-  \item[Somma tra vettori, metodo algebrico] Dati due vettori $ \vec{a} = a_x \hat{i} + a_y \hat{j} $ e  $ \vec{b} = b_x \hat{i} + b_y \hat{j} $ il vettore somma sarà: 
+  \item[Somma tra vettori, metodo algebrico]
+  Dati due vettori $ \vec{a} = a_x \hat{i} + a_y \hat{j} $ e  $ \vec{b} = b_x \hat{i} + b_y \hat{j} $ il vettore somma sarà: 
   \[ \vec{a} + \vec{b} =  (a_x + b_x) \hat{i} + (a_y + b_y) \hat{j}  \]
   È sufficiente sommare le componenti sui rispettivi assi.
   
-  \item[Differenza tra vettori] Graficamente, basta invertire il verso del vettore da sottrarre e procedere come per la somma. Algebricamente:
+  \item[Differenza tra vettori]
+  Graficamente, basta invertire il verso del vettore da sottrarre e procedere come per la somma. Algebricamente:
   \[ \vec{a} - \vec{b} =  (a_x - b_x) \hat{i} + (a_y - b_y) \hat{j} \]
   
-  \item[Attenzione!] La moltiplicazione è un'operazione che ha senso solo su numeri (scalari). Quando abbiamo a che fare con dei vettori, parliamo di ``prodotto tra vettori''. 
+  \item[Attenzione!]
+  La moltiplicazione è un'operazione che ha senso solo su numeri (scalari). Quando abbiamo a che fare con dei vettori, parliamo di ``prodotto tra vettori''. 
   
   Esistono tre tipi di prodotto che utilizzano i vettori. In nessun caso dobbiamo leggere i simboli $ \cdot $ e $ \times $ come dei ``per''.
   
-  \item[Prodotto di uno scalare per un vettore] Il prodotto di uno scalare per un vettore è un vettore che ha:
+  \item[Prodotto di uno scalare per un vettore]
+  Il prodotto di uno scalare per un vettore è un vettore che ha:
   \begin{itemize}
     \item la stessa direzione del vettore;
     \item stesso verso del vettore se lo scalare è positivo, verso opposto se lo scalare è negativo;
@@ -156,7 +169,8 @@
 \label{img:prodottoscalarevettore}
 \end{figure}
   
-  \item[Prodotto scalare] Il prodotto scalare (simbolo $ \cdot $) si esegue tra due vettori e dà come risultato uno scalare.
+  \item[Prodotto scalare]
+  Il prodotto scalare (simbolo $ \cdot $) si esegue tra due vettori e dà come risultato uno scalare.
   
   Si moltiplica il modulo del primo vettore per la componente del secondo lungo il primo (o viceversa: il prodotto scalare è commutativo).
   
@@ -180,7 +194,8 @@
 %   Aggiungiamo che, conoscendo le componenti del vettore, è possibile dimostrare che vale: 
 %   \[ \vec{a} \cdot \vec{b} = a_x b_x + a_y b_y \]
   
-  \item[Prodotto vettoriale] Il prodotto vettoriale (simbolo $ \times  $) si esegue tra due vettori e dà come risultato un vettore.
+  \item[Prodotto vettoriale]
+  Il prodotto vettoriale (simbolo $ \times  $) si esegue tra due vettori e dà come risultato un vettore.
   
   Il modulo del vettore $ \vec{a} \times \vec{b} $ è dato dall'area del parallelogramma costruito coi vettori $ \vec{a} $ e $ \vec{b} $.
   
@@ -235,7 +250,8 @@
 \subsection{Unità di misura e costanti}
 
 \begin{description}
-  \item[Unità di misura del Sistema Internazionale (SI)] Tutto ciò che in Fisica viene misurato, viene misurato utilizzando le sette unità di misura riportate in Tabella \ref{tab:udmSI} oppure unità di misura da esse derivate.
+  \item[Unità di misura del Sistema Internazionale (SI)]
+  Tutto ciò che in Fisica viene misurato, viene misurato utilizzando le sette unità di misura riportate in Tabella \ref{tab:udmSI} oppure unità di misura da esse derivate.
   \begin{table}[htp]\centering
   \begin{tabular}{|l|l|l|}\hline
     \textbf{Quantità misurata} & \textbf{Nome} & \textbf{Simbolo} \\\hline
@@ -251,34 +267,36 @@
   \label{tab:udmSI}
   \end{table}
  
- \item[Unità derivate] È importante conoscere, oltre alle unità di misura derivate riportate in Tabella \ref{tab:udmderivate}, anche la loro definizione in termini di grandezze del SI. Questo permette di eseguire correttamente i calcoli in Fisica.
+ \item[Unità derivate]
+ È importante conoscere, oltre alle unità di misura derivate riportate in Tabella \ref{tab:udmderivate}, anche la loro definizione in termini di grandezze del SI. Questo permette di eseguire correttamente i calcoli in Fisica.
  
   \begin{table}[htp]\centering
     \begin{tabular}{|l|l|l|l|}\hline
-    \textbf{Quantità misurata} & \textbf{Nome} & \textbf{Simbolo} & \textbf{Definizione} \\\hline\rule{0pt}{3ex}
-    area &  & $ m^2 $ & $ m^2 $ \\\rule{0pt}{3ex}
-    volume &  & $ m^3 $ & $ m^3 $ \\\rule{0pt}{3ex}
-    velocità &  & $ \frac{m}{s} $ & $ \frac{m}{s} $ \\\rule{0pt}{3ex}
-    accelerazione  &  & $ \sfrac{m}{s^2} $ & $ \sfrac{m}{s^2} $\\\rule{0pt}{3ex}
-    frequenza & hertz & $ Hz $ & $ \sfrac{1}{s} $, $ s^{-1} $ \\\rule{0pt}{3ex}
-    angolo & radiante & rad & \\\rule{0pt}{3ex}
-    forza & Newton & $ N $ & $ kg \cdot \sfrac{m}{s^2} $ \\\rule{0pt}{3ex}
-    pressione & Pascal & $ Pa $ & $ \sfrac{N}{m^2} $ \\\rule{0pt}{3ex}
-    energia, lavoro, calore & Joule & $ J $  & $ N \cdot m $ \\\rule{0pt}{3ex}
-    potenza & Watt & $ W $ & $ \sfrac{J}{s} $ \\\rule{0pt}{3ex}
-    carica elettrica & Coulomb & $ C $ & $ A \cdot s $ \\\rule{0pt}{3ex}
-    potenziale elettrico & Volt & $ V $ & $ \sfrac{J}{C} $, $ \sfrac{W}{A} $\\\rule{0pt}{3ex}
-    capacità & Farad & $ F $ & $ \sfrac{C}{V} $\\\rule{0pt}{3ex}
-    resistenza & Ohm & $ \Omega $ & $ \sfrac{V}{A} $\\\rule{0pt}{3ex}
-    campo magnetico & Tesla & $ T $ & $ \sfrac{N}{A \cdot m} $\\\rule{0pt}{3ex}
-    flusso magnetico & Weber & $ Wb $ & $ T \cdot m^2 $\\
+    \textbf{Quantità misurata}& \textbf{Nome} & \textbf{Simbolo} & \textbf{Definizione}             \\\hline\rule{0pt}{3ex}
+    area                      &           & $ m^2 $           & $ m^2 $                             \\\rule{0pt}{3ex}
+    volume                    &           & $ m^3 $           & $ m^3 $                             \\\rule{0pt}{3ex}
+    velocità                  &           & $ \sfrac{m}{s} $  & $ \sfrac{m}{s} $                    \\\rule{0pt}{3ex}
+    accelerazione             &           & $ \sfrac{m}{s^2} $& $ \sfrac{m}{s^2} $                  \\\rule{0pt}{3ex}
+    frequenza                 & hertz     & $ Hz $            & $ \sfrac{1}{s} $, $ s^{-1} $        \\\rule{0pt}{3ex}
+    angolo                    & radiante  & rad               &                                     \\\rule{0pt}{3ex}
+    forza                     & Newton    & $ N $             & $ kg \cdot \sfrac{m}{s^2} $         \\\rule{0pt}{3ex}
+    pressione                 & Pascal    & $ Pa $            & $ \sfrac{N}{m^2} $                  \\\rule{0pt}{3ex}
+    energia, lavoro, calore   & Joule     & $ J $             & $ N \cdot m $                       \\\rule{0pt}{3ex}
+    potenza                   & Watt      & $ W $             & $ \sfrac{J}{s} $                    \\\rule{0pt}{3ex}
+    carica elettrica          & Coulomb   & $ C $             & $ A \cdot s $                       \\\rule{0pt}{3ex}
+    potenziale elettrico      & Volt      & $ V $             & $ \sfrac{J}{C} $, $ \sfrac{W}{A} $  \\\rule{0pt}{3ex}
+    capacità                  & Farad     & $ F $             & $ \sfrac{C}{V} $                    \\\rule{0pt}{3ex}
+    resistenza                & Ohm       & $ \Omega $        & $ \sfrac{V}{A} $                    \\\rule{0pt}{3ex}
+    campo magnetico           & Tesla     & $ T $             & $ \sfrac{N}{A \cdot m} $            \\\rule{0pt}{3ex}
+    flusso magnetico          & Weber     & $ Wb $            & $ T \cdot m^2 $                     \\
     \hline
   \end{tabular}
   \caption{Alcune tra le più importanti unità di misura derivate.}
   \label{tab:udmderivate}
   \end{table}
   
-  \item[Multipli e sottomultipli della unità di misura] Il SI prevede l'utilizzo di opportuni multipli e sottomultipli delle unità di misura (riportati in Tabella \ref{tab:multipliesottomultipli}), poiché in molti casi le unità di misura si dimostrano troppo grandi o troppo piccole per una determinata misura.
+  \item[Multipli e sottomultipli della unità di misura] 
+  Il SI prevede l'utilizzo di opportuni multipli e sottomultipli delle unità di misura (riportati in Tabella \ref{tab:multipliesottomultipli}), poiché in molti casi le unità di misura si dimostrano troppo grandi o troppo piccole per una determinata misura.
   \begin{table}[htp]\centering
     \begin{tabular}{|c|c|r|}\hline
       \textbf{Prefisso} & \textbf{Simbolo} & \textbf{Fattore di conversione} \\\hline\rule{0pt}{3ex}
@@ -324,7 +342,8 @@
     \label{tab:costantimportanti}
   \end{table}  
 
-  \item[Dati su alcuni corpi del Sistema Solare] In Tabella \ref{tab:datisistemasolare} sono riportati alcuni dati utili per esercizi ed esempi.
+  \item[Dati su alcuni corpi del Sistema Solare]
+  In Tabella \ref{tab:datisistemasolare} sono riportati alcuni dati utili per esercizi ed esempi.
 
   \begin{table}[htp]\centering
     \begin{tabular}{|l|l|}\hline
@@ -1938,7 +1957,8 @@ Teorema di Ampère-Maxwell:
   $ v $ = velocità di $ S' $ rispetto a $ S $
   \end{multicols}
   
-  \item[Effetto Doppler relativistico] Variazione di frequenza ricevuta se ricevitore ($ S' $) e sorgente ($ S $) sono in moto l'uno rispetto all'altro.
+  \item[Effetto Doppler relativistico]
+  Variazione di frequenza ricevuta se ricevitore ($ S' $) e sorgente ($ S $) sono in moto l'uno rispetto all'altro.
   \begin{multicols}{2}
   Se $ S' $ si allontana da $ S $ con velocità $ v $:
   \[ f' = f \sqrt{\frac{1 - \beta}{1 + \beta}} \]
@@ -1961,7 +1981,7 @@ Teorema di Ampère-Maxwell:
   \[ E = m_0 c^2 \]
   $ m_0 $ = massa a riposto del corpo (cioè misurata in un SDR in cui esso è in quiete)
   
-    \item[Massa relativistica]
+  \item[Massa relativistica]
   \[ m = \gamma m_0 \]
   Se $ v = 0 $ (cioè se il corpo è fermo nel SDR), allora $ \gamma = 1 $ e $ m=m_0 $.
   
@@ -1970,6 +1990,7 @@ Teorema di Ampère-Maxwell:
   Quando la velocità di un corpo si avvicina indefinitamente a quella della luce, la sua energia totale tende a diventare infinitamente grande.
   
   Per accelerare un corpo alla velocità della luce bisogna fornire ad esso una quantità di energia infinita: nessun corpo massivo può quindi raggiungere o superare $ c $.
+  
   \item[Energia cinetica relativistica] 
   \[ K_r = (\gamma -1) m_0 c^2 \]
 
@@ -1985,7 +2006,8 @@ Teorema di Ampère-Maxwell:
   
   \item[Principio di equivalenza] In una zona limitata dello spazio-tempo è sempre possibile scegliere un SDR in modo da simulare l'esistenza di un dato campo gravitazionale uniforme o, al contrario, in modo da eliminare l'effetto di una forza di gravità costante.
   
-  \item[Principio di relatività generale] Le leggi della Fisica hanno la stessa forma in tutti i sistemi di riferimento.
+  \item[Principio di relatività generale]
+  Le leggi della Fisica hanno la stessa forma in tutti i sistemi di riferimento.
 \end{description}
 
 \subsection{Fisica quantistica}
@@ -1993,23 +2015,25 @@ Teorema di Ampère-Maxwell:
 \begin{description}
   \item[Corpo nero] Corpo capace di assorbire completamente onde elettromagnetiche di qualsiasi lunghezza d'onda.
   
-  \item[Curve sperimentali per l'emissione di energia a diverse temperature] Nella Figura \ref{img:radianza} la zona centrale indica lo spettro visibile: alla sua sinistra la radiazione ultravioletta, alla sue destra i raggi infrarossi. La previsione classica è data dalla legge di Rayleigh-Jeans.
+  \item[Curve sperimentali per l'emissione di energia a diverse temperature]
+  Nella Figura \ref{img:radianza} la zona centrale indica lo spettro della luce visibile: alla sua sinistra la radiazione ultravioletta, alla sue destra i raggi infrarossi.
+  La previsione classica è data dalla legge di Rayleigh-Jeans.
  
   \begin{figure}[htpb]\centering
     \begin{tikzpicture}[samples=100, scale=1]
     \begin{axis}[
         xmin=0,
+        xmax=30,
         xlabel={{\footnotesize $\lambda \, [nm]$}},
         ymin=0,
         ymax=pi,
         ylabel={{\footnotesize $\rho (\lambda; T) \, [\sfrac{W}{m^2}]$}},
-        xtick={2,6},
-        xticklabels={{\tiny $350 \, nm$},{\tiny $700 \, nm$}},
-        x tick label style ={rotate=35,anchor=east},
+        xtick=\empty,
         ytick=\empty,
         no markers,
         grid=both,domain=0.1:40,
         style={}]
+        \fill [black!10] (2,0.005) rectangle (6,pi-0.005);
         \addplot[fill=colorSitoScuro,fill opacity=.25,thick,colorSitoScuro] {(x^3)/((pi^2)*(exp(2000*x/(3000))-1))};
         \addlegendentryexpanded{{\footnotesize $T = 3000 \, K$}}
         \addplot[fill=colorSito,fill opacity=.25,thick,colorSito] {(x^3)/((pi^2)*(exp(2000*x/(4000))-1))};
@@ -2018,8 +2042,11 @@ Teorema di Ampère-Maxwell:
         \addlegendentryexpanded{{\footnotesize $T = 5000 \, K$}}
         \addplot[thick,colorSitoChiaro!60,dashed,domain=9.5:40] {(12/((x-5.6))- .3)};
         \addlegendentryexpanded{{\footnotesize previsione classica}}
-        \draw[black!30] (2,0)--(2,pi);
-        \draw[black!30] (6,0)--(6,pi);
+        \draw[black!30] (2,0.005)--(2,pi-0.005);
+        \draw[black!30] (6,0.005)--(6,pi-0.005);
+        \node[below] at (4,pi) {{\scriptsize visibile}};
+        \node[below] at (1,pi) {{\scriptsize UV}};
+        \node[below] at (7,pi) {{\scriptsize IR}};
     \end{axis}
     \end{tikzpicture}
   \caption{Dati sperimentali per la quantità di energia emessa nelle diverse lunghezze d'onda. L'area sottesa dalla curva fornisce l'energia totale emessa.}
