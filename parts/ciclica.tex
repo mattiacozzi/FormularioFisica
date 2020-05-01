@@ -1,0 +1,57 @@
+\begin{tikzpicture}[,scale=0.7]
+    \begin{axis}[
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10,
+        ymin=0, ymax=10,
+%        % (made labels more common)
+%        % (because of the "sketch" type of the plot these should not be needed)
+%        xlabel={Volume $(\mathrm{m}^3)$},
+%        ylabel={Pressure (Pa)},
+        % (changed ticks + labels to normal ticks instead of extra ticks)
+        xtick={3,6},
+        xticklabels={$V_0$,$V_1$},
+        ytick={1.5,6},
+        yticklabels={$p_1$,$p_0$},  % <-- (changed order of entries)
+    ]
+        \fill [
+            colorSitoChiaro!20,
+        ]
+            (axis cs:6,1.5) to [bend right=60]
+            (axis cs:3,6) to [bend right= 60]
+            cycle
+        ;
+
+        % draw the dashed lines
+        % (using two different approaches)
+        \addplot [dashed,domain=0:3,samples=2] {6};
+        \addplot [dashed,domain=0:6,samples=2] {1.5};
+
+        \draw [dashed,thin] (axis cs:6,1.5) -- (axis cs:6,0);
+        \draw [dashed,thin] (axis cs:3,6)   -- (axis cs:3,0);
+
+        % now draw the curve
+        \draw [
+            fleche={0.6:colorSito},
+            colorSito,thick,              % <-- added
+        ] (axis cs:3,6) to [bend right=60]
+            % store start and end coordinates
+            coordinate [pos=0] (start)
+            coordinate [pos=1] (end)
+        (axis cs:6,1.5);
+
+        \draw [
+            fleche={0.6:colorSito},
+            colorSito,thick,              % <-- added
+        ] (axis cs:6,1.5) to [bend right=60]
+            % store start and end coordinates
+            coordinate [pos=0] (start)
+            coordinate [pos=1] (end)
+        (axis cs:3,6);
+
+        % draw start and end point
+        \fill [radius=2pt,colorSito]
+            (start) circle[]
+            (end)   circle[];
+    \end{axis}
+\end{tikzpicture}

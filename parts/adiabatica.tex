@@ -1,0 +1,59 @@
+\begin{tikzpicture}[,scale=0.7]
+    \begin{axis}[
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10,
+        ymin=0, ymax=10,
+        xtick={1,6},
+        xticklabels={$V_0$,$V_1$},
+        ytick={0.3,6.6},
+        yticklabels={$p_1$,$p_0$},  % <-- (changed order of entries)
+    ]
+        % fill the area below the curve
+        % (draw it first, so it is below everything else)
+        \fill [
+            colorSitoChiaro!20,
+        ]
+            (axis cs:1,6.6) to [bend right=20]
+            (axis cs:6,0.3) |-
+            (axis cs:6,0) |-
+            (axis cs:1,\pgfkeysvalueof{/pgfplots/ymin}) --
+            cycle
+        ;
+
+        % draw the dashed lines
+        % (using two different approaches)
+
+        \draw [dashed,thin] (axis cs:0,6.6) -- (axis cs:1,6.6);
+        \draw [dashed,thin] (axis cs:0,0.3)   -- (axis cs:6,0.3);
+        \draw [dashed,thin] (axis cs:1,0) -- (axis cs:1,6.6);
+        \draw [dashed,thin] (axis cs:6,0)   -- (axis cs:6,0.3);
+
+        \draw [
+            thick,              % <-- added
+            dotted,
+        ] (axis cs:8,0.5) to [bend right=-30]
+        (axis cs:0.5,8);
+        
+        \draw [
+            thick,              % <-- added
+            dotted,
+        ] (axis cs:7,0.2) to [bend right=-40]
+        (axis cs:0.2,7);
+
+        \draw [
+            fleche={0.6:colorSito},
+            colorSito,thick,              % <-- added
+        ] (axis cs:1,6.6) to [bend right=20]
+            % store start and end coordinates
+            coordinate [pos=0] (start)
+            coordinate [pos=1] (end)
+        (axis cs:6,0.3);
+        
+
+        % draw start and end point
+        \fill [radius=2pt,colorSito]
+            (start) circle[]
+            (end)   circle[];
+    \end{axis}
+\end{tikzpicture}
