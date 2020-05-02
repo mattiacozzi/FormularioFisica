@@ -10,6 +10,7 @@ Comprende:
 - i valori delle più importanti costanti fisiche;
 - definizione e uso dei vettori;
 - spiegazione delle cifre significative;
+- derivate e integrali notevoli in Fisica,
 - timelime dei fisici più importanti;
 - tavola periodica con masse atomiche.
 
