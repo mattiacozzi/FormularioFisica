@@ -1572,12 +1572,38 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \end{multicols}
   
   \item[Capacità totale per condensatori in parallelo] 
-  I condensatori sono collegati in modo da essere sottoposti alla stessa tensione.
-  \[ C_{tot} = C_1 + C_2 + \ldots + C_n \]
-  
+  I condensatori sono collegati in modo da essere sottoposti alla stessa tensione.  Schema in \Cref{img:condparallelo}.
+  \[ C_{tot} = C_1 + C_2 + \ldots + C_n \] 
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[battery1, a=$\Delta V$](6,0);
+\draw (0,0) to (0,4) to (1.5,4);
+\draw (1.5,4) to (1.5,6) to[C, l=$ C_1 $] (4.5,6) to (4.5,4);
+\draw (1.5,4) to[C, l=$ C_2 $] (4.5,4);
+\draw (1.5,4) to (1.5,2) to[C, l=$ C_3 $] (4.5,2) to (4.5,4);
+\draw (4.5,4) to (6,4) to (6,0);
+\end{circuitikz}
+\caption{Schema di collegamento per condensatori in parallelo.}\label{img:condparallelo}
+\end{figure}
+
   \item[Capacità totale per condensatori in serie] 
-  I condensatori sono collegati in modo che su ogni armatura si trovi la medesima carica: $ +Q $ per l'armatura positiva, $ -Q $ per quella negativa.
+  I condensatori sono collegati in modo che su ogni armatura si trovi la medesima carica: $ +Q $ per l'armatura positiva, $ -Q $ per quella negativa.  Schema in \Cref{img:condserie}.
   \[ \frac{1}{C_{tot}} = \frac{1}{C_1} + \frac{1}{C_2} + \ldots + \frac{1}{C_n}  \]
+  
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[battery1, a=$\Delta V$](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[C, l=$ C_1 $] (2,3);
+\draw (2,3) to[C, l=$ C_2 $] (4,3);
+\draw (4,3) to[C, l=$ C_3 $] (6,3);
+\draw (6,3) to (6,0);
+\end{circuitikz}
+\caption{Schema di collegamento per condensatori in serie.}\label{img:condserie}
+\end{figure}
   
   \item[Campo elettrico all'interno di un condensatore]
   \[ E = \frac{\sigma}{\varepsilon_0} \]
@@ -1588,6 +1614,27 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
 
 \subsection{Corrente elettrica}
 \begin{description}
+  \item[Circuito elettrico]
+  È un insieme di conduttori collegati tra loro in modo continuo collegati ad un generatore di tensione.
+  Può essere costituito da diversi elementi, i più importanti dei quali sono riportati in \Cref{tab:elementicircuito}
+  
+\begin{table}[htb]\centering
+\begin{tabular}{ll}\toprule
+\textbf{Elemento}       & \textbf{Simbolo}        \\\midrule
+filo                    & \ctikzset{bipoles/length=0.6cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to (2,0);\end{circuitikz}\\\addlinespace[.4em]
+interruttore            & \ctikzset{bipoles/length=0.6cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[nos] (2,0);\draw[white] (0,-.2) to (2,-.2);\end{circuitikz}\\\addlinespace[.4em]
+generatore              & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[battery1] (2,0);\end{circuitikz}\\\addlinespace[.4em]
+lampadina               & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[lamp] (2,0);\end{circuitikz}\\\addlinespace[.4em]
+resistore               & \ctikzset{bipoles/length=0.6cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[R] (2,0);\end{circuitikz}\\\addlinespace[.4em]
+\textsc{led}            & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[leDo] (2,0);\end{circuitikz}\\\addlinespace[.4em]
+condensatore            & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[C] (2,0);\end{circuitikz}\\\addlinespace[.4em]
+induttore               & \ctikzset{bipoles/length=0.6cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[L] (2,0);\end{circuitikz}\\\addlinespace[.4em]
+alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scale=0.5]\draw (0,0) to[vco] (2,0);\end{circuitikz}\\\bottomrule
+\end{tabular}
+\caption{Elementi circuitali fondamentali e rispettivo simbolo.}
+\label{tab:elementicircuito}
+\end{table}
+
   \item[Intensità di corrente elettrica]
   \[ i = \frac{\Delta q}{\Delta t} \hspace*{3em} [A] = \left[ \sfrac{C}{s} \right] \]
   Intensità istantanea di corrente:   
@@ -1596,22 +1643,52 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   L'intensità di corrente è la derivata della carica rispetto al tempo.
   
   \item[Prima legge di Ohm]
+  La corrente che circola nel circuito è direttamente proporzionale alla differenza di potenziale applicata ($ \Delta V $) 
+  e inversamente proporzionale alla resistenza ($ R $) del circuito.
   \[ i = \frac{\Delta V}{R} \]
   $ R $ = resistenza elettrica [$ \Omega$] = [$\sfrac{V}{A} $]
   
-  \item[Resistenza totale per resistori in serie] 
-  I resistori sono collegati in modo da essere attraversati dalla stessa corrente.
-  \[ R_{tot} = R_1 + R_2 + \ldots + R_n \]
-  
   \item[Resistenza totale per resistori in parallelo] 
-  I resistori sono collegati in modo da essere sottoposti alla stessa tensione.
+  I resistori sono collegati in modo da essere sottoposti alla stessa tensione. Schema in \Cref{img:resiparallelo}.
   \[ \frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots + \frac{1}{R_n}  \]
-  
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[battery1, a=$\Delta V$](6,0);
+\draw (0,0) to (0,4) to (1.5,4);
+\draw (1.5,4) to (1.5,6) to[R, l=$ R_1 $] (4.5,6) to (4.5,4);
+\draw (1.5,4) to[R, l=$ R_2 $] (4.5,4);
+\draw (1.5,4) to (1.5,2) to[R, l=$ R_3 $] (4.5,2) to (4.5,4);
+\draw (4.5,4) to (6,4) to (6,0);
+\end{circuitikz}
+\caption{Schema di collegamento per resistori in parallelo.}\label{img:resiparallelo}
+\end{figure}
+
+  \item[Resistenza totale per resistori in serie] 
+  I resistori sono collegati in modo da essere attraversati dalla stessa corrente. Schema in \Cref{img:resiserie}.
+  \[ R_{tot} = R_1 + R_2 + \ldots + R_n \]
+
+\begin{figure}[htp]\centering
+\ctikzset{bipoles/length=0.6cm}
+\begin{circuitikz}[scale=0.5]
+\draw (0,0) to[battery1, a=$\Delta V$](6,0);
+\draw (0,0) to (0,3);
+\draw (0,3) to[R, l=$ R_1 $] (2,3);
+\draw (2,3) to[R, l=$ R_2 $] (4,3);
+\draw (4,3) to[R, l=$ R_3 $] (6,3);
+\draw (6,3) to (6,0);
+\end{circuitikz}
+\caption{Schema di collegamento per resistori in serie.}\label{img:resiserie}
+\end{figure}
+
   \item[Princìpi di Kirchhoff] 
   Due leggi utilizzate nella risoluzione dei circuiti:
   \begin{itemize}
-    \item legge dei nodi: la somma delle correnti entranti in un nodo è uguale alla somma delle correnti uscenti (conseguenza del principio di conservazione della carica);
-    \item legge delle maglie: la somma algebrica delle differenze di potenziale lungo una maglia è uguale a zero (conseguenza del principio di conservazione dell'energia).
+    \item \emph{legge dei nodi}: la somma delle correnti entranti in un nodo è uguale alla somma delle correnti uscenti (conseguenza del principio di conservazione della carica);
+    \[ \sum i_{in} = \sum i_{out} \]
+    \item \emph{legge delle maglie}: la somma algebrica delle differenze di potenziale lungo una maglia è uguale a zero (conseguenza del principio di conservazione dell'energia).
+    \[ \sum \Delta V = 0\]
   \end{itemize}
   
   \item[Potenza dissipata da una resistenza]
@@ -1661,7 +1738,8 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   Questa relazione vale da $ 100 \, K $ circa fino alla temperatura di fusione del metallo.
   
   \item[Superconduttività] 
-  A temperature molto basse la resistività di alcuni materiali cala bruscamente fino ad arrivare praticamente a zero. In questo caso il materiale passa allo stato di superconduttività.
+  A temperature molto basse la resistività di alcuni materiali cala bruscamente fino ad arrivare praticamente a zero.
+  In questo caso il materiale passa allo stato di superconduttività.
   
   La temperatura alla quale ciò avviene è detta temperatura critica (per il mercurio è circa $ 4 \, K $).
   
@@ -1677,7 +1755,7 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
 \draw (3,3) to[C, l=$ C $] (6,3);
 \draw (6,3) to[nos] (6,0);
 \end{circuitikz}
-\caption{Schema di un circuito RC.}\label{img:tc}
+\caption{Schema di un circuito RC.}\label{img:rc}
 \end{figure}
   
   Ricordando che un condensatore viene considerato praticamente carico/scarico dopo un tempo $ t = 5 RC $, le formule per la carica presente sulle armature e per la corrente nel circuito al tempo $ t $ sono riportate in \Cref{tab:caricascarica}.
