@@ -482,7 +482,7 @@
 
 
 
-\subsection{Cinematica}
+\subsection{Cinematica}\label{sec:cinematica}
 \subsubsection{Moto rettilineo uniforme}
 \begin{description}
   \item[Legge oraria] 
@@ -763,9 +763,9 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \begin{table}[htp]\centering
     \begin{tabular}{ll}\toprule
      \textbf{Corpo} & \textbf{Momento d'inerzia} \\\midrule
-     Guscio cilindrico rispetto al suo asse & $ I = mr^2 $ \\\addlinespace[.2em]
-     Cilindro pieno rispetto al suo asse & $ I = \sfrac{1}{2} mr^2 $ \\\addlinespace[.2em]
-     Sfera piena rispetto a un diametro & $ I = \sfrac{2}{5} mr^2 $ \\\bottomrule
+     guscio cilindrico rispetto al suo asse & $ I = mr^2 $ \\\addlinespace[.2em]
+     cilindro pieno rispetto al suo asse & $ I = \sfrac{1}{2} mr^2 $ \\\addlinespace[.2em]
+     sfera piena rispetto a un diametro & $ I = \sfrac{2}{5} mr^2 $ \\\bottomrule
     \end{tabular}
     \caption{Il momento d'inerzia di alcuni corpi rigidi.}
     \label{tab:momentoinerzia}
@@ -969,10 +969,10 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   
   \begin{table}[htb]\centering
   \begin{tabular}{lllll}\toprule
-     \textbf{Nome} & \textbf{Q.tà costante} & \textbf{Legge sperimentale} & \textbf{Formula} & \textbf{Legge}\\\midrule
-     Isoterma & Temperatura & Legge di Boyle & $ pV= $ costante & $ p_0V_0 = p_1V_1  $\\\addlinespace[.2em]
-     Isòbara & Pressione & I legge di Gay-Lussac & $ \sfrac{V}{T} = $ costante & $ \sfrac{V_0}{T_0} = \sfrac{V_1}{T_1} $\\\addlinespace[.2em]
-     Isocòra & Volume & II legge di Gay-Lussac & $ \sfrac{p}{T} = $ costante & $ \sfrac{p_0}{T_0} = \sfrac{p_1}{T_1} $\\\bottomrule
+     \textbf{Nome}  & \textbf{Q.tà costante}  & \textbf{Legge sperimentale} & \textbf{Formula}            & \textbf{Legge}\\\midrule
+     isoterma       & temperatura             & legge di Boyle              & $ pV= $ costante            & $ p_0V_0 = p_1V_1  $\\\addlinespace[.2em]
+     isòbara        & pressione               & I legge di Gay-Lussac       & $ \sfrac{V}{T} = $ costante & $ \sfrac{V_0}{T_0} = \sfrac{V_1}{T_1} $\\\addlinespace[.2em]
+     isocòra        & volume                  & II legge di Gay-Lussac      & $ \sfrac{p}{T} = $ costante & $ \sfrac{p_0}{T_0} = \sfrac{p_1}{T_1} $\\\bottomrule
    \end{tabular}
    \caption{Tre trasformazioni dei gas.}
   \label{tab:trasformazioni}
@@ -1547,7 +1547,7 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \item[Potenziale elettrico generato da una carica \textit{Q} a distanza \textit{r}]
   \[ V(r) = k_0 \frac{Q}{r}  \]
   
-  \item[Circuitazione del campo elettrico lungo una linea chiusa  $ \mathscr{L} $]
+  \item[Circuitazione del campo elettrico lungo una linea chiusa  $ \mathscr{L} $]\label{conc:circuitazioneE}
   \[ \Gamma_\mathscr{L}(E) = \sum_i  \vec{E}_i \cdot \Delta\vec{\ell}_i = \sum_i E_i \Delta \ell_i \cos \theta_i = - \sum_i \Delta V_i = 0 \]
   La circuitazione del campo elettrostatico lungo una \emph{qualsiasi} linea chiusa è uguale a zero.
   
@@ -1768,10 +1768,8 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   Il flusso del campo magnetico attraverso la superficie chiusa/gaussiana $ S $ è sempre nullo, poiché non esistono monopoli magnetici.
   \[ \Phi_S(B) = 0 \]
   
-  \item[Circuitazione del campo magnetico lungo la linea chiusa $ \mathscr{L} $]
+  \item[Circuitazione del campo magnetico lungo la linea chiusa $ \mathscr{L} $]\label{conc:circuitazioneB}
   \[ \Gamma_\mathscr{L}(B) = \sum_i \vec{B}_i \cdot \Delta\vec{\ell_i} = \sum_i B_i \Delta \ell_i \cos \theta_i \]
-  Se suddividiamo $ \mathscr{L} $ in un numero infinito di parti:
-  \[ \Gamma_\mathscr{L}(B) = \oint_\mathscr{L} \vec{B} \cdot d\vec{\ell} \]
   
   \item[Teorema di Ampère] 
   Afferma che il campo magnetico non è conservativo, poiché la sua circuitazione può essere diversa da zero.
@@ -2290,6 +2288,83 @@ Teorema di Ampère-Maxwell:
   
   La probabilità di osservare la particella è proporzionale al quadrato di $ \Psi $.
 \end{description}
+
+
+\newpage
+\section{Derivate e integrali notevoli}
+
+\begin{description}
+  \item[Variazioni istantanee e velocità]
+  La derivata della funzione $ f $ rispetto alla variabile $ x $ è definita come:
+  \[ f'(x) = \lim_{\Delta x \to 0} \frac{\Delta f}{\Delta x} = \frac{df}{dx} \]
+  Intuitivamente, la derivata di una funzione in un punto fornisce indicazioni sulla \emph{velocità di variazione} della funzione in quel punto.
+  
+  Tale informazione viene espressa graficamente dal coefficiente angolare della retta tangente al grafico della funzione in quel punto.
+  
+  \item[Notazioni per la derivata di una funzione]
+  Possiamo indicare la derivata (prima e seconda) della funzione $ f $ rispetto alla variabile $ x $ in diversi modi, in base alla comodità e al contesto, come indicato in \Cref{tab:scritturaderivate}.
+  
+  \begin{table}[htp]\centering
+  \begin{tabular}{ccc}\toprule
+    ~~~~\textbf{Lagrange}~~~~ & ~~~~\textbf{Leibniz}~~~~ & ~~~~\textbf{Eulero}~~~~ \\\midrule
+    $ f'(x),f''(x) $ & $ \dfrac{df}{dx},\dfrac{d^2 f}{dx^2} $ & $ D[f], D^2[f] $ \\\bottomrule
+  \end{tabular}
+  \caption{Tre modi diversi di esprimere la derivata di $ f(x) $.}
+  \label{tab:scritturaderivate}
+  \end{table}
+  
+  \item[Derivate e cinematica]
+  La funzione che esprime la posizione di un corpo nel \textsc{sdr} in funzione del tempo, la sua velocità istantanea e la sua accelerazione istantanea sono l'una la derivata dell'altra.
+  
+  \[ s'(t) = \displaystyle \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t} = \frac{ds}{dt} = v(t) \]
+  
+  \[ s''(t) = v'(t) = \displaystyle \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \frac{dv}{dt} = a(t) \]
+  
+  Possiamo verificare facilmente quanto detto per tutte le leggi orarie fornite alla \Cref{sec:cinematica}.
+  
+  \item[Derivate notevoli]
+  In \Cref{tab:derivatenotevoli} sono mostrate le quantità (istantanee) che possono essere ottenute derivando.
+  
+  \begin{table}[hbtp]\centering
+  \begin{tabular}{llll}\toprule
+    \textbf{Funzione} & \textbf{Derivata di} & \textbf{Rispetto a} & \textbf{Formula} \\\midrule
+    velocità          & posizione            & tempo               & $ v(t) = \dfrac{ds}{dt} $ \\\addlinespace[.8em]
+    accelerazione     & velocità             & tempo               & $ a(t) = \dfrac{dv}{dt} $ \\\addlinespace[.8em]
+    forza             & quantità di moto     & tempo               & $ F(t) = \dfrac{dp}{dt} $ \\\addlinespace[.8em]
+    forza             & energia              & posizione           & $ F(s) = \dfrac{dU}{ds} $ \\\addlinespace[.8em]
+    intensità di corrente & carica           & tempo               & $ i(t) = \dfrac{dq}{dt} $ \\\addlinespace[.8em]
+    potenza           & energia              & tempo               & $ P(t) = \dfrac{dU}{dt} $ \\\addlinespace[.8em]
+    $ \textrm{f}_{\textrm{em}} $ & flusso di $ B $ & tempo         & $ f_{em}(t) = -\dfrac{d\Phi(B)}{dt} $ \\\bottomrule
+  \end{tabular}
+  \caption{Alcune derivate notevoli.}
+  \label{tab:derivatenotevoli}
+  \end{table}
+  
+  \item[Spazio percorso]
+  Conoscendo la funzione $ v(t) $ che esprime la velocità di un corpo in funzione del tempo, 
+  possiamo calcolare lo spazio percorso tra un tempo $ t_0 $ e un tempo $ t_1 $ con:
+  \[ \Delta s = \int_{t_0}^{t_1} v dt \]
+  Questo integrale definito fornisce l'area sottesa dal grafico di $ v(t) $ tra il tempo $ t_0 $ e il tempo $ t_1 $.
+  
+  \item[Lavoro di una forza]
+  Conoscendo la funzione $ F(s) $ che esprime la forza agente su un corpo in funzione della sua posizione, 
+  possiamo calcolare il lavoro di tale forza (e quindi la variazione di energia potenziale del corpo tra la posizione $ s_0 $ e la posizione $ s_1 $ con:
+  \[ L = \Delta U = \int_{s_0}^{s_1} F(s) ds \]
+  
+  \item[Circuitazione] Alle \cpageref{conc:circuitazioneE,conc:circuitazioneB} abbiamo definito la circuitazione lungo la linea chiusa $ \mathscr{L} $ 
+  come una sommatoria di prodotti scalari tra un vettore campo e un vettore spostamento (cioè tutti gli spostamenti necessari per percorrere $ \mathscr{L} $). 
+  
+  Possiamo pertanto esprimere la circuitazione (del campo elettrico o magnetico) con:
+  \begin{multicols}{2}
+  \begin{center}
+  $ \displaystyle \Gamma_\mathscr{L}(E) = \oint_\mathscr{L} \vec{E} \cdot d\vec{\ell} $
+  
+  $ \displaystyle \Gamma_\mathscr{L}(B) = \oint_\mathscr{L} \vec{B} \cdot d\vec{\ell} $
+  \end{center}
+  \end{multicols}
+  Il simbolo $ \oint_\mathscr{L} $ indica l'integrale chiuso sulla linea $ \mathscr{L} $.
+\end{description}
+
 
 
 \newpage
