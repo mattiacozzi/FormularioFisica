@@ -138,9 +138,24 @@
   È sufficiente sommare le componenti sui rispettivi assi.
   
   \item[Differenza tra vettori]
-  Graficamente, basta invertire il verso del vettore da sottrarre e procedere come per la somma. Algebricamente:
+  Graficamente, basta invertire il verso del vettore da sottrarre e procedere come per la somma. Il metodo del parallelogramma viene applicato come in \Cref{img:parallelogramma2}.
+
+\begin{figure}[htb]\centering
+\begin{tikzpicture}[>=latex]
+\draw [dashed] (4,0) -- (2,-3);
+\draw [dashed] (-2,-3) -- (2,-3);
+\draw [line cap=round,->,colorSito!70,ultra thick] (0,0) -- (4,0);
+\node [below,colorSito!70] at (2,0) {$ \vec{a} $};
+\draw [line cap=round,->,colorSito!70,ultra thick] (4,0) -- (-2,-3);
+\node [below right,colorSito!70] at (1,-1.5) {$ -\vec{b} $};
+\draw [line cap=round,->,colorSito,ultra thick] (0,0) -- (-2,-3);
+\node [above left,colorSito] at (-1,-1.5) {$ \vec{c} $};
+\end{tikzpicture}\caption{Regola del parallelogramma applicata alla sottrazione: $ \vec{a} + (-\vec{b}) = \vec{c} $.}
+\label{img:parallelogramma2}
+\end{figure}
+  Algebricamente:
   \[ \vec{a} - \vec{b} =  (a_x - b_x) \hat{i} + (a_y - b_y) \hat{j} \]
-  
+
   \item[Attenzione!]
   La moltiplicazione è un'operazione che ha senso solo su numeri (scalari). Quando abbiamo a che fare con dei vettori, parliamo di ``prodotto tra vettori''. 
   
@@ -172,7 +187,7 @@
   \item[Prodotto scalare]
   Il prodotto scalare (simbolo $ \cdot $) si esegue tra due vettori e dà come risultato uno scalare.
   
-  Si moltiplica il modulo del primo vettore per la componente del secondo lungo il primo (o viceversa: il prodotto scalare è commutativo).
+  Si moltiplica il modulo del primo vettore per la componente del secondo lungo il primo (o viceversa: il prodotto scalare è commutativo), come mostrato in \Cref{img:scalare}.
   
   Se indichiamo con $ \theta $ l'angolo tra i due vettori $ \vec{a} $ e $ \vec{b} $, allora: 
   \[ \vec{a} \cdot \vec{b} = ab\cos\theta \]
@@ -187,7 +202,8 @@
 \draw [line cap=round,colorSito,ultra thick] (-.05,-.05) -- (2,-.05);
 \draw [line cap=round,->,colorSito,ultra thick] (-.05,-.05) -- (2,3);
 \node [above left,colorSito] at (1,1.5) {$ \vec{b} $};
-\end{tikzpicture}\caption{Rappresentazione del prodotto scalare.}
+\end{tikzpicture}\caption{Rappresentazione della componente di $ \vec{b} $ su $ \vec{a} $.}
+\label{img:scalare}
 \end{figure}
 
 %%%---NON NECESSARIO
@@ -983,7 +999,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
    \end{table}
   
   \item[Formula dei gas perfetti]
-  Ricordando che è possibile utilizzare una qualunque unità di misura adatta per pressione e volume, mentre la temperatura deve essere espressa in kelvin, vale: 
+  Ricordando che è possibile utilizzare una qualunque unità di misura adatta per pressione e volume, mentre la temperatura \emph{deve} essere espressa in kelvin, vale: 
   \[ \dfrac{p_0 V_0}{T_0} = \dfrac{p_1 V_1}{T_1} \]
   
   \item[Equazione di stato dei gas perfetti]
@@ -1208,16 +1224,16 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
 
 \begin{description}
   \item[Onda trasversale] 
-  Si ha quando gli elementi del mezzo materiale si spostano perpendicolarmente al moto dell'onda.
+  Si ha quando gli elementi del mezzo materiale si spostano \emph{perpendicolarmente} al moto dell'onda.
   
   \item[Onda longitudinale] 
-  Si ha quando gli elementi del mezzo materiale si spostano parallelamente al moto dell'onda.
+  Si ha quando gli elementi del mezzo materiale si spostano \emph{parallelamente} al moto dell'onda.
   
   \item[Onda elastica] 
   È un'onda che si propaga grazie alle proprietà elastiche del mezzo materiale che le fa da supporto.
   
   \item[Fronte d'onda] 
-  Insieme di tutti i punti in cui l'onda vibra allo stesso modo, cioè la grandezza che oscilla ha lo stesso valore.
+  Insieme di tutti i punti in cui l'onda vibra allo stesso modo, cioè in cui la grandezza che oscilla ha lo stesso valore.
   
   \item[Raggi dell'onda] 
   Sono le rette perpendicolari ai fronti d'onda.
@@ -1299,7 +1315,8 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
 
 \begin{description}
   \item[Definizione] 
-  Il suono è un'onda longitudinale generata da successive rarefazioni e compressioni del mezzo in cui si propaga. La sorgente del suono è un corpo che vibra.
+  Il suono è un'onda longitudinale generata da successive rarefazioni e compressioni del mezzo in cui si propaga.
+  La sorgente del suono è un corpo che vibra.
 
   \item[Velocità del suono nell'aria] 
   Alla pressione atmosferica e a $ 293 \, K $ vale circa $ 340 \, \sfrac{m}{s} $.
@@ -1308,10 +1325,9 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   Distingue un suono più acuto da uno più grave e cresce all'aumentare della frequenza dell'onda sonora.
 
   \item[Intensità]
+  Distingue un suono ad un volume basso da un suono a volume alto. Cresce all'aumentare dell'ampiezza dell'onda sonora.
   \[ I = \frac{E}{A \Delta t} \hspace*{3em} \left[ \frac{W}{m^2} \right]\]
   $ E $ = energia che attraversa la superficie $ A $ nel tempo $ \Delta t $
-  
-  Distingue un suono ad un volume basso da un suono a volume alto. Cresce all'aumentare dell'ampiezza dell'onda sonora.
 
   \item[Timbro] 
   Distingue il suono prodotto da strumenti diversi. Dipende dalla particolare legge periodica con cui oscilla l'onda sonora.
@@ -1370,7 +1386,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \end{multicols}
   
   \item[Riflessione totale] 
-  Fenomeno per cui oltre un certo angolo di incidenza (detto angolo limite) non si ha più alcun raggio rifratto. L'angolo limite si ottiene dalla legge di Snell ponendo $ \hat{r} = \frac{\pi}{2} $ (cioè $ \sin \hat{r} = 1 $) e quindi:
+  Fenomeno per cui oltre un certo angolo di incidenza (detto \emph{angolo limite}) non si ha più alcun raggio rifratto. L'angolo limite si ottiene dalla legge di Snell ponendo $ \hat{r} = \frac{\pi}{2} $ (cioè $ \sin \hat{r} = 1 $) e quindi:
   \[ \sin \hat{i}_{lim} = \frac{n_2}{n_1} \]
   da cui:
   \[ \hat{i}_{lim} = \arcsin \left( \frac{n_2}{n_1} \right) \]
@@ -1701,7 +1717,8 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   La differenza di energia prima e dopo il passaggio di corrente è causa dell'effetto Joule.
   
   \item[Effetto Joule] 
-  È la trasformazione di energia potenziale elettrica in energia termica. Viene dissipata una quantità di energia pari a:
+  È la trasformazione di energia potenziale elettrica in energia termica (calore).
+  Viene dissipata una quantità di energia pari a:
   \[ L = P \Delta t = i^2 R \Delta t \hspace*{3em} \left[ J \right] \]
   
   \item[Kilowattora] 
