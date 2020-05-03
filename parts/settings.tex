@@ -44,11 +44,11 @@
 \usepackage{xcolor}
 \usepackage{sectsty}
 \usepackage{enumitem}
-%%%--- TEAL
+%%%--- TEAL (completo)
 \definecolor{colorSito}{rgb}{.04,.212,.22}
 \definecolor{colorSitoChiaro}{rgb}{.20,.408,.416}
 \definecolor{colorSitoScuro}{rgb}{.0,.133,.141}
-%%%--- BORDEAUX
+%%%--- BORDEAUX (semplificato)
 % \definecolor{colorSito}{rgb}{.612,.067,.192}
 % \definecolor{colorSitoChiaro}{rgb}{.69,.145,.271}
 % \definecolor{colorSitoScuro}{rgb}{.22,.0,.0}
@@ -57,5 +57,14 @@
 \subsectionfont{\color{colorSitoChiaro}}  %imposta il colore delle sottosezioni
 \subsubsectionfont{\color{colorSitoChiaro}}  %imposta il colore delle sottosottosezioni
 \setlist[description]{format=\textcolor{colorSitoScuro}} %imposta il colore degli elementi di una lista di definizione
+
+%%%--- differenti sezioni scientifico/nonscientifico
+\usepackage{etoolbox}   % for booleans and much more
+\usepackage{verbatim}   % for the comment environment
+% new environment
+\newenvironment{soloscientifico}{}{} %creazione del nuovo ambiente
+% set conditional behaviour of environment
+\ifbool{semplificato}{\AtBeginEnvironment{soloscientifico}{\comment}% 
+\AtEndEnvironment{soloscientifico}{\endcomment}}{}
 
 %%%--- nuovi comandi
