@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{etoolbox}   % for booleans and much more
+\usepackage{verbatim}   % for the comment environment
+
+% setup a new boolean
+\newbool{semplificato}
+% \setbool{semplificato}{true}
+
+% new environment
+\newenvironment{soloscientifico}{}{}
+
+% set conditional behaviour of environment
+\ifbool{semplificato}{\AtBeginEnvironment{soloscientifico}{\comment}%
+\AtEndEnvironment{soloscientifico}{\endcomment}}{}
+
+
+\begin{document}
+
+\subsection*{Traffic light environment}
+\begin{soloscientifico}
+  \lipsum[1]
+\end{soloscientifico}
+
+\subsection*{After traffic light}
+\lipsum[2]
+
+\end{document}

@@ -76,7 +76,7 @@
   \[ a_x = a  \cos\theta \quad\quad\quad\quad a_y = a  \sin\theta \]
   
     \begin{figure}[htb]\centering
-    \begin{tikzpicture}
+    \begin{tikzpicture}[>=latex]
     \draw [dashed] (4,0) --(4,3);
     \draw [dashed] (0,3) -- (4,3);
     \draw [->](-.5,0) -- (5,0);
@@ -119,13 +119,13 @@
   Regola del parallelogramma, mostrata in \Cref{img:parallelogramma}.
 
 \begin{figure}[htb]\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[>=latex]
 \draw [dashed] (0,0) -- (2,3);
 \draw [dashed] (2,3) -- (6,3);
-\draw [line cap=round,->,colorSitoScuro,ultra thick] (0,0) -- (4,0);
-\node [below,colorSitoScuro] at (2,0) {$ \vec{a} $};
-\draw [line cap=round,->,colorSitoScuro,ultra thick] (4,0) -- (6,3);
-\node [below right,colorSitoScuro] at (5,1.5) {$ \vec{b} $};
+\draw [line cap=round,->,colorSito!70,ultra thick] (0,0) -- (4,0);
+\node [below,colorSito!70] at (2,0) {$ \vec{a} $};
+\draw [line cap=round,->,colorSito!70,ultra thick] (4,0) -- (6,3);
+\node [below right,colorSito!70] at (5,1.5) {$ \vec{b} $};
 \draw [line cap=round,->,colorSito,ultra thick] (0,0) -- (6,3);
 \node [below right,colorSito] at (3,1.5) {$ \vec{c} $};
 \end{tikzpicture}\caption{Regola del parallelogramma: $ \vec{a} + \vec{b} = \vec{c} $.}
@@ -160,7 +160,7 @@
   Solitamente il prodotto di uno scalare per un vettore non viene indicato con alcun simbolo.
   
 \begin{figure}[htb]\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[>=latex]
 \draw [line cap=round,->,colorSitoChiaro,ultra thick] (0,0) -- (2,0);
 \node [above,colorSitoChiaro] at (1,0) {$ \vec{a} $};
 \draw [line cap=round,->,colorSitoScuro,ultra thick] (0,-.66) -- (6,-.66);
@@ -178,7 +178,7 @@
   \[ \vec{a} \cdot \vec{b} = ab\cos\theta \]
 
 \begin{figure}[htb]\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[>=latex]
 \draw [colorSitoChiaro!50,thick] (0.4,0) arc [start angle=0,end angle=57,radius=0.4] node[pos=0.2,above right,colorSitoChiaro!50]{$\theta$};
 \draw [dashed,thick] (2,0) -- (2,3);
 \node [below,colorSito] at (1,0) {$ b \cos \theta $};
@@ -203,7 +203,7 @@
   \[ | \vec{a} \times \vec{b} | = ab\sin\theta \]
 
 \begin{figure}[htb]\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[>=latex]
 \fill[fill=colorSitoChiaro!10] (0,0) -- (4,0) -- (6,3) -- (2,3) -- cycle;
 \draw [thick,colorSitoChiaro] (0.7,0) arc [start angle=0,end angle=57,radius=0.7] node[pos=0.2,above right]{$\theta$};
 \draw [dashed,thick] (2,0) -- (2,3);
@@ -225,7 +225,7 @@
   \end{itemize}
   
 \begin{figure}[htpb]\centering
-\begin{tikzpicture}
+\begin{tikzpicture}[>=latex]
 \fill[fill=colorSitoChiaro!10] (0,0) -- (4,0) -- (3,-1) -- (-1,-1) -- cycle;
 \draw (.3,0) -- (.3,.3);
 \draw (.3,.3) -- (0,.3);
@@ -460,9 +460,9 @@
   \item[Conversione tra $ \sfrac{\mathbf{m}}{\mathbf{s}} $ e $ \sfrac{\mathbf{km}}{\mathbf{h}} $] 
   Possiamo convertire tra le due unità di misura moltiplicando o dividendo per uno stesso valore.
   \begin{multicols}{2}\begin{center}
-  $ \frac{km}{h} \xrightarrow{: 3,6} \frac{m}{s} $
+  $ \dfrac{km}{h} \xrightarrow{: 3,6} \dfrac{m}{s} $
    
-  $ \frac{m}{s} \xrightarrow{\cdot 3,6} \frac{km}{h} $
+  $ \dfrac{m}{s} \xrightarrow{\cdot 3,6} \dfrac{km}{h} $
   \end{center}\end{multicols}
   
   \item[Accelerazione media] 
@@ -632,6 +632,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \end{multicols}
   
   \item[Forza di richiamo di una molla (legge di Hooke)]
+  Il segno negativo indica che la forza elastica è una forza di richiamo, sempre opposta allo spostamento della molla rispetto alla posizione di equilibrio.
   \[ \vec{F} = - k \vec{x} \]
   \begin{multicols}{2}
   $ k $ = costante elastica della molla [$ \sfrac{N}{m} $]\\
@@ -669,6 +670,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \end{itemize}
   
   \item[Potenza media] 
+  Indica quanto lavoro viene fatto nell'unità di tempo.
   \[ \overline{P} = \frac{L}{\Delta t} \hspace*{3em} \left[ W \right] = \left[ \sfrac{J}{s} \right] \]
   
   \item[Energia cinetica di traslazione] 
@@ -708,7 +710,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
 
 \begin{description}
   \item[Quantità di moto] 
-  \[ \vec{p} = m \vec{v}\] 
+  \[ \vec{p} = m \vec{v} \hspace*{3em} \left[ kg \cdot \sfrac{m}{s} \right] \] 
   
   \item[Teorema dell'impulso] 
   È una diversa formulazione del secondo principio della dinamica.
@@ -798,6 +800,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
      forza $ \vec{F} $ & momento torcente $ \vec{M} $\\\addlinespace[.2em]
      quantità di moto $ \vec{p} $ & momento angolare $ \vec{L} $\\\addlinespace[.2em]
      $ F = ma $ & $ M = I \alpha  $ \\\addlinespace[.2em]
+     $ p = mv $ & $ L = I \omega  $ \\\addlinespace[.2em]
      $ K = \frac{1}{2}mv^2 $ & $ K = \frac{1}{2} I\omega^2 $ \\\addlinespace[.2em]
      $ \Delta p = F\Delta t $ & $ \Delta L = M\Delta t $\\\bottomrule
     \end{tabular}
@@ -833,7 +836,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \[ g =  9, 807 \, \frac{m}{s^2} \]
   
   \item[Vettore campo gravitazionale] 
-  \[ \vec{g} = \frac{\vec{F}}{m} \]
+  \[ \vec{g} = \frac{\vec{F}}{m} \hspace*{3em} \left[ \frac{N}{kg} \right] \]
   
   \item[Campo gravitazionale di una massa puntiforme] 
   È un vettore rivolto sempre verso la massa puntiforme $ M $.
@@ -853,7 +856,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
 %   \[ v_{fuga} = \sqrt{\frac{2GM}{R}} \]
   
   \item[Energia potenziale gravitazionale di un sistema di due masse] 
-  \[ U(r) = - G \frac{m_1m_2}{r} \]
+  \[ U(r) = - G \frac{m_1m_2}{r} \hspace*{3em} \left[ J \right] \]
 \end{description}
 
 
@@ -878,7 +881,8 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \end{multicols}
   
   \item[Principio di Archimede] 
-  Un corpo immerso in un fluido riceve una spinta verso l'alto pari al peso del volume di fluido spostato dal corpo. Tale spinta vale:\[ S = g \cdot d_{fluido} \cdot V_{corpo} \]
+  Un corpo immerso in un fluido riceve una spinta verso l'alto pari al peso del volume di fluido spostato dal corpo. Tale spinta vale:
+  \[ S = g \cdot d_{fluido} \cdot V_{corpo} \hspace*{3em} \left[ N \right] \]
   Se la spinta è maggiore del peso del corpo, il corpo galleggia nel fluido.
   
   \item[Corrente] 
@@ -1230,10 +1234,10 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \[ f = \frac{1}{T} \hspace*{3em} [s^{-1}]=[ Hz] \]
   
   \item[Pulsazione dell'onda]
-  \[ \omega = \frac{2\pi}{T} = 2\pi f \]
+  \[ \omega = \frac{2\pi}{T} = 2\pi f \hspace*{3em} \left[ \frac{rad}{s} \right] \]
   
   \item[Velocità di propagazione dell'onda] 
-  \[ v = \frac{\lambda}{T} = \lambda f  \]
+  \[ v = \frac{\lambda}{T} = \lambda f \hspace*{3em} \left[ \frac{m}{s} \right] \]
   $ \lambda $ = lunghezza d'onda [$ m $]
   
   \item[Legge oraria delle onde in un punto fissato] 
@@ -1246,7 +1250,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \end{multicols}
   
 \begin{figure}[htp]\centering
-\begin{tikzpicture}[xscale=.5,yscale=1.6]
+\begin{tikzpicture}[xscale=.5,yscale=1.6,>=latex]
 \node [below] at (4*pi,0) {{\scriptsize $ t $}};
 \node [left] at (0,1.5) {{\scriptsize $ y $}};
 \node [above] at (1.5*pi,1) {{\scriptsize $ T $}};
@@ -1266,7 +1270,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \[ y = a \cos\left(\frac{2 \pi}{\lambda}x + \varphi_0\right) \]
 
 \begin{figure}[htp]\centering
-\begin{tikzpicture}[xscale=.5,yscale=1.6]
+\begin{tikzpicture}[xscale=.5,yscale=1.6,>=latex]
 \node [below] at (4*pi,0) {{\scriptsize $ x $}};
 \node [left] at (0,1.5) {{\scriptsize $ y $}};
 \node [above] at (1.5*pi,1) {{\scriptsize $ \lambda $}};
@@ -1558,6 +1562,7 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \item[Teorema di Coulomb] 
   Permette di calcolare il valore del campo elettrico in prossimità della superficie di un conduttore carico. Il campo elettrico risulta normale alla superficie.
   \[ E = \frac{\sigma}{\varepsilon_0} \]
+  $ \sigma $ = densità superficiale di carica [$ \sfrac{C}{m^2} $]
   
   \item[Capacità di un condensatore]
   \[ C = \frac{Q}{\Delta V} \hspace*{3em} [F] = \left[ \sfrac{C}{V} \right] \]
@@ -1646,7 +1651,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   La corrente che circola nel circuito è direttamente proporzionale alla differenza di potenziale applicata ($ \Delta V $) 
   e inversamente proporzionale alla resistenza ($ R $) del circuito.
   \[ i = \frac{\Delta V}{R} \]
-  $ R $ = resistenza elettrica [$ \Omega$] = [$\sfrac{V}{A} $]
+  $ R $ = resistenza elettrica [$ \Omega$] = $\left[ \sfrac{V}{A} \right]$
   
   \item[Resistenza totale per resistori in parallelo] 
   I resistori sono collegati in modo da essere sottoposti alla stessa tensione. Schema in \Cref{img:resiparallelo}.
@@ -1697,7 +1702,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   
   \item[Effetto Joule] 
   È la trasformazione di energia potenziale elettrica in energia termica. Viene dissipata una quantità di energia pari a:
-  \[ L = P \Delta t = i^2 R \Delta t \]
+  \[ L = P \Delta t = i^2 R \Delta t \hspace*{3em} \left[ J \right] \]
   
   \item[Kilowattora] 
   Un kilowattora è l’energia assorbita in un'ora da un dispositivo che dissipa la potenza di $ 1000 \, W $.
