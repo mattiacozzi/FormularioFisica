@@ -241,7 +241,7 @@
     \item il verso è dato dalla \emph{regola della mano destra}, ovvero ponendo il pollice della mano destra nel verso del vettore $ \vec{a} $ e le altre dita nel verso di $ \vec{b} $, il vettore $ \vec{a} \times \vec{b} $ sarà uscente dal palmo della mano, come indicato dalla \Cref{img:vettoriale2}.
   \end{itemize}
   
-\begin{figure}[htpb]\centering
+\begin{figure}[htb]\centering
 \begin{tikzpicture}[>=latex]
 \fill[fill=colorSitoChiaro!10] (0,0) -- (4,0) -- (3,-1) -- (-1,-1) -- cycle;
 \draw (.3,0) -- (.3,.3);
@@ -259,8 +259,8 @@
 \end{tikzpicture}\caption{Rappresentazione tridimensionale del vettore ottenuto con il prodotto vettoriale.}
 \label{img:vettoriale2}
 \end{figure}
+~\\~\\~\\~\\~
 \end{description}
-
 
 \newpage
 \section{Misura}
@@ -313,25 +313,26 @@
   \label{tab:udmderivate}
   \end{table}
   
-  \item[Multipli e sottomultipli della unità di misura] 
+  \item[Multipli e sottomultipli della unità di misura] %\, \: \; 
   Il \textsc{si} prevede l'utilizzo di opportuni multipli e sottomultipli delle unità di misura (riportati in \Cref{tab:multipliesottomultipli}), poiché in molti casi le unità di misura si dimostrano troppo grandi o troppo piccole per una determinata misura.
   \begin{table}[htp]\centering
     \begin{tabular}{llr}\toprule
       \textbf{Prefisso} & \textbf{Simbolo} & \textbf{Fattore di conversione} \\\midrule
       femto- & f- & $ \sfrac{1}{1\,000\,000\,000\,000\,000} = 10^{-15} $\\\addlinespace[.2em]
       pico- & p- & $ \sfrac{1}{1\,000\,000\,000\,000} = 10^{-12} $\\\addlinespace[.2em]
-      nano- & n- & $ \sfrac{1}{1\,000\,000\,000} = 10^{-9} $\\\addlinespace[.2em]
-      micro- & $ \mu $- & $ \sfrac{1}{1\,000\,000} = 10^{-6} $\\\addlinespace[.2em]
-      milli- & m- & $ \sfrac{1}{1\,000} = 10^{-3} $\\\addlinespace[.2em]
-      centi- & c- & $ 10^{-2} $\\\addlinespace[.2em]
-      deci- & d- & $ 10^{-1} $\\\addlinespace[.2em]
-      deca- & da- & $ 10^{1} $\\\addlinespace[.2em]
-      etto- & h- & $ 10^{2} $\\\addlinespace[.2em]
-      kilo- & k- & $ 10^{3} $\\\addlinespace[.2em]
-      mega- & M- & $ 10^{6} $\\\addlinespace[.2em]
-      giga- & G- & $ 10^{9} $\\\addlinespace[.2em]
-      tera- & T- & $ 10^{12} $\\\addlinespace[.2em]
-      peta- & P- & $ 10^{15} $\\\bottomrule
+      nano- & n- & $ \sfrac{1}{1\,000\,000\,000} = 10^{-9} \:\, $\\\addlinespace[.2em]
+      micro- & $ \mu $- & $ \sfrac{1}{1\,000\,000} = 10^{-6} \:\, $\\\addlinespace[.2em]
+      milli- & m- & $ \sfrac{1}{1\,000} = 10^{-3} \:\, $\\\addlinespace[.2em]
+      centi- & c- & $ \sfrac{1}{100} = 10^{-2} \:\, $\\\addlinespace[.2em]
+      deci- & d- & $ \sfrac{1}{10} = 10^{-1} \:\, $\\\addlinespace[.2em]
+%       unità base &  & $ 1 = 10^{0} \;\;\;\, $\\\addlinespace[.2em]
+      deca- & da- & $ 10^{1} \;\;\;\, $\\\addlinespace[.2em]
+      etto- & h- & $ 10^{2} \;\;\;\, $\\\addlinespace[.2em]
+      kilo- & k- & $ 10^{3} \;\;\;\, $\\\addlinespace[.2em]
+      mega- & M- & $ 10^{6} \;\;\;\, $\\\addlinespace[.2em]
+      giga- & G- & $ 10^{9} \;\;\;\, $\\\addlinespace[.2em]
+      tera- & T- & $ 10^{12} \:\:\, $\\\addlinespace[.2em]
+      peta- & P- & $ 10^{15} \:\:\, $\\\bottomrule
     \end{tabular}
   \caption{Multipli e sottomultipli più usati.}
     \label{tab:multipliesottomultipli}
@@ -451,14 +452,13 @@
 %   \end{itemize}
 \end{description}
 
-
 \newpage
 \section{Meccanica}
 
 \subsection{Definizioni fondamentali}
 
 \begin{description}
-  \item[Densità] 
+  \item[Densità di un corpo] 
   \[ d = \frac{m}{V} \hspace*{3em} \left[ \frac{kg}{m^3} \right] \]
   \begin{multicols}{2}
   m = massa del corpo [$ kg $]\\
@@ -493,8 +493,8 @@
   \item[Definizione operativa] 
   Una definizione operativa è il procedimento con cui si introducono le grandezze fisiche. È composta da:
   \begin{itemize}
-    \item descrizione degli strumenti di misura che si utilizzano per misurare la grandezza in esame; 
-    \item specificazione di un «protocollo di misura», cioè la procedura corretta con cui utilizzare gli strumenti.
+    \item descrizione degli \emph{strumenti di misura} che si utilizzano per misurare la grandezza in esame; 
+    \item specificazione di un \emph{protocollo di misura}, cioè la procedura corretta con cui utilizzare gli strumenti di misura.
   \end{itemize}
 \end{description}
 
@@ -523,8 +523,10 @@
   \end{multicols}
   
   \item[Moto parabolico] 
-  È la composizione di un moto rettilineo uniforme sull'asse orizzontale con un moto uniformemente accelerato ($ a=g=9,81 \, \sfrac{m}{s^2} $) sull'asse verticale. Per la posizione nel sistema di riferimento:
-  \[
+  È la composizione di un moto rettilineo uniforme sull'asse orizzontale con un moto uniformemente accelerato ($ a=g=9,81 \, \sfrac{m}{s^2} $) sull'asse verticale.
+  
+  Per la posizione nel sistema di riferimento:
+  \[ s= 
   \left\{ 
   \begin{array}{l}
   x = v_{0x}t + x_0 \\ 
@@ -533,7 +535,7 @@
   \right.
   \]
 Per le componenti della velocità in ogni istante del moto:
-  \[
+  \[ v=
   \left\{ 
   \begin{array}{l}
   v_x = v_{0x} \\ 
@@ -706,7 +708,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \[ U_g = mgh \hspace*{3em} [J] \]
   
   \item[Variazione di energia potenziale gravitazionale] 
-  È il lavoro che una forza compie \emph{contro} la forza peso per portare un corpo da una certa altezza A ad un'altra altezza B. 
+  È il lavoro che una forza compie \emph{contro} la forza peso per portare un corpo da una certa altezza $ A $ ad un'altra altezza $ B $.
   \[ \Delta U_g = -L_{A\rightarrow B} = L_{B\rightarrow A} \]
   
   \item[Energia potenziale elastica] 
@@ -848,7 +850,13 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   
   \item[Forza peso] 
   Attrazione che un corpo esercita su un corpo posto sulla sua superficie: 
-  \[ F_P = G \frac{m_{c} m_{T}}{r^2_{T}} =  m_{c} \left(\frac{G m_{T}}{r^2_{T}} \right) = m_{c} g \]
+  \[ F_P = G \frac{m_{c} m_{P}}{r^2_{P}} =  m_{c} \left(\frac{G m_{P}}{r^2_{P}} \right) = m_{c} g_P \]
+  \begin{multicols}{2}
+  $ m_c $ = massa del corpo\\
+  $ m_P $ = massa del pianeta\\
+  $ r_P $ = raggio del pianeta\\
+  $ g $ = accelerazione di gravità del pianeta
+  \end{multicols}
   
   \item[Accelerazione di gravità sulla superficie della Terra] 
   \[ g =  9, 807 \, \frac{m}{s^2} \]
@@ -901,7 +909,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \item[Principio di Archimede] 
   Un corpo immerso in un fluido riceve una spinta verso l'alto pari al peso del volume di fluido spostato dal corpo. Tale spinta vale:
   \[ S = g \cdot d_{fluido} \cdot V_{corpo} \hspace*{3em} \left[ N \right] \]
-  Se la spinta è maggiore del peso del corpo, il corpo galleggia nel fluido.
+  Se la spinta è maggiore del peso del corpo, il corpo galleggia nel fluido. Se la spinta è minore del peso del corpo, il corpo affonda.
   
   \item[Corrente] 
   Una corrente in un fluido è un movimento ordinato di particelle.
@@ -948,8 +956,6 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
 %   \[ v = \frac{mg}{6 \pi \eta r} \]
 \end{description}
 
-
-
 \newpage
 \section{Termologia e termodinamica}
 
@@ -991,7 +997,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   
   \begin{table}[htb]\centering
   \begin{tabular}{lllll}\toprule
-     \textbf{Nome}  & \textbf{Q.tà costante}  & \textbf{Legge sperimentale} & \textbf{Formula}            & \textbf{Legge}\\\midrule
+     \textbf{Nome}  & \textbf{Quantità costante}  & \textbf{Legge sperimentale} & \textbf{Formula}            & \textbf{Legge}\\\midrule
      isoterma       & temperatura             & legge di Boyle              & $ pV= $ costante            & $ p_0V_0 = p_1V_1  $\\\addlinespace[.2em]
      isòbara        & pressione               & I legge di Gay-Lussac       & $ \sfrac{V}{T} = $ costante & $ \sfrac{V_0}{T_0} = \sfrac{V_1}{T_1} $\\\addlinespace[.2em]
      isocòra        & volume                  & II legge di Gay-Lussac      & $ \sfrac{p}{T} = $ costante & $ \sfrac{p_0}{T_0} = \sfrac{p_1}{T_1} $\\\bottomrule
@@ -1043,9 +1049,9 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
 \begin{table}[htb]\centering\footnotesize
 \begin{tabular}{lll}\toprule
 \textbf{Meccanismo} & \textbf{Mezzi}            & \textbf{Trasferimento}\\\midrule
-Conduzione          & Solidi                    & Solo energia\\\addlinespace[1em]
-Convezione          & Fluidi                    & Energia e materia\\\addlinespace[1em]
-Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
+conduzione          & solidi                    & solo energia\\\addlinespace[1em]
+convezione          & fluidi                    & energia e materia\\\addlinespace[1em]
+irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
 \end{tabular}
 \caption{I meccanismi di prograzione del calore.}
 \label{tab:conduzione}
@@ -1196,8 +1202,8 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
   Macchina ideale che compie una trasformazione ciclica reversibile.
   
   \item[Teorema di Carnot] 
-  Il rendimento di una macchina reversibile è sempre maggiore o uguale al rendimento di una macchina qualunque che lavora tra le stesse temperature:
-  \[ \eta_R \leq \eta_S \]
+  Il rendimento di una macchina reversibile $ R $ è sempre maggiore o uguale al rendimento di una macchina qualunque $ Q $ che lavora tra le stesse temperature:
+  \[ \eta_Q \leq \eta_R \]
   
   \item[Ciclo di Carnot] 
   È un ciclo composto da quattro trasformazioni termodinamiche reversibili:
@@ -1228,7 +1234,6 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
 %%%---NON NECESSARIO
 %   \item[Terzo principio della termodinamica] È impossibile raffreddare un corpo fino allo zero assoluto mediante una procedura che contenga un numero finito di trasformazioni.
 \end{description}
-
 
 
 \newpage
@@ -1283,13 +1288,13 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
 \begin{tikzpicture}[xscale=.5,yscale=1.6,>=latex]
 \node [below] at (4*pi,0) {{\scriptsize $ t $}};
 \node [left] at (0,1.5) {{\scriptsize $ y $}};
-\node [above] at (1.5*pi,1) {{\scriptsize $ T $}};
+\node [above] at (pi,1) {{\scriptsize $ T $}};
 \draw [->] (-4,0) -- (4*pi,0);
-\draw [|<->|, dashed, thick] (.5*pi,1) -- (2.5*pi,1);
-\draw [|<->|, dashed, thick] (2.5*pi,0) -- (2.5*pi,1);
-\node [right] at (2.5*pi,.5) {{\scriptsize $ a $}};
+\draw [|<->|, dashed, thick] (0,1) -- (2*pi,1);
+\draw [|<->|, dashed, thick] (2*pi,0) -- (2*pi,1);
+\node [right] at (2*pi,.5) {{\scriptsize $ a $}};
 \draw [->] (0,-1.5) -- (0,1.5);
-\draw[smooth, colorSitoChiaro!60, ultra thick, domain=-pi:3.5*pi] plot (\x, {sin(\x r)});
+\draw[smooth, colorSitoChiaro!60, ultra thick, domain=-pi:3.5*pi] plot (\x, {cos(\x r)});
 \end{tikzpicture}
 \caption{Grafico della legge oraria delle onde armoniche in un punto fissato.}
 \label{img:graficoonde1}
@@ -1303,13 +1308,13 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
 \begin{tikzpicture}[xscale=.5,yscale=1.6,>=latex]
 \node [below] at (4*pi,0) {{\scriptsize $ x $}};
 \node [left] at (0,1.5) {{\scriptsize $ y $}};
-\node [above] at (1.5*pi,1) {{\scriptsize $ \lambda $}};
+\node [above] at (pi,1) {{\scriptsize $ \lambda $}};
 \draw [->] (-4,0) -- (4*pi,0);
-\draw [|<->|, dashed, thick] (.5*pi,1) -- (2.5*pi,1);
-\draw [|<->|, dashed, thick] (2.5*pi,0) -- (2.5*pi,1);
-\node [right] at (2.5*pi,.5) {{\scriptsize $ a $}};
+\draw [|<->|, dashed, thick] (0,1) -- (2*pi,1);
+\draw [|<->|, dashed, thick] (2*pi,0) -- (2*pi,1);
+\node [right] at (2*pi,.5) {{\scriptsize $ a $}};
 \draw [->] (0,-1.5) -- (0,1.5);
-\draw[smooth, colorSito, ultra thick, domain=-pi:3.5*pi] plot (\x, {sin(\x r)});
+\draw[smooth, colorSito, ultra thick, domain=-pi:3.5*pi] plot (\x, {cos(\x r)});
 \end{tikzpicture}
 \caption{Grafico della legge delle onde armoniche in un istante fissato.}
 \label{img:graficoonde2}
@@ -1339,12 +1344,12 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
   Distingue un suono più acuto da uno più grave e cresce all'aumentare della frequenza dell'onda sonora.
 
   \item[Intensità]
-  Distingue un suono ad un volume basso da un suono a volume alto. Cresce all'aumentare dell'ampiezza dell'onda sonora.
+  Distingue un suono ad un volume basso da un suono a volume alto e cresce all'aumentare dell'ampiezza dell'onda sonora.
   \[ I = \frac{E}{A \Delta t} \hspace*{3em} \left[ \frac{W}{m^2} \right]\]
   $ E $ = energia che attraversa la superficie $ A $ nel tempo $ \Delta t $
 
   \item[Timbro] 
-  Distingue il suono prodotto da strumenti diversi. Dipende dalla particolare legge periodica con cui oscilla l'onda sonora.
+  Distingue il suono prodotto da strumenti diversi e dipende dalla particolare legge periodica con cui oscilla l'onda sonora.
 
   \item[Limiti di udibilità] 
   L'orecchio umano può percepire suoni con frequenza compresa tra $ 20 $ e $ 20\, 000 \, Hz $. A frequenze inferiori si trovano gli infrasuoni, a frequenze superiori si trovano gli ultrasuoni.
@@ -1356,7 +1361,7 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
   Si assegna il valore $ 0 \, dB $ alla soglia di udibilità, il valore $ 130 \, dB $ alla soglia del dolore.
 
   \item[Effetto Doppler] 
-  La frequenza di un'onda periodica, rilevata da un ricevitore in modo rispetto alla sorgente dell'onda, è diversa da quella rilevata da un ricevitore in quiete rispetto alla sorgente.
+  La frequenza di un'onda periodica, rilevata da un ricevitore in moto rispetto alla sorgente dell'onda, è diversa da quella rilevata da un ricevitore in quiete rispetto alla sorgente.
   
   \item[Sorgente ferma e ricevitore in moto]
   \[ f' = \frac{v_s \pm  v}{v_s}f \]
@@ -1367,11 +1372,11 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
   $ f $ = frequenza emessa
   \end{multicols}
   
-  Usiamo il segno $ + $ se il ricevitore si avvicina alla sorgente (la frazione vale più di 1 e $ f' > f $), il segno $ - $ se il ricevitore si allontana dalla sorgente (la frazione vale meno di 1 e $ f' < f $).
+  Usiamo il segno $ + $ se il ricevitore si avvicina alla sorgente (la frazione vale più di $ 1 $ e $ f' > f $), il segno $ - $ se il ricevitore si allontana dalla sorgente (la frazione vale meno di $ 1 $ e $ f' < f $).
   
   \item[Sorgente in moto e ricevitore fermo]
   \[ f' = \frac{v_s }{v_s \pm  v}f \]
-  Usiamo il segno $ + $ se la sorgente si allontana dal ricevitore (la frazione vale meno di uno e $ f' < f $), il segno $ - $ se la sorgente si avvicina al ricevitore (la frazione vale più di uno e $ f' > f $).
+  Usiamo il segno $ + $ se la sorgente si allontana dal ricevitore (la frazione vale meno di $ 1 $ e $ f' < f $), il segno $ - $ se la sorgente si avvicina al ricevitore (la frazione vale più di $ 1 $ e $ f' > f $).
 \end{description}
 
 
@@ -1380,19 +1385,20 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
 
 \begin{description}
   \item[Natura della luce] 
-  A seconda delle situazioni, la luce può essere descritta come un'onda elettromagnetica (modello ondulatorio) costituita da campi elettrici e magnetici oscillanti che si propagano anche nel vuoto, o come un insieme di corpuscoli chiamati fotoni (modello corpuscolare).
+  A seconda delle situazioni, la luce può essere descritta come un'onda elettromagnetica (modello ondulatorio) costituita da campi elettrici e magnetici oscillanti che si propagano anche nel vuoto, o come un insieme di corpuscoli chiamati \emph{fotoni} (modello corpuscolare).
   
   \item[Legge della riflessione] 
   Il raggio incidente, il raggio riflesso e la perpendicolare alla superficie riflettente nel punto di incidenza appartengono allo stesso piano.
   
   L'angolo di incidenza è uguale all'angolo di riflessione.
   
-  \item[Indice di rifrazione] 
-  Rapporto tra la velocità della luce nel vuoto e la velocità della luce nel mezzo materiale.
+  \item[Indice di rifrazione di un mezzo materiale] 
+  Rapporto tra la velocità della luce nel vuoto e la velocità della luce in un certo mezzo materiale.
   \[ n = \frac{c}{v} \]
-  Poiché la luce ha la sua massima velocità nel vuoto, l'indice di rifrazione è sempre maggiore di uno.
+  Poiché la luce ha la sua massima velocità nel vuoto, l'indice di rifrazione risulterà sempre maggiore di $ 1 $.
   
   \item[Legge della rifrazione (legge di Snell)]
+  Conoscendo gli indici di rifrazione dei mezzi attraversati e l'angolo di incidenza, possiamo calcolare l'angolo di rifrazione.
   \[ \frac{\sin \hat{i} }{\sin \hat{r}} = \frac{n_2}{n_1} \]
   \begin{multicols}{2}
   $ \hat{i} $, $ \hat{r} $ = angolo di incidenza e rifrazione\\
@@ -1459,7 +1465,7 @@ Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
   \[ \sin \theta_m = \frac{m\lambda}{d} \]
   e interferenza distruttiva nelle direzioni date da:
   \[ \sin \theta_m = \frac{(m + \frac{1}{2})\lambda}{d} \]
-  L'angolo $ \theta $ è misurato a partire dall'asse del segmento avente le sorgenti come estremi. $ m $ è un numero intero, il cui valore è chiamato ordine dell'interferenza costruttiva.
+  L'angolo $ \theta $ è misurato a partire dall'asse del segmento avente le sorgenti come estremi. $ m $ è un numero intero, il cui valore è chiamato \emph{ordine} dell'interferenza costruttiva.
 
 %%%---NON NECESSARIO
 %   \item[Cammino ottico equivalente] Un tratto lungo $ L $ in un materiale avente indice di rifrazione $ n $ ha un cammino ottico equivalente la cui lunghezza è:
@@ -1492,7 +1498,7 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
 \end{table}
   
   \item[Legge di Coulomb] 
-  Fornisce il modulo della forza, attrattiva o repulsiva, tra due cariche elettriche. Tale forza ha come direzione la congiungente tra le due cariche e vale:
+  Fornisce il modulo della forza, attrattiva o repulsiva, tra due cariche elettriche. Tale forza ha come direzione la congiungente tra le due cariche e ha intensità data da:
   \[ F = k_0 \frac{q_1q_2}{r^2} \]
   \begin{multicols}{2}
   $ k_0 $ = costante elettrica del vuoto\\
@@ -1508,13 +1514,14 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   Tra $ k_0 $ e $ \varepsilon_0 $ vale la seguente relazione:
   \[ k_0 = \frac{1}{4 \pi \varepsilon_0} \]
   
-  \item[Costante dielettrica di un mezzo] 
-  È il rapporto tra la forza di Coulomb nel vuoto e la forza nel mezzo. Essendo la forza massima nel vuoto, tale rapporto è sempre superiore a uno.
+  \item[Costante dielettrica di un mezzo materiale] 
+  È il rapporto tra la forza di Coulomb nel vuoto e la forza nel mezzo. Essendo la forza massima nel vuoto, tale rapporto è sempre superiore a $ 1 $.
   \[ \varepsilon_r = \frac{F_{vuoto}}{F_{mezzo}} \]
   Viene sostanzialmente affiancata a $ \varepsilon_0 $ quando non si lavora nel vuoto.
 
   \item[Campo elettrico] 
-  Il campo elettrico è una funzione che ad ogni punto dello spazio circostante una carica (identificato con la sua distanza $ r $ da essa) associa una forza elettrica. Vale:
+  Il campo elettrico è una funzione che ad ogni punto dello spazio circostante una carica (identificato con la sua distanza $ r $ da essa) associa una forza elettrica. 
+  È definito da:
   \[ \vec{E}  = \frac{\vec{F}}{q_P} \hspace*{3em} \left[ \frac{N}{C} \right] \]
   \begin{multicols}{2}
   $ q_P $ = carica di prova, positiva\\
@@ -1602,8 +1609,8 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \item[Capacità di un condensatore piano]
   \[ C = \varepsilon_0 \frac{S}{d} \]
   \begin{multicols}{2}
-  $ S $ = superficie dell'armatura [$ m^2 $]\\
-  $ d $ = distanza tra le armature [$ m $]
+  $ S $ = superficie dell'armatura\\
+  $ d $ = distanza tra le armature
   \end{multicols}
   
   \item[Capacità totale per condensatori in parallelo] 
@@ -1675,7 +1682,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   Intensità istantanea di corrente:   
   \[ i_{ist} = \lim_{\Delta t \rightarrow 0} \frac{\Delta q}{\Delta t} = \frac{dq}{dt} = q'(t) \]
   
-  L'intensità di corrente è la derivata della carica rispetto al tempo.
+  La corrente istantanea è la derivata della carica rispetto al tempo (\emph{derivata temporale}).
   
   \item[Prima legge di Ohm]
   La corrente che circola nel circuito è direttamente proporzionale alla differenza di potenziale applicata ($ \Delta V $) 
@@ -1728,7 +1735,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   
   \item[Potenza dissipata da una resistenza]
   \[ P = \frac{L}{\Delta t} = i \Delta V = i^2 R = \frac{V^2}{R} \hspace*{3em} [W] \]
-  La differenza di energia prima e dopo il passaggio di corrente è causa dell'effetto Joule.
+  La differenza di energia tra prima e dopo il passaggio di corrente è causa dell'effetto Joule.
   
   \item[Effetto Joule] 
   È la trasformazione di energia potenziale elettrica in energia termica (calore).
@@ -1777,10 +1784,10 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   A temperature molto basse la resistività di alcuni materiali cala bruscamente fino ad arrivare praticamente a zero.
   In questo caso il materiale passa allo stato di superconduttività.
   
-  La temperatura alla quale ciò avviene è detta temperatura critica (per il mercurio è circa $ 4 \, K $).
+  La temperatura alla quale ciò avviene è detta \emph{temperatura critica} (per il mercurio è circa $ 4 \, K $).
   
   \item[Circuito RC] 
-  Consiste di un generatore che fornisce una certa $ f_{em} $, una resistore con resistenza $ R $ e un condensatore con capacità $ C $.
+  Consiste di un generatore che fornisce una certa $ f_{em} $, un resistore con resistenza $ R $ e un condensatore con capacità $ C $.
 
 \begin{figure}[htp]\centering
 \ctikzset{bipoles/length=0.6cm}
@@ -1794,7 +1801,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
 \caption{Schema di un circuito RC.}\label{img:rc}
 \end{figure}
   
-  Ricordando che un condensatore viene considerato praticamente carico/scarico dopo un tempo $ t = 5 RC $, le formule per la carica presente sulle armature e per la corrente nel circuito al tempo $ t $ sono riportate in \Cref{tab:caricascarica}.
+  Ricordando che un condensatore viene considerato a tutti gli effetti carico/scarico dopo un tempo $ t = 5 RC $, le formule per la carica presente sulle armature e per la corrente nel circuito al tempo $ t $ sono riportate in \Cref{tab:caricascarica}.
   
     \begin{table}[htb]\centering
   \begin{tabular}{ll}\toprule
@@ -1809,7 +1816,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
    \end{table}
    
   \item[Elettronvolt] 
-  Un elettronvolt ($ eV $) è l’energia acquistata da una carica con modulo pari alla carica elementare $ e $ quando è accelerata da una differenza di potenziale di un volt.
+  Un elettronvolt ($ eV $) è l’energia acquistata da una carica con modulo pari alla carica elementare $ e $ quando è accelerata da una differenza di potenziale di $ 1 \, V $.
   \[ 1 \, eV = 1,60 \times 10^{-19} \, J \]
 \end{description}
 
@@ -1827,15 +1834,6 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   $ L $ = lunghezza dei fili
   \end{multicols}
   
-  \item[Legge di Biot-Savart] 
-  Una corrente genera intorno a sé un campo magnetico la cui intensità è data da:
-  \[ B = \frac{\mu_0}{2\pi r} i \hspace*{3em} [T] = \left[ \sfrac{N}{A\cdot m} \right] \]
-  \begin{multicols}{2}
-  $ B $ = intensità del campo magnetico\\
-  $ i $ = corrente nel filo\\
-  $ r $ = distanza dal filo
-  \end{multicols}
-  
   \item[Permeabilità magnetica del vuoto]
   \[ \mu_0 = 4\pi \times 10^{-7} \, \frac{N}{A^2} \]
   
@@ -1850,6 +1848,15 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   Possiamo facilmente esprimere questa formula con il prodotto vettoriale:
   \[ F = i \vec{\ell} \times \vec{B} \]
   
+  \item[Legge di Biot-Savart] 
+  Una corrente genera intorno a sé un campo magnetico la cui intensità è data da:
+  \[ B = \frac{\mu_0}{2\pi r} i \hspace*{3em} [T] = \left[ \sfrac{N}{A\cdot m} \right] \]
+  \begin{multicols}{2}
+  $ B $ = intensità del campo magnetico\\
+  $ i $ = corrente nel filo\\
+  $ r $ = distanza dal filo
+  \end{multicols}  
+
   \item[Campo al centro di una spira]
   \[ B = \mu_0 \frac{i}{2r} \]
   $ r $ = raggio della spira
@@ -1883,6 +1890,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   \[ \Phi_S(B) = 0 \]
   
   \item[Circuitazione del campo magnetico lungo la linea chiusa $ \mathscr{L} $]\label{conc:circuitazioneB}
+  Analogamente alla circuitazione del campo elettrico.
   \[ \Gamma_\mathscr{L}(B) = \sum_i \vec{B}_i \cdot \Delta\vec{\ell_i} = \sum_i B_i \Delta \ell_i \cos \theta_i \]
   
   \item[Teorema di Ampère] 
@@ -1900,17 +1908,21 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   
   \item[Forza elettromotrice indotta istantanea] 
   \[ f_{em \, ind \, ist} =  \lim_{\Delta t \rightarrow 0}- \frac{\Delta \Phi(B)}{\Delta t} = - \frac{d\Phi(B)}{dt} = - \Phi'(t) \]
+  La forza elettromotrice istantanea è la derivata temporale del flusso del campo magnetico cambiata di segno.
   
   \item[Legge di Lenz] 
-  Il verso della corrente indotta è tale da opporsi alla variazione di flusso che la genera. Tale legge è indicata dal segno meno delle formule precedenti.
+  Il verso della corrente indotta è tale da opporsi alla variazione di flusso che la genera. 
+  Tale legge è indicata dal segno meno delle formule precedenti.
   
   \item[Induttanza] 
-  È la costante di proporzionalità tra il flusso del campo magnetico e la corrente che fluisce nel circuito. Il valore di $ L $ dipende da come è fatto un circuito e dal materiale di cui è composto.
+  È la costante di proporzionalità tra il flusso del campo magnetico e la corrente che fluisce nel circuito.
+  Il valore di $ L $ dipende da come è fatto un circuito e dal materiale di cui è composto.
   \[ L =  \frac{\Phi(B)}{i} \hspace*{3em} [H] = \left[ \sfrac{Wb}{A} \right] \]
   
   \item[Autoinduzione] 
   Se in un circuito si verifica induttanza $ L $ avremo una forza elettromotrice autoindotta:
-  \[ f_{em \, auto} =  - \frac{\Delta \Phi(B)}{\Delta t} = - L \frac{\Delta i}{\Delta t} \]La frazione indica la velocità con cui varia la corrente nel circuito.
+  \[ f_{em \, auto} =  - \frac{\Delta \Phi(B)}{\Delta t} = - L \frac{\Delta i}{\Delta t} \]
+  La frazione $ \sfrac{\Delta i}{\Delta t} $ indica la velocità con cui varia la corrente nel circuito.
   
   \item[Circuito RL] 
   Indicando con $ i_0 = \sfrac{f_{em}}{R} $ la corrente che si avrebbe senza induttanza, valgono:
@@ -1954,14 +1966,14 @@ all'apertura del circuito:
   
   \item[Valori efficaci in corrente alternata] Per confrontare il regime alternato con quello continuo, introduciamo:
   \begin{itemize}
-    \item corrente efficace, cioè la corrente continua che erogherebbe la stessa potenza della corrente alternata:
+    \item \emph{corrente efficace}, cioè la corrente continua che erogherebbe la stessa potenza della corrente alternata:
     \[ i_{\mathit{efficace}} = \frac{i_0}{\sqrt{2}} \]
-    \item tensione efficace, cioè la tensione in regime di corrente continua con cui si erogherebbe la stessa potenza erogata in regime di corrente alternata:
+    \item \emph{tensione efficace}, cioè la tensione in regime di corrente continua con cui si erogherebbe la stessa potenza erogata in regime di corrente alternata:
     \[ f_{em \, \mathit{efficace}} = \frac{f_{em \, 0}}{\sqrt{2}} \]
   \end{itemize}
   
   \item[Circuito ohmico (resistivo)] 
-  Nel circuito resistivo la $ f_{em} $ e la corrente sono in fase. Le due funzioni sono legate dalla prima legge di Ohm:
+  Nel circuito resistivo la $ f_{em} $ e la corrente sono \emph{in fase}. Le due funzioni sono legate dalla prima legge di Ohm:
   \[ i(t) = \frac{f_{em} (t)}{R} \]  
   
   Tra le ampiezze delle funzioni vale:
@@ -1979,7 +1991,7 @@ all'apertura del circuito:
 \end{figure}
   
   \item[Circuito induttivo] 
-  Nel circuito induttivo la corrente è in ritardo di un quarto di periodo rispetto alla $ f_{em} $.
+  Nel circuito induttivo la corrente è \emph{in ritardo} di un quarto di periodo rispetto alla $ f_{em} $.
   \[ i(t) = \frac{f_{em \, 0}}{\omega L} \cdot \sin\left( \omega t - \frac{\pi}{2} \right) \]
   La corrente massima è:
   \[ i_0 = \frac{f_{em \, 0}}{\omega L} \]
@@ -1996,7 +2008,7 @@ all'apertura del circuito:
 \end{figure}
 
   \item[Circuito capacitivo] 
-  Nel circuito capacitivo la corrente è in anticipo di un quarto di periodo rispetto alla $ f_{em} $.
+  Nel circuito capacitivo la corrente è \emph{in anticipo} di un quarto di periodo rispetto alla $ f_{em} $.
   \[ i(t) = \omega  C f_{em \, 0} \cdot \sin\left( \omega t + \frac{\pi}{2} \right) \]
   
   La corrente massima è:
@@ -2016,7 +2028,7 @@ all'apertura del circuito:
   \item[Circuito RLC] 
   In un circuito RLC la $ f_{em \, \mathit{eff}} $ è direttamente proporzionale alla $ i_{\mathit{eff}} $:
   \[ f_{em \, \mathit{eff}} = Z \cdot i_{\mathit{eff}} \]  
-  La costante di proporzionalità è l'impedenza del circuito:
+  La costante di proporzionalità è detta \emph{impedenza} del circuito:
   \[  Z = \sqrt{R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2} \hspace*{3em} [\Omega]\]
   \begin{multicols}{2}
   $ R $ = resistenza del circuito [$ \Omega $]\\
@@ -2044,12 +2056,12 @@ all'apertura del circuito:
 
   \item[Circuito LC] 
   Carica sulle armature del condensatore:
-  \[ q(t) = Q \cdot \cos (\omega t) \]
-  $ Q $ = carica massima (iniziale)
+  \[ q(t) = Q_0 \cdot \cos (\omega t) \]
+  $ Q_0 $ = carica massima (iniziale)
   
   Corrente nel circuito:
-  \[ i(t) = \omega Q \cdot \sin (\omega t) \]
-  $ \omega Q = i_0 $ = ampiezza della corrente
+  \[ i(t) = \omega Q_0 \cdot \sin (\omega t) \]
+  $ \omega Q_0 = i_0 $ = ampiezza della corrente
   
 \begin{figure}[htp]\centering
 \ctikzset{bipoles/length=0.6cm}
@@ -2067,9 +2079,9 @@ all'apertura del circuito:
   
   \item[Trasformatori] 
   Sono dispositivi capaci di modificare il valore della tensione e della corrente alternata. Se indichiamo con $ n_1 $ e $ n_2 $ il numero di spire del circuito primario e secondario, vale:
-  \[ \frac{f_{em 2 \, \mathit{eff}}}{f_{em 1 \, \mathit{eff}}} = \frac{n_2}{n_1} \]
-  Inoltre si dimostra che, se il trasformatore è ideale (non avvengono fenomeni dissipativi):
-  \[ \overline{P}_1 = f_{em 1 \, \mathit{eff}} \cdot i_{1 \, \mathit{eff}} =  f_{em 2 \, \mathit{eff}} \cdot i_{2 \, \mathit{eff}} = \overline{P}_2 \]
+  \[ \frac{f_{em \, \mathit{eff}2}}{f_{em \, \mathit{eff}1}} = \frac{n_2}{n_1} \]
+  Inoltre si dimostra che, se il trasformatore è ideale (non avvengono cioè fenomeni dissipativi):
+  \[ \overline{P}_1 = f_{em \, \mathit{eff}1} \cdot i_{\mathit{eff}1} =  f_{em \, \mathit{eff}2} \cdot i_{\mathit{eff}2} = \overline{P}_2 \]
 \end{description}
 
 \subsection{Equazioni di Maxwell e onde elettromagnetiche}
@@ -2178,7 +2190,7 @@ Teorema di Ampère-Maxwell:
   $ v $ = velocità del corpo nel \textsc{sdr} $ S $
   
   Poiché $ v $ è sempre minore di $ c $, il coefficiente di dilatazione è sempre maggiore di $ 1 $.
-  
+
   Notiamo inoltre che:
   \[ \lim_{v \rightarrow c^{-}} \frac{1}{\sqrt{1-(\frac{v}{c})^2}} = + \infty \]
   e che se $ v \ll c $ (come nei casi del mondo medio) il valore di $ \gamma $ tende a $ 1 $.
@@ -2299,7 +2311,7 @@ Teorema di Ampère-Maxwell:
   La previsione classica è data dalla legge di Rayleigh-Jeans.
  
   \begin{figure}[htpb]\centering
-    \begin{tikzpicture}[samples=100, scale=1]
+    \begin{tikzpicture}[samples=100, scale=1.2]
     \begin{axis}[
         xmin=0,
         xmax=30,
@@ -2344,14 +2356,14 @@ Teorema di Ampère-Maxwell:
   \item[Costante di Planck]
   \[ h = 6,62607 \times 10^{-34} \, J\cdot s \]
   
-  \item[Energia di un quanto del campo elettromagnetico]
+  \item[Energia trasportata dal campo elettromagnetico]
   \[ E=nhf \]
   $ n $ = numero intero positivo
   
   \item[Fotoni] 
-  Ogni fotone ha massa nulla ed energia quantizzata pari a:
+  Sono i \emph{quanti del campo elettromagnetico} e hanno massa nulla ed energia quantizzata pari a:
   \[ E=hf \]
-  Anche la quantità di moto è quantizzata:
+  Anche la quantità di moto dei fotoni è quantizzata:
   \[ p = \frac{E}{c} = \frac{hf}{c} \]
   
   \item[Effetto Compton] 
@@ -2423,12 +2435,15 @@ Teorema di Ampère-Maxwell:
     ~~~~\textbf{Lagrange}~~~~ & ~~~~\textbf{Leibniz}~~~~ & ~~~~\textbf{Eulero}~~~~ \\\midrule
     $ f'(x),f''(x) $ & $ \dfrac{df}{dx},\dfrac{d^2 f}{dx^2} $ & $ D[f], D^2[f] $ \\\bottomrule
   \end{tabular}
-  \caption{Tre modi diversi di esprimere la derivata di $ f(x) $.}
+  \caption{Tre modi diversi di esprimere la derivata prima e seconda di $ f(x) $.}
   \label{tab:scritturaderivate}
   \end{table}
   
+  \item[Derivata temporale]
+  La derivata di una funzione avente come variabile il tempo è detta \emph{derivata temporale} di quella funzione.
+  
   \item[Derivate e cinematica]
-  La funzione che esprime la posizione di un corpo nel \textsc{sdr} in funzione del tempo, la sua velocità istantanea e la sua accelerazione istantanea sono l'una la derivata dell'altra.
+  La funzione che esprime la posizione di un corpo nel \textsc{sdr} in funzione del tempo, la sua velocità istantanea e la sua accelerazione istantanea sono l'una la derivata (temporale) dell'altra.
   
   \[ s'(t) = \displaystyle \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t} = \frac{ds}{dt} = v(t) \]
   
@@ -2462,7 +2477,7 @@ Teorema di Ampère-Maxwell:
   
   \item[Lavoro di una forza]
   Conoscendo la funzione $ F(s) $ che esprime la forza agente su un corpo in funzione della sua posizione, 
-  possiamo calcolare il lavoro di tale forza (e quindi la variazione di energia potenziale del corpo tra la posizione $ s_0 $ e la posizione $ s_1 $ con:
+  possiamo calcolare il lavoro di tale forza (e quindi la variazione di energia potenziale del corpo) tra la posizione $ s_0 $ e la posizione $ s_1 $ con:
   \[ L = \Delta U = \int_{s_0}^{s_1} F(s) ds \]
   
   \item[Circuitazione] Alle \cpageref{conc:circuitazioneE,conc:circuitazioneB} abbiamo definito la circuitazione lungo la linea chiusa $ \mathscr{L} $ 
