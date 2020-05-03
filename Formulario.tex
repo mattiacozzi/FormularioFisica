@@ -168,12 +168,8 @@
     \item stesso verso del vettore se lo scalare è positivo, verso opposto se lo scalare è negativo;
     \item modulo uguale al prodotto dello scalare per il modulo del vettore.
   \end{itemize}
-  Intuitivamente, se eseguo il prodotto tra lo scalare $ 5 $ e il vettore $ \vec{v} $, otterrò un vettore orientato come $ \vec{v} $ ma cinque volte più lungo. Vedi la \Cref{img:prodottoscalarevettore}.
-  
-  Algebricamente: 
-  \[ a \vec{v} = (a v_x)\hat{i} + (a v_y)\hat{j} \]
-  Solitamente il prodotto di uno scalare per un vettore non viene indicato con alcun simbolo.
-  
+  Intuitivamente, se eseguo il prodotto tra lo scalare $ 3 $ e il vettore $ \vec{a} $, otterrò un vettore orientato come $ \vec{a} $ ma tre volte più lungo.
+
 \begin{figure}[htb]\centering
 \begin{tikzpicture}[>=latex]
 \draw [line cap=round,->,colorSitoChiaro,ultra thick] (0,0) -- (2,0);
@@ -183,14 +179,15 @@
 \end{tikzpicture}\caption{Prodotto del vettore $ \vec{a} $ per lo scalare $ 3 $.}
 \label{img:prodottoscalarevettore}
 \end{figure}
+
+  Algebricamente: 
+  \[ k \vec{a} = (k a_x)\hat{i} + (k a_y)\hat{j} \]
+  Solitamente il prodotto di uno scalare per un vettore non viene indicato con alcun simbolo.
   
   \item[Prodotto scalare]
   Il prodotto scalare (simbolo $ \cdot $) si esegue tra due vettori e dà come risultato uno scalare.
   
   Si moltiplica il modulo del primo vettore per la componente del secondo lungo il primo (o viceversa: il prodotto scalare è commutativo), come mostrato in \Cref{img:scalare}.
-  
-  Se indichiamo con $ \theta $ l'angolo tra i due vettori $ \vec{a} $ e $ \vec{b} $, allora: 
-  \[ \vec{a} \cdot \vec{b} = ab\cos\theta \]
 
 \begin{figure}[htb]\centering
 \begin{tikzpicture}[>=latex]
@@ -205,6 +202,9 @@
 \end{tikzpicture}\caption{Rappresentazione della componente di $ \vec{b} $ su $ \vec{a} $.}
 \label{img:scalare}
 \end{figure}
+  
+  Se indichiamo con $ \theta $ l'angolo tra i due vettori $ \vec{a} $ e $ \vec{b} $, allora: 
+  \[ \vec{a} \cdot \vec{b} = ab\cos\theta \]
 
 %%%---NON NECESSARIO
 %   Aggiungiamo che, conoscendo le componenti del vettore, è possibile dimostrare che vale: 
@@ -214,9 +214,6 @@
   Il prodotto vettoriale (simbolo $ \times  $) si esegue tra due vettori e dà come risultato un vettore.
   
   Il modulo del vettore $ \vec{a} \times \vec{b} $ è dato dall'area del parallelogramma costruito coi vettori $ \vec{a} $ e $ \vec{b} $.
-  
-  Se indichiamo con $ \theta $ l'angolo tra i due vettori $ \vec{a} $ e $ \vec{b} $, allora: 
-  \[ | \vec{a} \times \vec{b} | = ab\sin\theta \]
 
 \begin{figure}[htb]\centering
 \begin{tikzpicture}[>=latex]
@@ -232,12 +229,16 @@
 \node [above left,colorSito] at (4,1.5) {$ |\vec{a}\times\vec{b}| $};
 \draw [dashed] (2,3) -- (6,3);
 \end{tikzpicture}\caption{Il modulo del prodotto vettoriale come area del parallelogramma.}
+\label{img:vettoriale1}
 \end{figure}
+  
+  Se indichiamo con $ \theta $ l'angolo tra i due vettori $ \vec{a} $ e $ \vec{b} $, allora: 
+  \[ | \vec{a} \times \vec{b} | = ab\sin\theta \]
 
   Poiché il risultato dell'operazione è un vettore, dobbiamo ancora indicarne direzione e verso:
   \begin{itemize}
     \item la direzione del prodotto vettoriale di $ \vec{a} $ e $ \vec{b} $ è perpendicolare al piano da essi formato;
-    \item il verso è dato dalla \emph{regola della mano destra}, ovvero ponendo il pollice della mano destra nel verso del vettore $ \vec{a} $ e le altre dita nel verso di $ \vec{b} $, il vettore $ \vec{a} \times \vec{b} $ sarà uscente dal palmo della mano.
+    \item il verso è dato dalla \emph{regola della mano destra}, ovvero ponendo il pollice della mano destra nel verso del vettore $ \vec{a} $ e le altre dita nel verso di $ \vec{b} $, il vettore $ \vec{a} \times \vec{b} $ sarà uscente dal palmo della mano, come indicato dalla \Cref{img:vettoriale2}.
   \end{itemize}
   
 \begin{figure}[htpb]\centering
@@ -256,6 +257,7 @@
 \node [left,colorSito] at (0,1.5) {$ \vec{a} \times \vec{b} $};
 \node [above,colorSito] at (1.5,-.8) {$ |\vec{a} \times \vec{b} |$};
 \end{tikzpicture}\caption{Rappresentazione tridimensionale del vettore ottenuto con il prodotto vettoriale.}
+\label{img:vettoriale2}
 \end{figure}
 \end{description}
 
@@ -377,9 +379,9 @@
     \label{tab:datisistemasolare}
   \end{table}  
 
-  \item[Gradi e radianti] Ricordando che il procedimento generale per convertire tra gradi e radianti è la proporzione:
+  \item[Gradi e radianti] Il procedimento generale per convertire tra gradi e radianti è la proporzione:
   \[ \frac{\theta_{rad}}{\theta_{gradi}} = \frac{2\pi}{360} \]
-  Riportiamo in \Cref{tab:gradiradianti} alcune conversioni veloci.
+  Riportiamo inoltre in \Cref{tab:gradiradianti} alcune conversioni veloci.
   \begin{table}[htp]\centering
     \begin{tabular}{lcccccccc}\toprule
         \boldmath$ \theta_{gradi} $ & $ 0 $ & $ 30 $ & $ 45 $ & $ 60 $ & $ 90 $ & $ 180 $ & $ 270 $ & $ 360 $\\\addlinespace[.2em]\midrule
@@ -464,7 +466,7 @@
   \end{multicols}
   
   \item[Variazione $ \mathbf{\Delta} $] 
-  Data una grandezza $ g $, il simbolo $ \Delta g = g_2 - g_1 $ indica la variazione di $ g $ quando essa varia da $ g_1 $ a $ g_2 $.
+  Data una grandezza $ g $, il simbolo $ \Delta g = g_1 - g_0 $ indica la variazione di $ g $ quando essa varia da $ g_0 $ a $ g_1 $.
   
   \item[Velocità media]
   \[ \overline{v} = \frac{\Delta s}{\Delta t} \hspace*{3em} \left[ \frac{m}{s} \right] \]
@@ -756,7 +758,7 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   
   \item[Condizioni di equilibrio per corpi rigidi]
   \[ \sum \vec{F} = 0 \quad\quad\textrm{e}\quad\quad \sum \vec{M} = 0 \]
-  
+
   \item[Momento angolare] 
   È un vettore che permette di descrivere, rispetto ad un punto $ O $, la rotazione di un punto materiale.
   
@@ -1036,7 +1038,19 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \[ P_c = \frac{Q}{m} \hspace*{3em} \left[ \frac{J}{kg} \right] \]
   
   \item[Propagazione del calore] 
-  Il calore può propagarsi per conduzione, convezione o irraggiamento.
+  Il calore può propagarsi per \emph{conduzione}, \emph{convezione} o \emph{irraggiamento}, a seconda del mezzo e dello spostamento o meno di materia. La \Cref{tab:conduzione} riporta le caratteristiche di ciascun meccanismo.
+
+\begin{table}[htb]\centering\footnotesize
+\begin{tabular}{lll}\toprule
+\textbf{Meccanismo} & \textbf{Mezzi}            & \textbf{Trasferimento}\\\midrule
+Conduzione          & Solidi                    & Solo energia\\\addlinespace[1em]
+Convezione          & Fluidi                    & Energia e materia\\\addlinespace[1em]
+Irraggiamento       & Vuoto e corpi trasparenti & Solo energia\\\bottomrule
+\end{tabular}
+\caption{I meccanismi di prograzione del calore.}
+\label{tab:conduzione}
+\end{table}
+
 
 %%%---NON NECESSARIO
 %   \item[Conduzione] La conduzione è un meccanismo di propagazione del calore in cui si ha trasporto di energia senza spostamento di materia. È resa dalla relazione:
@@ -1895,7 +1909,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   \[ L =  \frac{\Phi(B)}{i} \hspace*{3em} [H] = \left[ \sfrac{Wb}{A} \right] \]
   
   \item[Autoinduzione] 
-  Se in un circuito è presente un'induttanza $ L $ avremo una forza elettromotrice autoindotta:
+  Se in un circuito si verifica induttanza $ L $ avremo una forza elettromotrice autoindotta:
   \[ f_{em \, auto} =  - \frac{\Delta \Phi(B)}{\Delta t} = - L \frac{\Delta i}{\Delta t} \]La frazione indica la velocità con cui varia la corrente nel circuito.
   
   \item[Circuito RL] 
