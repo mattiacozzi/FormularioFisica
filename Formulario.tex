@@ -2310,48 +2310,42 @@ Teorema di Ampère-Maxwell:
   Corpo capace di assorbire completamente onde elettromagnetiche di qualsiasi lunghezza d'onda.
   
   \item[Curve sperimentali per l'emissione di energia a diverse temperature]
-  Nella \Cref{img:radianza} la zona evidenziata indica lo spettro della luce visibile; alla sua sinistra la radiazione ultravioletta, alla sue destra i raggi infrarossi.
+  Nella \Cref{img:radianza} la zona evidenziata indica lo spettro della luce visibile; alla sua sinistra la radiazione ultravioletta, alla sua destra i raggi infrarossi.
   La previsione classica è data dalla legge di Rayleigh-Jeans.
  
-\begin{figure}[htb]\centering
-\includegraphics[width=.7\columnwidth]{parts/corponero.jpg}
+\begin{figure}[htpb]\centering
+  \begin{tikzpicture}[samples=700, scale=1.2]
+  \begin{axis}[
+    xmin=0.1,
+    xmax=4,
+    xlabel={{\footnotesize $\lambda \, [nm]$}},
+    ymin=0,
+    ymax=.3,
+    ylabel={{\footnotesize $\rho (\lambda; T) \, [\sfrac{W}{m^2}]$}},
+    xtick=\empty,
+    ytick=\empty,
+    no markers,
+    grid=both,domain=0.1:40,
+    style={}]
+     \fill [black!10] (.5,0.001) rectangle (1,pi-0.001);
+     \addplot[fill=colorSitoScuro,fill opacity=.25,thick,colorSitoScuro,smooth] {(8)/((x^5)*(exp((3.6)/(x))-1))};
+     \addlegendentryexpanded{{\footnotesize $T = 5000 \, K$}}
+     \addplot[fill=colorSito,fill opacity=.25,thick,colorSito,smooth] {(8)/((x^5)*(exp((4.3)/(x))-1))};
+     \addlegendentryexpanded{{\footnotesize $T = 4000 \, K$}}
+     \addplot[fill=colorSitoChiaro,fill opacity=.25,thick,colorSitoChiaro,smooth] {(8)/((x^5)*(exp((5.3)/(x))-1))};
+     \addlegendentryexpanded{{\footnotesize $T = 3000 \, K$}}
+     \addplot[thick,colorSitoChiaro!60,dashed,domain=.5:4] {(1/((4*(x-.4)^2)))};
+     \addlegendentryexpanded{{\footnotesize previsione classica}}
+     \draw[black!30] (.5,0.0001)--(.5,.3-0.0001);
+     \draw[black!30] (1,0.0001)--(1,.3-0.0001);
+     \node[below] at (.75,.3) {{\scriptsize visibile}};
+     \node[below] at (.3,.3) {{\scriptsize UV}};
+     \node[below] at (1.15,.3) {{\scriptsize IR}};
+  \end{axis}
+  \end{tikzpicture}
 \caption{Dati sperimentali per la quantità di energia emessa nelle diverse lunghezze d'onda. L'area sottesa dalla curva fornisce l'energia totale emessa.}
 \label{img:radianza}
 \end{figure}
- 
-%   \begin{figure}[htpb]\centering
-%     \begin{tikzpicture}[samples=100, scale=1.2]
-%     \begin{axis}[
-%         xmin=0,
-%         xmax=30,
-%         xlabel={{\footnotesize $\lambda \, [nm]$}},
-%         ymin=0,
-%         ymax=pi,
-%         ylabel={{\footnotesize $\rho (\lambda; T) \, [\sfrac{W}{m^2}]$}},
-%         xtick=\empty,
-%         ytick=\empty,
-%         no markers,
-%         grid=both,domain=0.1:40,
-%         style={}]
-%         \fill [black!10] (2,0.005) rectangle (6,pi-0.005);
-%         \addplot[fill=colorSitoScuro,fill opacity=.25,thick,colorSitoScuro] {(x^3)/((pi^2)*(exp(2000*x/(3000))-1))};
-%         \addlegendentryexpanded{{\footnotesize $T = 3000 \, K$}}
-%         \addplot[fill=colorSito,fill opacity=.25,thick,colorSito] {(x^3)/((pi^2)*(exp(2000*x/(4000))-1))};
-%         \addlegendentryexpanded{{\footnotesize $T = 4000 \, K$}}
-%         \addplot[fill=colorSitoChiaro,fill opacity=.25,thick,colorSitoChiaro] {(x^3)/((pi^2)*(exp(2000*x/(5000))-1))};
-%         \addlegendentryexpanded{{\footnotesize $T = 5000 \, K$}}
-%         \addplot[thick,colorSitoChiaro!60,dashed,domain=9.5:40] {(12/((x-5.6))- .3)};
-%         \addlegendentryexpanded{{\footnotesize previsione classica}}
-%         \draw[black!30] (2,0.005)--(2,pi-0.005);
-%         \draw[black!30] (6,0.005)--(6,pi-0.005);
-%         \node[below] at (4,pi) {{\scriptsize visibile}};
-%         \node[below] at (1,pi) {{\scriptsize UV}};
-%         \node[below] at (7,pi) {{\scriptsize IR}};
-%     \end{axis}
-%     \end{tikzpicture}
-%   \caption{Dati sperimentali per la quantità di energia emessa nelle diverse lunghezze d'onda. L'area sottesa dalla curva fornisce l'energia totale emessa.}
-%   \label{img:radianza}
-%   \end{figure}
   
   \item[Legge di Wien] 
   Fornisce la lunghezza d'onda per cui sia ha il picco di intensità di radiazione in funzione della temperatura.
