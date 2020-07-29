@@ -1271,8 +1271,11 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
   \item[Pulsazione dell'onda]
   \[ \omega = \frac{2\pi}{T} = 2\pi f \hspace*{3em} \left[ \frac{rad}{s} \right] \]
   
+  \item[Lunghezza d'onda] Distanza tra due creste di un'onda periodica.
+  \[ \lambda \hspace*{3em} [m] \]
+  
   \item[Velocità di propagazione dell'onda] 
-  \[ v = \frac{\lambda}{T} = \lambda f \hspace*{3em} \left[ \frac{m}{s} \right] \]
+  \[ v = \frac{\Delta s}{\Delta t} = \frac{\lambda}{T} = \lambda f \hspace*{3em} \left[ \frac{m}{s} \right] \]
   $ \lambda $ = lunghezza d'onda [$ m $]
   
   \item[Legge oraria delle onde in un punto fissato] 
@@ -2310,39 +2313,45 @@ Teorema di Ampère-Maxwell:
   Nella \Cref{img:radianza} la zona evidenziata indica lo spettro della luce visibile; alla sua sinistra la radiazione ultravioletta, alla sue destra i raggi infrarossi.
   La previsione classica è data dalla legge di Rayleigh-Jeans.
  
-  \begin{figure}[htpb]\centering
-    \begin{tikzpicture}[samples=100, scale=1.2]
-    \begin{axis}[
-        xmin=0,
-        xmax=30,
-        xlabel={{\footnotesize $\lambda \, [nm]$}},
-        ymin=0,
-        ymax=pi,
-        ylabel={{\footnotesize $\rho (\lambda; T) \, [\sfrac{W}{m^2}]$}},
-        xtick=\empty,
-        ytick=\empty,
-        no markers,
-        grid=both,domain=0.1:40,
-        style={}]
-        \fill [black!10] (2,0.005) rectangle (6,pi-0.005);
-        \addplot[fill=colorSitoScuro,fill opacity=.25,thick,colorSitoScuro] {(x^3)/((pi^2)*(exp(2000*x/(3000))-1))};
-        \addlegendentryexpanded{{\footnotesize $T = 3000 \, K$}}
-        \addplot[fill=colorSito,fill opacity=.25,thick,colorSito] {(x^3)/((pi^2)*(exp(2000*x/(4000))-1))};
-        \addlegendentryexpanded{{\footnotesize $T = 4000 \, K$}}
-        \addplot[fill=colorSitoChiaro,fill opacity=.25,thick,colorSitoChiaro] {(x^3)/((pi^2)*(exp(2000*x/(5000))-1))};
-        \addlegendentryexpanded{{\footnotesize $T = 5000 \, K$}}
-        \addplot[thick,colorSitoChiaro!60,dashed,domain=9.5:40] {(12/((x-5.6))- .3)};
-        \addlegendentryexpanded{{\footnotesize previsione classica}}
-        \draw[black!30] (2,0.005)--(2,pi-0.005);
-        \draw[black!30] (6,0.005)--(6,pi-0.005);
-        \node[below] at (4,pi) {{\scriptsize visibile}};
-        \node[below] at (1,pi) {{\scriptsize UV}};
-        \node[below] at (7,pi) {{\scriptsize IR}};
-    \end{axis}
-    \end{tikzpicture}
-  \caption{Dati sperimentali per la quantità di energia emessa nelle diverse lunghezze d'onda. L'area sottesa dalla curva fornisce l'energia totale emessa.}
-  \label{img:radianza}
-  \end{figure}
+\begin{figure}[htb]\centering
+\includegraphics[width=.7\columnwidth]{parts/corponero.jpg}
+\caption{Dati sperimentali per la quantità di energia emessa nelle diverse lunghezze d'onda. L'area sottesa dalla curva fornisce l'energia totale emessa.}
+\label{img:radianza}
+\end{figure}
+ 
+%   \begin{figure}[htpb]\centering
+%     \begin{tikzpicture}[samples=100, scale=1.2]
+%     \begin{axis}[
+%         xmin=0,
+%         xmax=30,
+%         xlabel={{\footnotesize $\lambda \, [nm]$}},
+%         ymin=0,
+%         ymax=pi,
+%         ylabel={{\footnotesize $\rho (\lambda; T) \, [\sfrac{W}{m^2}]$}},
+%         xtick=\empty,
+%         ytick=\empty,
+%         no markers,
+%         grid=both,domain=0.1:40,
+%         style={}]
+%         \fill [black!10] (2,0.005) rectangle (6,pi-0.005);
+%         \addplot[fill=colorSitoScuro,fill opacity=.25,thick,colorSitoScuro] {(x^3)/((pi^2)*(exp(2000*x/(3000))-1))};
+%         \addlegendentryexpanded{{\footnotesize $T = 3000 \, K$}}
+%         \addplot[fill=colorSito,fill opacity=.25,thick,colorSito] {(x^3)/((pi^2)*(exp(2000*x/(4000))-1))};
+%         \addlegendentryexpanded{{\footnotesize $T = 4000 \, K$}}
+%         \addplot[fill=colorSitoChiaro,fill opacity=.25,thick,colorSitoChiaro] {(x^3)/((pi^2)*(exp(2000*x/(5000))-1))};
+%         \addlegendentryexpanded{{\footnotesize $T = 5000 \, K$}}
+%         \addplot[thick,colorSitoChiaro!60,dashed,domain=9.5:40] {(12/((x-5.6))- .3)};
+%         \addlegendentryexpanded{{\footnotesize previsione classica}}
+%         \draw[black!30] (2,0.005)--(2,pi-0.005);
+%         \draw[black!30] (6,0.005)--(6,pi-0.005);
+%         \node[below] at (4,pi) {{\scriptsize visibile}};
+%         \node[below] at (1,pi) {{\scriptsize UV}};
+%         \node[below] at (7,pi) {{\scriptsize IR}};
+%     \end{axis}
+%     \end{tikzpicture}
+%   \caption{Dati sperimentali per la quantità di energia emessa nelle diverse lunghezze d'onda. L'area sottesa dalla curva fornisce l'energia totale emessa.}
+%   \label{img:radianza}
+%   \end{figure}
   
   \item[Legge di Wien] 
   Fornisce la lunghezza d'onda per cui sia ha il picco di intensità di radiazione in funzione della temperatura.
