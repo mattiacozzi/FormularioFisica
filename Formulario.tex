@@ -40,7 +40,7 @@
   Solitamente i versori $ \hat{i}  $, $ \hat{j} $ e $ \hat{k} $ sono usati per indicare gli assi cartesiani, 
   mentre con $ \hat{n} $ si indica un versore normale (perpendicolare) ad un piano.
   
-  \item[Seno e coseno]
+  \item[Funzioni goniometriche (seno, coseno, tangente)]
   In un triangolo rettangolo, possiamo distinguere i due cateti in \emph{cateto opposto all'angolo $ \theta $} 
   e \emph{cateto adiacente a $ \theta $}, in base alla posizione che occupano rispetto all'angolo $ \theta $.
   
@@ -1053,7 +1053,7 @@ conduzione          & solidi                    & solo energia\\\addlinespace[1e
 convezione          & fluidi                    & energia e materia\\\addlinespace[1em]
 irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
 \end{tabular}
-\caption{I meccanismi di prograzione del calore.}
+\caption{I meccanismi di propagazione del calore.}
 \label{tab:conduzione}
 \end{table}
 
@@ -1461,7 +1461,7 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
   Fenomeno per cui le onde sono in grado di aggirare un ostacolo e passare nella zona posta al di là dell'ostacolo stesso. La diffrazione è notevole quando il diametro dell'ostacolo è confrontabile con la lunghezza d'onda delle onde.
   
   \item[Principio di Huygens] 
-  Ogni punto su di un fronte d'onda funge da sorgente puntiforme di nuove onde.
+  Ogni punto di un fronte d'onda funge da sorgente puntiforme di nuove onde.
   
   \item[Interferenza con due sorgenti (esperimento di Young)] 
   Quando due sorgenti luminose sono separate da una distanza $ d $ ed emettono identiche onde in fase, si osserva interferenza costruttiva tra le onde nelle direzioni date da:
@@ -1853,7 +1853,7 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   
   \item[Legge di Biot-Savart] 
   Una corrente genera intorno a sé un campo magnetico la cui intensità è data da:
-  \[ B = \frac{\mu_0}{2\pi r} i \hspace*{3em} [T] = \left[ \sfrac{N}{A\cdot m} \right] \]
+  \[ B = \mu_0\dfrac{i}{2\pi r} \hspace*{3em} [T] = \left[ \sfrac{N}{A\cdot m} \right] \]
   \begin{multicols}{2}
   $ B $ = intensità del campo magnetico\\
   $ i $ = corrente nel filo\\
@@ -2466,7 +2466,8 @@ Teorema di Ampère-Maxwell:
     forza             & energia              & posizione           & $ F(s) = \dfrac{dU}{ds} $ \\\addlinespace[.8em]
     intensità di corrente & carica           & tempo               & $ i(t) = \dfrac{dq}{dt} $ \\\addlinespace[.8em]
     potenza           & energia              & tempo               & $ P(t) = \dfrac{dU}{dt} $ \\\addlinespace[.8em]
-    $ \textrm{f}_{\textrm{em}} $ & flusso di $ B $ & tempo         & $ f_{em}(t) = -\dfrac{d\Phi(B)}{dt} $ \\\bottomrule
+    $ \textrm{f}_{\textrm{em}} $ & flusso di $ B $ & tempo         & $ f_{em}(t) = -\dfrac{d\Phi(B)}{dt} $ \\\addlinespace[.8em]
+    corrente di spostamento & flusso di $ E $ & tempo         & $ i_s(t) = \varepsilon_0 \dfrac{d\Phi(E)}{dt} $ \\\bottomrule
   \end{tabular}
   \caption{Alcune derivate notevoli.}
   \label{tab:derivatenotevoli}
@@ -2475,7 +2476,7 @@ Teorema di Ampère-Maxwell:
   \item[Spazio percorso]
   Conoscendo la funzione $ v(t) $ che esprime la velocità di un corpo in funzione del tempo, 
   possiamo calcolare lo spazio percorso tra un tempo $ t_0 $ e un tempo $ t_1 $ con:
-  \[ \Delta s = \int_{t_0}^{t_1} v dt \]
+  \[ \Delta s = \int_{t_0}^{t_1} v(t) dt \]
   Questo integrale definito fornisce l'area sottesa dal grafico di $ v(t) $ tra il tempo $ t_0 $ e il tempo $ t_1 $.
   
   \item[Lavoro di una forza]
