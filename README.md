@@ -14,6 +14,6 @@ Comprende:
 - derivate e integrali notevoli in Fisica,
 - timelime dei fisici più importanti;
 - tavola periodica con masse atomiche;
-- formulario "mini" per l'uso durante le prove scritte per studenti con DSA.
+- formulario "mini" per l'uso durante le prove scritte per studenti con DSA .
 
 Tutte le tavole presenti sono realizzate con TikZ.
