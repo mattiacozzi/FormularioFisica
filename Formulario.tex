@@ -19,6 +19,7 @@
 \newpage
 \section{Vettori}
 
+
 \begin{description}
   \item[Scalari e vettori] 
   Una grandezza può:
@@ -67,9 +68,9 @@
   \end{figure}
   
   Quando si eseguono calcoli con le funzioni goniometriche, assicurarsi che gli angoli siano espressi con l'unità di misura desiderata. 
-  La calcolatrice dovrà riportare esplicitamente \colorbox{black}{\textcolor{white}{D}} per i gradi (\emph{degrees}) o \colorbox{black}{\textcolor{white}{R}} per i radianti (possiamo ignorare la dicitura \colorbox{black}{\textcolor{white}{G}}).
+  La calcolatrice scientifica dovrà riportare esplicitamente \colorbox{black}{\textcolor{white}{D}} per i gradi (\emph{degrees}) o \colorbox{black}{\textcolor{white}{R}} per i radianti (possiamo ignorare la dicitura \colorbox{black}{\textcolor{white}{G}}).
   
-  \item[Scomposizione di un vettore]
+  \item[Scomposizione di un vettore e forma cartesiana]
   Una volta stabilito un sistema di riferimento, possiamo determinare l'angolo che un vettore $ \vec{a} $ forma con l'asse $ x $ (la cui direzione è data dal versore $ \hat{i} $).
   
   Chiamiamo tale angolo $ \theta $ e calcoliamo le componenti cartesiane del vettore (ovvero le sue proiezioni sugli assi cartesiani) utilizzando le formule precedenti:
@@ -101,7 +102,7 @@
     \end{figure}
   
   
-  Possiamo ora esprimere il vettore $ \vec{a} $ mediante le sue componenti sugli assi.
+  Possiamo ora esprimere il vettore $ \vec{a} $ mediante le sue componenti sugli assi (forma cartesiana del vettore).
   \[ \vec{a} = a_x \hat{i} + a_y \hat{j} \]
   
   \item[Modulo e direzione di un vettore, note le componenti]
@@ -109,7 +110,7 @@
   \[ a = \sqrt{(a_x)^2 + (a_y)^2} \]
   Per ottenere l'angolo  formato con l'asse $ x $ possiamo usare una tra le seguenti formule (che utilizzano le funzioni inverse delle funzioni goniometriche):
   \[ \theta  = \arccos\left( \frac{a_x}{a} \right) = \arcsin\left( \frac{a_y}{a} \right) = \arctan\left( \frac{a_y}{a_x} \right) \]
-  Sulle calcolatrici scientifiche, le funzioni inverse delle funzioni goniometriche sono solitamente indicate come $ \cos^{-1} $, $ \sin^{-1} $ e $ \tan^{-1} $.
+  Sulle calcolatrici scientifiche, le funzioni inverse delle funzioni goniometriche sono solitamente indicate come \colorbox{black}{\textcolor{white}{$ \cos^{-1} $}}, \colorbox{black}{\textcolor{white}{$ \sin^{-1} $}} e \colorbox{black}{\textcolor{white}{$ \tan^{-1} $}}.
 \end{description}
 
 \subsection{Operazioni coi vettori}
@@ -133,7 +134,7 @@
 \end{figure}
 
   \item[Somma tra vettori, metodo algebrico]
-  Dati due vettori $ \vec{a} = a_x \hat{i} + a_y \hat{j} $ e  $ \vec{b} = b_x \hat{i} + b_y \hat{j} $ il vettore somma sarà: 
+  Dati due vettori in forma cartesiana $ \vec{a} = a_x \hat{i} + a_y \hat{j} $ e  $ \vec{b} = b_x \hat{i} + b_y \hat{j} $ il vettore somma sarà: 
   \[ \vec{a} + \vec{b} =  (a_x + b_x) \hat{i} + (a_y + b_y) \hat{j}  \]
   È sufficiente sommare le componenti sui rispettivi assi.
   
@@ -207,8 +208,8 @@
   \[ \vec{a} \cdot \vec{b} = ab\cos\theta \]
 
 %%%---NON NECESSARIO
-%   Aggiungiamo che, conoscendo le componenti del vettore, è possibile dimostrare che vale: 
-%   \[ \vec{a} \cdot \vec{b} = a_x b_x + a_y b_y \]
+  Se i vettori sono in forma cartesiana (se ne conoscono cioè le componenti) il prodotto scalare si calcola con: 
+  \[ \vec{a} \cdot \vec{b} = a_x b_x + a_y b_y \]
   
   \item[Prodotto vettoriale]
   Il prodotto vettoriale (simbolo $ \times  $) si esegue tra due vettori e dà come risultato un vettore.
@@ -259,6 +260,9 @@
 \end{tikzpicture}\caption{Rappresentazione tridimensionale del vettore ottenuto con il prodotto vettoriale.}
 \label{img:vettoriale2}
 \end{figure}
+
+Se i vettori sono in forma cartesiana, allora il vettore risultato (necessariamente tridimensionale) è dato da: 
+\[ \vec{a} \times \vec{b} = (a_y b_z - a_z b_y)\hat{i} + (a_z b_x - a_x b_z)\hat{j} + (a_x b_y - a_y b_x)\hat{k} \]
 ~\\~\\~\\~\\~
 \end{description}
 
@@ -365,20 +369,24 @@
   In \Cref{tab:datisistemasolare} sono riportati alcuni dati utili per esercizi ed esempi.
 
   \begin{table}[htp]\centering
-    \begin{tabular}{ll}\toprule
-      \textbf{Nome} & \textbf{Valore e unità di misura}\\\midrule
-      massa della Terra & $ m_T = 5,98 \times 10^{24} \, kg	$ \\\addlinespace[.2em]
-      raggio della Terra & $ r_T = 6 \, 378 \, km $ \\\addlinespace[.2em]
-      massa della Luna & $ m_L = 7,35 \times 10^{22} \, kg $ \\\addlinespace[.2em]
-      raggio della Luna & $ r_L = 1 \, 737 \, km $ \\\addlinespace[.2em]
-      massa del Sole & $ m_S = 1,99 \times 10^{30} \, kg $ \\\addlinespace[.2em]
-      raggio del Sole & $ r_S = 695 \, 508 \, km $ \\\addlinespace[.2em]
-      massa di Marte & $ m_M = 6,24 \times 10^{23} \, kg $ \\\addlinespace[.2em]
-      raggio di Marte & $ r_M = 3 \, 397 \, km $ \\\bottomrule
+    \begin{tabular}{lllll}\toprule
+      \textbf{Dato} & \textbf{Valore e unità di misura} &&
+      \textbf{Dato} & \textbf{Valore e unità di misura}\\\midrule
+      massa della Terra   & $ m_T = 5,98 \times 10^{24} \, kg	$ &&
+      massa di Marte      & $ m_M = 6,24 \times 10^{23} \, kg $\\\addlinespace[.2em]
+      raggio della Terra  & $ r_T = 6 \, 378 \, km $ &&
+      raggio di Marte     & $ r_M = 3 \, 397 \, km $ \\\addlinespace[.2em]
+      distanza Terra-Sole & $ d = 1,50 \times 10^8 \, km $ && 
+      distanza Marte-Sole & $ d = 2,16 \times 10^8 \, km $\\\addlinespace[.2em]
+      massa della Luna    & $ m_L = 7,35 \times 10^{22} \, kg $ && 
+      massa del Sole      & $ m_S = 1,99 \times 10^{30} \, kg $\\\addlinespace[.2em]
+      raggio della Luna   & $ r_L = 1 \, 737 \, km $ &&
+      raggio del Sole     & $ r_S = 695 \, 508 \, km $ \\\addlinespace[.2em]
+      distanza Luna-Terra & $ d = 3,84 \times 10^5 \, km $ &&&\\\bottomrule
     \end{tabular}
-  \caption{Dati sul Sistema Solare.}
+  \caption{Dati su alcuni corpi del Sistema Solare.}
     \label{tab:datisistemasolare}
-  \end{table}  
+  \end{table} 
 
   \item[Gradi e radianti] Il procedimento generale per convertire tra gradi e radianti è la proporzione:
   \[ \frac{\theta_{rad}}{\theta_{gradi}} = \frac{2\pi}{360} \]
@@ -431,25 +439,25 @@
   \end{itemize}
 
 %%%---NON NECESSARIO
-%   \item[Errore assoluto] Differenza in modulo tra il valore teorico della misura effettuata e il valore effettivamente misurato. Ogni misura viene espressa come:\[ (m \pm \epsilon_a) \, u \]
-%   \begin{multicols}{2}
-%   $ m $ = misura teorica\\
-%   $ \epsilon_a $ = errore assoluto, incertezza della misura\\
-%   $ u $ = unità di misura
-%   \end{multicols}
-%   
-%   \item[Errore relativo] 
-%   \[ \epsilon_{r} = \frac{\epsilon_a}{m} \]
-%   
-%   \item[Errore percentuale] 
-%   \[ \epsilon_\% = \epsilon_r \cdot 100 \]
-%   
-%   \item[Regole per i calcoli sugli errori] Si seguono le seguenti regole di calcolo quando si considerano gli errori:
-%   \begin{itemize}
-%     \item prodotti di numeri esatti per misura: l'errore \emph{assoluto} del risultato è il prodotto tra il numero e l'errore assoluto della misura;
-%     \item somme e sottrazioni tra misure: l'errore \emph{assoluto} del risultato è la somma degli errori assoluti delle misure;
-%     \item prodotti tra misure: l'errore \emph{relativo} del risultato è la somma degli errori relativi delle misure.
-%   \end{itemize}
+  \item[Errore assoluto] Differenza in modulo tra il valore teorico della misura effettuata e il valore effettivamente misurato. Ogni misura viene espressa come:\[ (m \pm \epsilon_a) \, u \]
+  \begin{multicols}{2}
+  $ m $ = misura teorica\\
+  $ \epsilon_a $ = errore assoluto, incertezza della misura\\
+  $ u $ = unità di misura
+  \end{multicols}
+  
+  \item[Errore relativo] 
+  \[ \epsilon_{r} = \frac{\epsilon_a}{m} \]
+  
+  \item[Errore percentuale] 
+  \[ \epsilon_\% = \epsilon_r \cdot 100 \]
+  
+  \item[Regole per i calcoli sugli errori] Si seguono le seguenti regole di calcolo quando si considerano gli errori:
+  \begin{itemize}
+    \item prodotti di numeri esatti per misura: l'errore \emph{assoluto} del risultato è il prodotto tra il numero e l'errore assoluto della misura;
+    \item somme e sottrazioni tra misure: l'errore \emph{assoluto} del risultato è la somma degli errori assoluti delle misure;
+    \item prodotti tra misure: l'errore \emph{relativo} del risultato è la somma degli errori relativi delle misure.
+  \end{itemize}
 \end{description}
 
 \newpage
@@ -869,17 +877,17 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   \[ g = G \frac{M}{r^2} \]
 
 %%%---NON NECESSARIO
-%   \item[Satelliti] Sono proiettili sparati ad una velocità tale da non atterrare più: la forza di gravità funge da forza centripeta per un moto circolare.
-%   
-%   Possiamo calcolare la velocità del satellite in orbita:
-%   \[ v = \sqrt{\frac{GM}{R}} \]
-%   \begin{multicols}{2}
-%   $ M $ = massa del pianeta\\
-%   $ R $ = distanza tra il satellite e il centro del pianeta
-%   \end{multicols}
-%   
-%   La velocità di fuga è quella che permette ad un satellite di sfuggire all'attrazione gravitazionale di un pianeta.
-%   \[ v_{fuga} = \sqrt{\frac{2GM}{R}} \]
+  \item[Satelliti] Sono proiettili sparati ad una velocità tale da non atterrare più: la forza di gravità funge da forza centripeta per un moto circolare.
+  
+  Possiamo calcolare la velocità del satellite in orbita:
+  \[ v = \sqrt{\frac{GM}{R}} \]
+  \begin{multicols}{2}
+  $ M $ = massa del pianeta\\
+  $ R $ = distanza tra il satellite e il centro del pianeta
+  \end{multicols}
+  
+  La velocità di fuga è quella che permette ad un satellite di sfuggire all'attrazione gravitazionale di un pianeta.
+  \[ v_{fuga} = \sqrt{\frac{2GM}{R}} \]
   
   \item[Energia potenziale gravitazionale di un sistema di due masse] 
   \[ U(r) = - G \frac{m_1m_2}{r} \hspace*{3em} \left[ J \right] \]
@@ -921,39 +929,39 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   $ v $ = velocità del fluido [$ \sfrac{m}{s} $]
 
 %%%---NON NECESSARIO
-%   \item[Corrente stazionaria] Corrente con portata costante nel tempo.
-%   
-%   \item[Equazione di continuità] Per un liquido che scorre in una conduttura senza sorgenti né pozzi, vale:
-%   \[ S_A v_A = S_B v_B  \]
-%   \begin{multicols}{2}
-%   $ S_A $, $ S_B $ = aree delle sezioni della conduttura\\
-%   $ v_A $, $ v_B $ = velocità del fluido nelle due sezioni
-%   \end{multicols}
-%   
-%   \item[Equazione di Bernoulli] Se un fluido scorre in una conduttura di diametro e altezza variabile, vale:
-%   \[ p + \frac{1}{2}dv^2 + dgy = costante \]
-%   \begin{multicols}{2}
-%   $ p $ = pressione [$ Pa $]\\
-%   $ d $ = densità del fluido [$ \sfrac{kg}{m^3} $]\\
-%   $ y $ = quota [$ m $]
-%   \end{multicols}
-%   
-%   Come conseguenza, tra un punto $ A $ e un punto $ B $:
-%   \[ p_A + \frac{1}{2}dv_A^2 + dgy_A = p_B + \frac{1}{2}dv_B^2 + dgy_B \]
-%   
-%   \item[Regime laminare] Nella condizione laminare, il fluido si muove come se fosse formato da sottili lamine fluide che scivolano una sull’altra. La forza necessaria per mantenere in moto laminare uno strato di fluido, con un valore della velocità $ v $ costante, è:
-%   \[ F = \eta\frac{Sv}{d} \]
-%   \begin{multicols}{2}
-%   $ \eta $ = coefficiente di viscosità del fluido [$ Pa\cdot s $]\\
-%   $ S $ = area della lamina\\
-%   $ d $ = distanza tra la lamina e la parete fissa
-%   \end{multicols}
-%   
-%   \item[Legge di Stokes] L'attrito viscoso di una sfera di raggio $ r $ in moto a velocità $ v $ in un fluido vale:
-%   \[ F_v = 6 \pi \eta r v \]
-%   
-%   \item[Velocità limite di caduta in un fluido] Per una sfera, vale:
-%   \[ v = \frac{mg}{6 \pi \eta r} \]
+  \item[Corrente stazionaria] Corrente con portata costante nel tempo.
+  
+  \item[Equazione di continuità] Per un liquido che scorre in una conduttura senza sorgenti né pozzi, vale:
+  \[ S_A v_A = S_B v_B  \]
+  \begin{multicols}{2}
+  $ S_A $, $ S_B $ = aree delle sezioni della conduttura\\
+  $ v_A $, $ v_B $ = velocità del fluido nelle due sezioni
+  \end{multicols}
+  
+  \item[Equazione di Bernoulli] Se un fluido scorre in una conduttura di diametro e altezza variabile, vale:
+  \[ p + \frac{1}{2}dv^2 + dgy = costante \]
+  \begin{multicols}{2}
+  $ p $ = pressione [$ Pa $]\\
+  $ d $ = densità del fluido [$ \sfrac{kg}{m^3} $]\\
+  $ y $ = quota [$ m $]
+  \end{multicols}
+  
+  Come conseguenza, tra un punto $ A $ e un punto $ B $:
+  \[ p_A + \frac{1}{2}dv_A^2 + dgy_A = p_B + \frac{1}{2}dv_B^2 + dgy_B \]
+  
+  \item[Regime laminare] Nella condizione laminare, il fluido si muove come se fosse formato da sottili lamine fluide che scivolano una sull’altra. La forza necessaria per mantenere in moto laminare uno strato di fluido, con un valore della velocità $ v $ costante, è:
+  \[ F = \eta\frac{Sv}{d} \]
+  \begin{multicols}{2}
+  $ \eta $ = coefficiente di viscosità del fluido [$ Pa\cdot s $]\\
+  $ S $ = area della lamina\\
+  $ d $ = distanza tra la lamina e la parete fissa
+  \end{multicols}
+  
+  \item[Legge di Stokes] L'attrito viscoso di una sfera di raggio $ r $ in moto a velocità $ v $ in un fluido vale:
+  \[ F_v = 6 \pi \eta r v \]
+  
+  \item[Velocità limite di caduta in un fluido] Per una sfera, vale:
+  \[ v = \frac{mg}{6 \pi \eta r} \]
 \end{description}
 
 \newpage
@@ -1038,6 +1046,19 @@ Per un proiettile sparato da terra, la gittata massima si ha se $ \theta = \sfra
   
   \item[Calore specifico dell'acqua] 
   \[ c_{H_2O} = 4,186 \times 10^3 \, \frac{J}{kg \cdot K}\]
+
+  \item[Calore specifico] Indica quanti \emph{joule} di calore è necessario fornire (o sottrarre) per cambiare di $ 1 \, K $ la temperatura di $ 1 \, kg $ di sostanza. Un valore elevato indica un buon isolante termico (cioè un cattivo conduttore), un valore basso indica invece un buon conduttore di calore (cioè un cattivo isolante). I valori per alcuni materiali sono riportati in \Cref{tab:calorispecifici}.
+  \begin{table}[htb]\centering\footnotesize
+    \begin{tabular}{lllll}\toprule
+    \textbf{Materiale} & \textbf{Calore specifico [$ \sfrac{J}{kg \cdot K} $]} && \textbf{Materiale} & \textbf{Calore specifico}  [$ \sfrac{J}{kg \cdot K} $]\\\midrule
+    acqua          & $ 4,186 \times 10^3 $ && olio minerale  & $ 1,884 \times 10^3 $\\\addlinespace[1em]
+    ghiaccio       & $ 2,090 \times 10^3 $ && alluminio      & $ 8,79  \times 10^2 $\\\addlinespace[1em]
+    vapore acqueo  & $ 1,940 \times 10^3 $ && vetro          & $ 7,95  \times 10^2 $\\\addlinespace[1em]
+    legno          & $ 2,512 \times 10^3 $ && piombo         & $ 1,29  \times 10^2 $\\\bottomrule
+    \end{tabular}
+    \caption{Il valore del calore specifico per alcuni materiali. }
+    \label{tab:calorispecifici}
+    \end{table}
   
   \item[Potere calorifico] 
   Misura quanto calore $ Q $ è prodotto nella combustione completa di una massa di $ 1 \, kg $ di combustibile.
@@ -1059,44 +1080,69 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
 
 
 %%%---NON NECESSARIO
-%   \item[Conduzione] La conduzione è un meccanismo di propagazione del calore in cui si ha trasporto di energia senza spostamento di materia. È resa dalla relazione:
-%   \[ \frac{Q}{\Delta t} = \lambda S\frac{\Delta T}{d} \]
-%   $ \lambda $ = conducibilità termica del materiale [$ \frac{W}{mK} $]\\
-%   $ S $ = superficie\\
-%   $ d $ = spessore del materiale
+  \item[Conduzione] La conduzione è un meccanismo di propagazione del calore in cui si ha trasporto di energia senza spostamento di materia. È resa dalla relazione:
+  \[ \frac{Q}{\Delta t} = \lambda S\frac{\Delta T}{d} \]
+  \begin{multicols}{2}
+  $ Q $ = calore scambiato [$ J $]\\
+  $ \Delta t $ = tempo impiegato [$ s $]\\
+  $ \lambda $ = conducibilità termica del materiale [$ \frac{W}{m \cdot K} $]\\
+  $ S $ = superficie [$ m^2 $]\\
+  $ \Delta T $ = differenza di temperatura tra le due superfici del materiale [$ K $]\\
+  $ d $ = spessore del materiale [$ m $]
+  \end{multicols}
   
   \item[Passaggi di stato] 
-  Per la fusione vale:
-  \[ Q = L_f m \]
+  Nelle formule seguenti usiamo il segno $+$ se viene fornito calore (fusione e vaporizzazione) e il segno $-$ se viene sottratto calore (solidificazione e condensazione).
+  
+  Per la fusione e la solidificazione vale:
+  \[ Q = \pm L_f m \]
   $ L_f $ = calore latente di fusione [$ \sfrac{J}{kg} $]
   
-  Per la vaporizzazione:
-  \[ Q = L_v m \]
+  Per la vaporizzazione e la condensazione:
+  \[ Q = \pm L_v m \]
   $ L_v $ = calore latente di vaporizzazione [$ \sfrac{J}{kg} $]
+
+  I valori del calore latente di alcune sostanze sono riportati in \Cref{tab:calorilatenti}.
+
+  \begin{table}[htb]\centering\footnotesize
+    \begin{tabular}{lllll}\toprule
+    \textbf{Sostanza} & \textbf{Punto di fusione [$K$]} & \textbf{Calore di fusione [$\sfrac{J}{kg}$]} & \textbf{Punto di ebollizione [$K$]} & \textbf{Calore di vaporizz.~[$\sfrac{J}{kg}$]} \\\midrule
+    idrogeno  & $ 14,0 $ & $ 5,86 \times 10^4 $  & $ 20,3 $ & $ 4,52 \times 10^5 $\\\addlinespace[1em]
+    ossigeno  & $ 54,8 $ & $ 1,38 \times 10^4 $  & $ 90,2 $ & $ 2,13  \times 10^5 $\\\addlinespace[1em]
+    acqua     & $ 273  $ & $ 3,335 \times 10^5 $ & $ 373 $  & $ 2,256  \times 10^6 $\\\addlinespace[1em]
+    argento   & $ 1235 $ & $ 1,05 \times 10^5 $  & $ 2845 $ & $ 2,336  \times 10^6 $\\\addlinespace[1em]
+    rame      & $ 1356 $ & $ 2,05 \times 10^5 $  & $ 2840 $ & $ 4,730  \times 10^6 $\\\bottomrule
+    \end{tabular}
+    \caption{Il valore del calore latente di fusione e vaporizzazione per alcune sostanze.}
+    \label{tab:calorilatenti}
+    \end{table}
 \end{description}
 
 \subsection{Modello microscopico della materia}
 \begin{description}
   \item[Energia cinetica media di un gas] 
-  L'energia cinetica di una particella di gas dipende dalla sua struttura molecolare.
-  \begin{itemize}
-    \item $ \overline{K} = \dfrac{3}{2}k_B T $ per gas con tre gradi di libertà (monoatomici);
-    \item $ \overline{K} = \dfrac{5}{2}k_B T $ per gas con cinque gradi di libertà (biatomici);
-    \item $ \overline{K} = 6 k_B T $ per strutture molecolari non lineari.
-  \end{itemize}
+  L'energia cinetica di una particella di gas dipende dalla sua struttura molecolare. Vale:
+  \[ \overline{K} = \dfrac{\ell}{2}k_B T \]
   $ k_B $ = costante di Boltzmann = $ 1,38 \times 10^{-23} \, \sfrac{J}{K} $
 
+  La variabile $ \ell $ indica i gradi di libertà delle particelle del gas e vale:
+  \begin{itemize}
+    \item $ \ell = 3 $ per gas con tre gradi di libertà (monoatomici);
+    \item $ \ell = 5 $ per gas con cinque gradi di libertà (biatomici);
+    \item $ \ell = 12 $ per strutture molecolari non lineari.
+  \end{itemize}
+
 %%%---NON NECESSARIO
-%   \item[Pressione di un gas perfetto] 
-%   \[ p = \frac{2 N \overline{K}}{3 V} = \frac{2 n N_A \overline{K}}{3 V} \]
-%   \begin{multicols}{2}
-%   $ N $ = numero di particelle\\
-%   $ n $ = numero di moli [$ mol $]
-%   \end{multicols}
-%   
-%   \item[Velocità quadratica media delle particelle di un gas] 
-%   \[ v_{qm} = \sqrt{\frac{3 k_B T}{m}} \]
-%   $ m $ = massa della particella
+  \item[Pressione di un gas perfetto] 
+  \[ p = \frac{2 N \overline{K}}{3 V} = \frac{2 n N_A \overline{K}}{3 V} \]
+  \begin{multicols}{2}
+  $ N $ = numero di particelle\\
+  $ n $ = numero di moli [$ mol $]
+  \end{multicols}
+  
+  \item[Velocità quadratica media delle particelle di un gas monoatomico] 
+  \[ v_{qm} = \sqrt{\frac{3 k_B T}{m}} \]
+  $ m $ = massa della particella [$ kg $]
   
   \item[Energia interna di un gas perfetto] 
   Indicando con $ \ell $ il numero dei gradi di libertà del gas, vale:
@@ -1114,7 +1160,7 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
   \[ \Delta U = Q - L \]
   Se il sistema riceve calore, $ Q $ è positivo; se il sistema cede calore $ Q $ è negativo.
   
-  Se il sistema compie lavoro (sull'ambiente), $ L $ è positivo; se il sistema subisce lavoro, $ L $ è negativo.
+  Se il sistema compie lavoro (sull'ambiente, cioè aumenta il suo volume), $ L $ è positivo; se il sistema subisce lavoro (cioè diminuisce il suo volume), $ L $ è negativo.
   
   \item[Trasformazioni cicliche e adiabatiche] 
   Oltre alle trasformazioni già riportate in \Cref{tab:trasformazioni} a \cpageref{tab:trasformazioni}, aggiungiamo le trasformazioni \emph{adiabatiche} (senza scambi di calore con l'ambiente) e quelle \emph{cicliche} (che iniziano e si concludono con gli stessi valori delle variabili di stato).
@@ -1123,12 +1169,12 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
   È un piano volume/pressione su vengono rappresentate le trasformazioni termodinamiche.
   
   \item[Lavoro termodinamico] 
-  Il lavoro compiuto durante una trasformazione termodinamica è uguale all'area sottesa dalla curva nel piano di Clapeyron.
+  Il lavoro compiuto durante una trasformazione termodinamica è il risultato di una variazione di volume del gas. Graficamente, è uguale all'area sottesa dalla curva nel piano di Clapeyron.
   
   Particolarmente facile nel caso delle trasformazioni isobare, poiché risulta essere l'area di un rettangolo.
   
   \item[Trasformazione isobara] 
-  Il \textsc{ppt} assume la forma $ \Delta U = Q - p \Delta V $. Grafico in \Cref{img:isobara}.
+  Il lavoro vale $ L = p \Delta V $. Il \textsc{ppt} assume pertanto la forma $ \Delta U = Q - p \Delta V $. Grafico in \Cref{img:isobara}.
   
 \begin{figure}[htp]\centering
 \input{./parts/isobara.tex}
@@ -1137,7 +1183,7 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
 \end{figure}
   
   \item[Trasformazione isocora] 
-  Il \textsc{ppt} assume la forma $ \Delta U = Q $. Grafico in \Cref{img:isocora}.
+  Non essendoci variazione di volume, $ L = 0 $. Il \textsc{ppt} assume pertanto la forma $ \Delta U = Q $. Grafico in \Cref{img:isocora}.
 
 \begin{figure}[htp]\centering
 \input{./parts/isocora.tex}
@@ -1146,7 +1192,9 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
 \end{figure}
 
   \item[Trasformazione isoterma] 
-  Il \textsc{ppt} assume la forma $ Q = L $. Grafico in \Cref{img:isoterma}.
+  Non variando la temperatura, non varia l'energia interna, $ \Delta U = 0 $. Il \textsc{ppt} assume la forma $ Q = L $. Grafico in \Cref{img:isoterma}. Il lavoro può essere calcolato con:
+  \[ L = nRT \ln\left( \frac{V_1}{V_0} \right) \]
+ 
 
 \begin{figure}[htp]\centering
 \input{./parts/isoterma.tex}
@@ -1164,7 +1212,7 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
 \end{figure}
 
   \item[Trasformazione ciclica] 
-  Il \textsc{ppt} assume la forma  $ Q = L $. Grafico in \Cref{img:ciclica}.
+  Il \textsc{ppt} assume la forma  $ Q = L $. Grafico in \Cref{img:ciclica}. Le trasformazioni cicliche sono quelle utilizzate dalle macchine termiche.
 
 \begin{figure}[htp]\centering
 \input{./parts/ciclica.tex}
@@ -1232,7 +1280,7 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
   Se nel sistema avvengono solo trasformazioni reversibili, l'entropia rimane costante. L'entropia aumenta se le trasformazioni sono irreversibili.
 
 %%%---NON NECESSARIO
-%   \item[Terzo principio della termodinamica] È impossibile raffreddare un corpo fino allo zero assoluto mediante una procedura che contenga un numero finito di trasformazioni.
+  \item[Terzo principio della termodinamica] È impossibile raffreddare un corpo fino allo zero assoluto mediante una procedura che contenga un numero finito di trasformazioni.
 \end{description}
 
 
@@ -1449,13 +1497,13 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
   Se la lente è convergente, $ f $ è positivo, se la lente invece è divergente è negativo.
 
 %%%---NON NECESSARIO
-%   \item[Equazione dei fabbricanti di lenti]
-%   \[ \frac{1}{f} = (n-1) \left( \frac{1}{R_1} - \frac{1}{R_2} \right) \]
-%   $ n $ = rapporto tra l'indice di rifrazione del materiale di cui è fatta la lente e l'indice di rifrazione della sostanza che la circonda\\
-%   $ R_1 $ = raggio di curvatura della superficie frontale\\
-%   $ R_2 $ = raggio di curvatura della superficie retrostante
-%   
-%   I due raggi sono positivi se le superfici sono convesse rispetto alla superficie incidente e negativi se sono concave.
+  \item[Equazione dei fabbricanti di lenti]
+  \[ \frac{1}{f} = (n-1) \left( \frac{1}{R_1} - \frac{1}{R_2} \right) \]
+  $ n $ = rapporto tra l'indice di rifrazione del materiale di cui è fatta la lente e l'indice di rifrazione della sostanza che la circonda\\
+  $ R_1 $ = raggio di curvatura della superficie frontale\\
+  $ R_2 $ = raggio di curvatura della superficie retrostante
+  
+  I due raggi sono positivi se le superfici sono convesse rispetto alla superficie incidente e negativi se sono concave.
   
   \item[Diffrazione] 
   Fenomeno per cui le onde sono in grado di aggirare un ostacolo e passare nella zona posta al di là dell'ostacolo stesso. La diffrazione è notevole quando il diametro dell'ostacolo è confrontabile con la lunghezza d'onda delle onde.
@@ -1471,9 +1519,9 @@ irraggiamento       & vuoto e corpi trasparenti & solo energia\\\bottomrule
   L'angolo $ \theta $ è misurato a partire dall'asse del segmento avente le sorgenti come estremi. $ m $ è un numero intero, il cui valore è chiamato \emph{ordine} dell'interferenza costruttiva.
 
 %%%---NON NECESSARIO
-%   \item[Cammino ottico equivalente] Un tratto lungo $ L $ in un materiale avente indice di rifrazione $ n $ ha un cammino ottico equivalente la cui lunghezza è:
-%   \[ L_{ottico} = n L \]
-%   Ne consegue che in un tratto $ L $ del materiale è contenuto il medesimo numero di onde che si trovano in un tratto pari a $ L_{ottico} $ nel vuoto.
+  \item[Cammino ottico equivalente] Un tratto lungo $ L $ in un materiale avente indice di rifrazione $ n $ ha un cammino ottico equivalente la cui lunghezza è:
+  \[ L_{ottico} = n L \]
+  Ne consegue che in un tratto $ L $ del materiale è contenuto il medesimo numero di onde che si trovano in un tratto pari a $ L_{ottico} $ nel vuoto.
   
   \item[Sfasamento delle onde riflesse] 
   Quando un'onda che si propaga in un mezzo con indice di rifrazione $ n_1 $ viene riflessa da un mezzo con indice di rifrazione $ n_2 $, se $ n_2 > n_1 $ l'onda riflessa subisce uno sfasamento di mezzo ciclo rispetto all'onda incidente. Se invece $ n_2 < n_1 $, la riflessione non provoca sfasamento.
@@ -1546,24 +1594,24 @@ Induzione & Si pone un corpo carico (induttore) in prossimità di un conduttore 
   \[ \Phi_S(E) = \frac{Q_{tot}}{\varepsilon_0} \]
   
 %%%---NON NECESSARIO
-%   \item[Particolari distribuzioni di carica] Valori dei campi elettrici generati in particolari situazioni: 
-%     \begin{itemize}
-%     \item distribuzione piana infinita: 
-%       \[ E = \frac{\sigma}{2 \varepsilon_0} \]
-%       $ \sigma $ = densità superficiale di carica [$ \sfrac{C}{m^2} $]
-%     \item distribuzione lineare infinita: 
-%       \[ E = \frac{\lambda}{2 \pi \varepsilon_0 r} \]
-%       \begin{multicols}{2}
-%       $ \lambda $ = densità lineare di carica [$ \sfrac{C}{m} $]\\
-%       $ r $ = distanza dal filo
-%       \end{multicols}
-%     \item distribuzione sferica:
-%       \[ E = \frac{Q}{4 \pi \varepsilon_0 r^2} \]
-%       \begin{multicols}{2}
-%       $ Q $ = carica racchiusa\\
-%       $ r $ = raggio della sfera
-%       \end{multicols}
-%   \end{itemize}
+  \item[Particolari distribuzioni di carica] Valori dei campi elettrici generati in particolari situazioni: 
+    \begin{itemize}
+    \item distribuzione piana infinita: 
+      \[ E = \frac{\sigma}{2 \varepsilon_0} \]
+      $ \sigma $ = densità superficiale di carica [$ \sfrac{C}{m^2} $]
+    \item distribuzione lineare infinita: 
+      \[ E = \frac{\lambda}{2 \pi \varepsilon_0 r} \]
+      \begin{multicols}{2}
+      $ \lambda $ = densità lineare di carica [$ \sfrac{C}{m} $]\\
+      $ r $ = distanza dal filo
+      \end{multicols}
+    \item distribuzione sferica:
+      \[ E = \frac{Q}{4 \pi \varepsilon_0 r^2} \]
+      \begin{multicols}{2}
+      $ Q $ = carica racchiusa\\
+      $ r $ = raggio della sfera
+      \end{multicols}
+  \end{itemize}
   
   \item[Lavoro in un campo elettrico] 
   Assumendo un campo elettrico $ \vec{E} $ di intensità costante, per portare una carica $ q $ da un punto $ A $ fino ad un punto $ B $ è necessario un lavoro, cioè:
@@ -1880,9 +1928,9 @@ alternatore             & \ctikzset{bipoles/length=0.4cm}\begin{circuitikz}[scal
   $ m $ = massa della particella
 
 %%%---NON NECESSARIO
-%   \item[Massa di una carica in uno spettrometro di massa]
-%   \[ m = \frac{qB^2r^2}{2 \Delta V} \]
-%   $  \Delta V $ = tensione che accelera la carica
+  \item[Massa di una carica in uno spettrometro di massa]
+  \[ m = \frac{qB^2r^2}{2 \Delta V} \]
+  $  \Delta V $ = tensione che accelera la carica
   
   \item[Flusso del campo magnetico] 
   Analogamente al flusso del campo elettrico.
@@ -1953,10 +2001,10 @@ all'apertura del circuito:
 \end{figure}
 
 %%%---NON NECESSARIO
-%   \item[Mutua induzione]
-%   \[ f_{em}^{1 \rightarrow 2} = - M \frac{\Delta i_1}{\Delta t} \]
-%   $ f_{em}^{1 \rightarrow 2} $ = forza elettromotrice nel secondo circuito causata dalla variazione di corrente $ \Delta i_1 $ nel primo circuito\\
-%   $ M $ = coefficiente di mutua induzione tra i due circuiti [$ H $]
+  \item[Mutua induzione]
+  \[ f_{em}^{1 \rightarrow 2} = - M \frac{\Delta i_1}{\Delta t} \]
+  $ f_{em}^{1 \rightarrow 2} $ = forza elettromotrice nel secondo circuito causata dalla variazione di corrente $ \Delta i_1 $ nel primo circuito\\
+  $ M $ = coefficiente di mutua induzione tra i due circuiti [$ H $]
   
   \item[Forza elettromotrice in corrente alternata]
   \[ f_{em} (t)  = f_{em \, 0} \cdot \sin (\omega t) \]
@@ -2179,10 +2227,16 @@ Teorema di Ampère-Maxwell:
   
   \item[Principio di invarianza di \textit{c}]
   La velocità della luce è la stessa in tutti i \textsc{sdr} inerziali, indipendentemente dal moto del sistema stesso o della sorgente da cui la luce è emessa.
+
+  \item[Velocità della luce] La velocità della luce è una costante universale (identica in ogni \textsc{sdr}) e vale:
+  \[ c = 299\,  792\, 458\,	\frac{m}{s} \simeq 3,00 \times 10^8 \,	\frac{m}{s} \]
+
+  \item[Anno luce] Un anno luce (simbolo $ ly $) è la distanza percorsa dalla luce in un anno, ed è pertanto un'unità di distanza.
+  \[ 1 \, ly = 9,46 \times 10^{15} \, m \]
   
   \item[Simultaneità]
   Due fenomeni che avvengono nei punti $ P_1 $ e $ P_2 $ sono simultanei se la luce che essi emettono giunge nello stesso istante in un punto equidistante dai due fenomeni.
-  
+
   \item[Sincronizzazione degli orologi]
   Due orologi sono sincronizzati se il secondo di essi, nell'istante in cui riceve il lampo di luce emesso dal primo, segna il valore:
   \[ t = t_0 + \frac{D}{c} \]
