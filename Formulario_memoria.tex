@@ -1,0 +1,414 @@
+\documentclass[a4paper,11pt,italian]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\input{./parts/settings.tex}
+\begin{document}
+\begin{center}
+\textbf{\Large \color{colorSitoScuro}Formulario di Fisica}\\
+\textbf{\large \color{colorSitoScuro}Formule fondamentali}
+\end{center}
+\section{Vettori}
+\begin{description}
+  \item[Funzioni goniometriche]   $ \cos\theta = \dfrac{c_{adj}}{i} $~~~~~~~~~~~~~~$ \sin\theta = \dfrac{c_{opp}}{i} $~~~~~~~~~~~~~~$ \tan\theta = \dfrac{c_{opp}}{c_{adj}} $
+  
+  \item[Scomposizione di un vettore] $ a_x = a  \cos\theta $~~~~~~~~~~~~~~$ a_y = a  \sin\theta $
+  
+  \item[Forma cartesiana di un vettore] $ \vec{a} = a_x \hat{i} + a_y \hat{j} $
+  
+  \item[Modulo di un vettore, note le componenti (Pitagora)] $ a = \sqrt{(a_x)^2 + (a_y)^2} $
+  
+  \item[Direzione di un vettore] $ \theta  = \arctan\left( \dfrac{a_y}{a_x} \right) $
+
+  \item[Somma tra vettori, forma cartesiana]
+  $ \vec{a} + \vec{b} =  (a_x + b_x) \hat{i} + (a_y + b_y) \hat{j}  $
+  
+  \item[Differenza tra vettori, forma cartesiana]
+  $\vec{a} - \vec{b} =  (a_x - b_x) \hat{i} + (a_y - b_y) \hat{j} $
+ 
+  
+  \item[Prodotto di uno scalare per un vettore, forma cartesiana] $ k \vec{a} = (k a_x)\hat{i} + (k a_y)\hat{j} $
+  
+  \item[Prodotto scalare, forma polare]$ \vec{a} \cdot \vec{b} = ab\cos\theta $
+  
+  \item[Prodotto vettoriale, forma polare]$ | \vec{a} \times \vec{b} | = ab\sin\theta $, direzione perpendicolare al piano formato da $ \vec{a} $ e $ \vec{b} $
+\end{description}
+   
+\section{Misura}
+\begin{description}
+  
+  \item[Costanti fisiche fondamentali] ~
+  
+  \begin{table}[h]\centering
+    \begin{tabular}{ll}\toprule
+      \textbf{Nome} & \textbf{Simbolo e valore}\\\midrule
+      velocità della luce nel vuoto & $ c = 3,00 \times 10^8 \,	\sfrac{m}{s} $ \\\addlinespace[.2em]
+      costante dielettrica del vuoto & $ \varepsilon_0 = 8,85\times 10^{-12} \, \sfrac{C^2}{N \cdot m^2} $ \\\addlinespace[.2em]
+      costante di Coulomb & $ k_0 = 8,99 \times 10^9 \, \sfrac{N \cdot m^2}{C^2} $ \\\addlinespace[.2em]
+      permeabilità magnetica del vuoto & $ \mu_0 = 4\pi \times 10^{-7} \, \sfrac{N}{A^2} $ \\\addlinespace[.2em]
+      carica elementare & $ e = 1,60 \times 10^{-19} \, C $ \\\addlinespace[.2em]
+      costante di Planck & $ h = 6,63 \times 10^{-34} \, J\cdot s $ \\\bottomrule
+    \end{tabular}
+  \end{table}  
+\end{description}
+   
+\section{Meccanica}
+\subsection{Definizioni fondamentali}
+\begin{description}
+  \item[Densità di un corpo] 
+  $ d = \dfrac{m}{V} \hspace*{3em} \left[ \dfrac{kg}{m^3} \right] $
+  
+  \item[Velocità media]
+  $ \overline{v} = \dfrac{\Delta s}{\Delta t} \hspace*{3em} \left[ \dfrac{m}{s} \right] $
+
+  \item[Velocità istantanea] 
+  $ v(t) =  \displaystyle\lim_{\Delta t \rightarrow 0} \dfrac{\Delta s}{\Delta t} = \dfrac{ds}{dt} = s'(t) $
+  
+  \item[Conversione tra $ \sfrac{\mathbf{m}}{\mathbf{s}} $ e $ \sfrac{\mathbf{km}}{\mathbf{h}} $] $ \dfrac{km}{h} \xrightarrow{: 3,6} \dfrac{m}{s} $~~~~~~~~~~~~~~$ \dfrac{m}{s} \xrightarrow{\cdot 3,6} \dfrac{km}{h} $
+  
+  \item[Accelerazione media] 
+  $ \overline{a} = \dfrac{\Delta v}{\Delta t} \hspace*{3em} \left[ \dfrac{m}{s^2} \right]  $
+
+  \item[Accelerazione istantanea] 
+  $ a(t) =  \displaystyle\lim_{\Delta t \rightarrow 0} \dfrac{\Delta v}{\Delta t} = \dfrac{dv}{dt} = v'(t) = s''(t) $  
+\end{description}
+\subsection{Cinematica}\label{sec:cinematica}
+\begin{description}
+  \item[Leggi del moto rettilineo uniforme] 
+  $ s(t) = v  t + s_0 $~~~~~~~~~~~~~~$ v(t) = s'(t) = v $
+
+  \item[Leggi del moto accelerato] 
+  $ s(t) = \dfrac{1}{2} a t^2 + v_0 t + s_0 $~~~~~~~~~~~~~~$ v(t) = s'(t) = at + v_0 $
+  
+  \item[Frequenza del moto circolare] 
+  $ f = \dfrac{1}{T} \hspace*{3em} [s^{-1}]=[ Hz] $
+
+  \item[Velocità angolare (pulsazione) del moto circolare] 
+  $ \omega = \dfrac{\Delta\alpha}{\Delta t} = \dfrac{2 \pi}{T} = 2 \pi f \hspace*{3em} \left[ \dfrac{rad}{s} \right] $
+  
+  \item[Velocità tangenziale] 
+  $ v = \omega r  \hspace*{3em} \left[ \dfrac{m}{s} \right]$
+  
+  \item[Accelerazione centripeta] 
+  $ a_c = \omega^2 r \hspace*{3em} \left[ \dfrac{m}{s^2} \right] $
+  
+  \item[Forza centripeta] 
+  $ F_c = m  a_c \hspace*{3em} \left[ N \right] $
+  
+  \item[Legge del moto armonico]  $ s(t) = A \cos(\omega t) $
+\end{description}
+\subsection{Dinamica ed energia}
+\begin{description}
+  \item[Secondo principio della dinamica (legge fondamentale della dinamica)] 
+  $ \vec{F} = m  \vec{a}   \hspace*{3em} \left[ N \right]  $
+  
+  
+  \item[Condizione di equilibrio per corpi puntiformi]
+  $ \sum\vec{F} = 0 $
+  
+  \item[Forza peso] 
+  $ \vec{P} = m \vec{g} $
+  
+  \item[Attrito statico] 
+  
+  $ \vec{F}_{A} = \mu \vec{F}_{premente} $
+  
+  \item[Forza di richiamo di una molla (legge di Hooke)]
+  $ \vec{F} = k \vec{\Delta x} $
+  
+  \item[Definizione di lavoro] 
+  $ L = \vec{F} \cdot \vec{s} = F s \cos\theta \hspace*{3em} [J]  $
+
+  \item[Il lavoro è una variazione di energia] 
+  $ L = \Delta U $
+  
+  \item[Potenza media] 
+  $ \overline{P} = \dfrac{\Delta U}{\Delta t} = \dfrac{L}{\Delta t} \hspace*{3em} \left[ W \right] $
+  
+  
+  \item[Energia cinetica di traslazione] 
+  $ K = \dfrac{1}{2} mv^2 \hspace*{3em} \left[ J \right]$
+  
+  \item[Energia potenziale gravitazionale] 
+  $ U_g = mgh \hspace*{3em} [J] $
+  
+  \item[Quantità di moto] 
+  $ \vec{p} = m \vec{v} \hspace*{3em} \left[ kg \cdot \dfrac{m}{s} \right] $ 
+  
+  \item[Legge di gravitazione universale] 
+  $ F = G \dfrac{m_1 m_2}{r^2} $
+  
+  \item[Accelerazione di gravità sulla superficie della Terra] 
+$ g =  9, 81 \, \frac{m}{s^2} $
+
+  \item[Pressione] 
+$ p = \dfrac{F}{S} \hspace*{3em} [Pa]$
+\end{description}
+   
+\section{Termodinamica}
+\begin{description}
+  \item[Conversione Celsius-kelvin] $ T_K = T_{^{\circ}C} + 273 $~~~~~~~~~~~~~~$ T_{^{\circ}C} = T_{K} - 273 $
+  
+  \item[Legge fondamentale della calorimetria] $ Q = cm \Delta T $
+    
+  \item[Primo principio della termodinamica] 
+  $ \Delta U = Q - L $
+\end{description}
+   
+\section{Onde}
+\begin{description}
+  
+  \item[Frequenza] 
+$ f = \dfrac{1}{T} \hspace*{3em} [s^{-1}]=[ Hz] $
+  
+  \item[Pulsazione dell'onda] $ \omega = \dfrac{2\pi}{T} = 2\pi f \hspace*{3em} \left[ \dfrac{rad}{s} \right] $
+  
+  
+  \item[Velocità di propagazione dell'onda] $ v = \dfrac{\lambda}{T} = \lambda f \hspace*{3em} \left[ \dfrac{m}{s} \right] $
+  
+  \item[Legge oraria delle onde in un punto fissato] $ y = a \cos\left(\dfrac{2 \pi}{T}t + \varphi_0\right) = a \cos\left(\omega t + \varphi_0\right) $
+
+  \item[Indice di rifrazione di un mezzo materiale] $ n = \dfrac{c}{v} $
+  
+  \item[Legge della rifrazione (legge di Snell)] $ \dfrac{\sin \hat{i} }{\sin \hat{r}} = \dfrac{n_2}{n_1} $
+  
+  \item[Riflessione totale, angolo limite] $ \sin \hat{i}_{lim} = \dfrac{n_2}{n_1} $~~~~~~~~~~~~~~$ \hat{i}_{lim} = \arcsin \left( \dfrac{n_2}{n_1} \right) $  
+\end{description}
+   
+\section{Fenomeni elettrici e magnetici}
+
+\begin{description}
+  
+  \item[Legge di Coulomb] $ F = k_0 \dfrac{q_1q_2}{r^2} $
+  
+   \item[Costante elettrica del vuoto ] $ k_0 = 8,99 \times 10^9 \, \frac{N\cdot m^2}{C^2} $
+  
+  \item[Costante dielettrica del vuoto] $ \varepsilon_0 = 8,85\times 10^{-12} \, \frac{C^2}{N \cdot m^2} $~~~~~~~~~~~~~~$ k_0 = \dfrac{1}{4 \pi \varepsilon_0} $
+  
+  \item[Definizione di campo elettrico] 
+  $ \vec{E}  = \dfrac{\vec{F}}{q_P} \hspace*{3em} \left[ \dfrac{N}{C} \right] $
+
+  \item[Campo elettrico generato da una carica puntiforme] 
+  $ E(r) = k_0 \dfrac{Q}{r^2} $
+    
+  \item[Forza subita da una carica in un campo elettrico] 
+  $ \vec{F}  = q\vec{E} \hspace*{3em} \left[ N \right] $
+
+  \item[Flusso del campo elettrico] 
+  $ \Phi_S(E) = \vec{E} \cdot \vec{S} = ES \cos \theta \hspace*{3em} \left[ \dfrac{N\cdot m^2}{C} \right] $
+  
+  \item[Teorema di Gauss per il campo elettrico] 
+  $ \Phi_S(E) = \dfrac{Q_{tot}}{\varepsilon_0} $
+  
+  \item[Energia potenziale elettrica di un sistema di due cariche] 
+  $  U = k_0 \dfrac{q_1 q_2}{r}  $
+  
+  \item[Potenziale elettrico]
+  $ V_A = \dfrac{U_A}{q_P} \hspace*{3em} [V] $  
+
+  \item[Energia acquistata/perduta da una carica sottoposta a tensione]
+  $ \Delta U = q \cdot \Delta V $   
+  
+  \item[Differenza di potenziale (tensione) tra i punti \textit{A} e \textit{B}]
+  $  \Delta V_{AB} = - \vec{E} \cdot \vec{s} $
+  
+  \item[Potenziale elettrico generato da una carica \textit{Q} a distanza \textit{r}]
+  $ V(r) = k_0 \dfrac{Q}{r}  $
+  
+  \item[Circuitazione del campo elettrico]\label{conc:circuitazioneE}
+  $ \Gamma_\mathscr{L}(E) = \sum_i  \vec{E}_i \cdot \Delta\vec{\ell}_i = \sum_i E_i \Delta \ell_i \cos \theta_i $
+  
+  \item[Capacità di un condensatore]
+  $ C = \dfrac{Q}{\Delta V} \hspace*{3em} [F] $
+  
+  \item[Capacità totale per condensatori in parallelo] 
+  $ C_{tot} = C_1 + C_2 + \ldots + C_n $ 
+  
+  \item[Capacità totale per condensatori in serie] 
+  $ \dfrac{1}{C_{tot}} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \ldots + \dfrac{1}{C_n}  $
+
+  \item[Intensità media di corrente]
+  $ i = \dfrac{\Delta q}{\Delta t} \hspace*{3em} [A]  $
+  
+  \item[Intensità istantanea di corrente]
+  $ i(t) = \displaystyle \lim_{\Delta t \rightarrow 0} \dfrac{\Delta q}{\Delta t} = \dfrac{dq}{dt} = q'(t) $
+  
+  \item[Prima legge di Ohm]
+  $ i = \dfrac{\Delta V}{R} $
+  
+  \item[Resistenza totale per resistori in parallelo] 
+  $ \dfrac{1}{R_{tot}} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \ldots + \dfrac{1}{R_n}  $
+
+  \item[Resistenza totale per resistori in serie] 
+  $ R_{tot} = R_1 + R_2 + \ldots + R_n $
+
+  \item[Potenza dissipata da una resistenza]
+  $ P = i \Delta V = i^2 R \hspace*{3em} [W] $
+  
+  \item[Energia dissipata per effetto Joule] 
+  $ L = \Delta U = P \Delta t \hspace*{3em} \left[ J \right] $
+  
+    
+  \item[Elettronvolt] 
+  $ 1 \, eV = 1,60 \times 10^{-19} \, J $
+  
+  \item[Legge di Ampère]
+  $ F = \dfrac{\mu_0}{2\pi} \cdot \dfrac{i_1 i_2}{d}\cdot L $
+  
+  \item[Permeabilità magnetica del vuoto]
+  $ \mu_0 = 4\pi \times 10^{-7} \, \frac{N}{A^2} $
+  
+  \item[Forza subita da un filo in un campo magnetico] 
+  $ \vec{F} = i\vec{\ell}\times\vec{B} $
+  
+  
+  \item[Legge di Biot-Savart] 
+  $ B = \mu_0\dfrac{i}{2\pi r} \hspace*{3em} [T] $
+  
+  \item[Forza di Lorentz] 
+  $ \vec{F} = q \vec{v} \times \vec{B} $
+  
+  \item[Flusso del campo magnetico] 
+  $ \Phi_S(B) = \vec{B} \cdot \vec{S} = B S \cos \theta \hspace*{3em} [Wb] $
+  
+  \item[Teorema di Gauss per il campo magnetico] 
+  $ \Phi_S(B) = 0 $
+  
+  \item[Circuitazione del campo magnetico]\label{conc:circuitazioneB}
+  $ \Gamma_\mathscr{L}(B) = \sum_i \vec{B}_i \cdot \Delta\vec{\ell_i} = \sum_i B_i \Delta \ell_i \cos \theta_i $
+  
+  \item[Teorema di Ampère] 
+  $ \Gamma_\mathscr{L}(B) = \mu_0 \sum i_{concatenate} $
+  
+  \item[Legge di Faraday-Neumann-Lenz, fem indotta media] 
+  $ f_{em \, ind} =  - \dfrac{\Delta \Phi(B)}{\Delta t} $
+  
+  \item[Fem indotta istantanea] 
+  $ f_{em}(t) =  \displaystyle\lim_{\Delta t \rightarrow 0}- \dfrac{\Delta \Phi(B)}{\Delta t} = - \dfrac{d\Phi(B)}{dt} = - \Phi'(t) $
+  
+  
+  \item[Induttanza] 
+  $ L =  \dfrac{\Phi(B)}{i} \hspace*{3em} [H] $
+  
+  \item[Autoinduzione] 
+  $ f_{em \, auto} =  - \dfrac{\Delta \Phi(B)}{\Delta t} = - L \dfrac{\Delta i}{\Delta t} $
+  
+  \item[Forza elettromotrice in corrente alternata]
+  $ f_{em} (t)  = f_{em \, 0} \cdot \sin (\omega t) $
+  
+  \item[Corrente in regime alternato]
+  $ i (t)  = i_0 \cdot \sin (\omega t) $
+  
+  \item[Valori efficaci in corrente alternata]  $ i_{\mathit{efficace}} = \dfrac{i_0}{\sqrt{2}} $~~~~~~~~~~~~~~$ f_{em \, \mathit{efficace}} = \dfrac{f_{em \, 0}}{\sqrt{2}} $
+  
+  \item[Potenza media prodotta in corrente alternata] 
+  $ \overline{P} = f_{em \, \mathit{eff}} \cdot i_{\mathit{eff}} $
+  
+  \item[Trasformatori] $ \dfrac{f_{em \, \mathit{eff}2}}{f_{em \, \mathit{eff}1}} = \dfrac{n_2}{n_1} $~~~~~~~~~~~~~~$ \overline{P}_1 = f_{em \, \mathit{eff}1} \cdot i_{\mathit{eff}1} =  f_{em \, \mathit{eff}2} \cdot i_{\mathit{eff}2} = \overline{P}_2 $
+
+  \item[Circuitazione del campo elettrico indotto (FNL)] 
+  $ \Gamma_\mathscr{L}(E) = - \dfrac{\Delta \Phi_S(B)}{\Delta t}  $
+  
+  \item[Corrente di spostamento] 
+  $ i_s = \varepsilon_0 \dfrac{\Delta \Phi_S(E)}{\Delta t} \hspace*{3em} [A]$
+  
+  \item[Equazioni nel caso statico] $ \Phi_S(E) = \dfrac{Q}{\varepsilon_0}; ~~~~~~ \Phi_S(B) = 0; ~~~~~~ \Gamma_\mathscr{L}(E) = 0; ~~~~~~ \Gamma_\mathscr{L}(B) = \mu_0 \sum i_{conc}$
+  \item[Equazioni generali] $ \Phi_S(E) = \dfrac{Q}{\varepsilon_0}; ~~~~~~ \Phi_S(B) = 0; ~~~~~~ \Gamma_\mathscr{L}(E) = - \dfrac{\Delta\Phi_S(B)}{\Delta t}; ~~~~~~ \Gamma_\mathscr{L}(B) = \mu_0 \left( i + i_s \right) .$
+  
+  
+  \item[Velocità di un'onda elettromagnetica nel vuoto] 
+  $ c = \dfrac{1}{\sqrt{\varepsilon_0\cdot \mu_0}} \simeq 3,0 \times 10^8 \,	\sfrac{m}{s} $
+  
+   \item[Frequenza e lunghezza d'onda] 
+$ \lambda = c f $
+  
+    \item[Ampiezze di \textit{E} e di \textit{B}] $ E = cB $
+\end{description}
+   
+\section{Fisica moderna}
+
+\begin{description}
+  
+  \item[Coefficiente di dilatazione (fattore di Lorentz)]
+  $ \gamma = \dfrac{1}{\sqrt{1-\beta^2}} \qquad \mathrm{con} \quad \beta = \dfrac{v}{c} $
+  \item[Dilatazione dei tempi]
+  $ \Delta t' = \gamma \Delta t $
+  
+  \item[Contrazione delle lunghezze parallele al moto] 
+  $ \Delta x' = v \Delta t' = \dfrac{\Delta x}{\gamma} $
+  
+  \item[Composizione relativistica delle velocità]
+  $ u' = \dfrac{u - v}{1- \dfrac{u v}{c^2}} $
+  
+  \item[Effetto Doppler relativistico] $ f' = f \sqrt{\dfrac{1 \pm \beta}{1 \mp \beta}} $
+  
+   \item[Equivalenza massa-energia] 
+  $ \Delta m = \dfrac{\Delta E}{c^2} $
+  
+  \item[Energia di quiete]
+  $ E = m_0 c^2 $
+  
+  \item[Massa relativistica]
+  $ m = \gamma m_0 $
+  
+  \item[Energia totale di una particella relativistica (relazione di Einstein)]
+  $ E = \gamma m_0 c^2 = mc^2$
+  
+  
+  \item[Energia cinetica relativistica] 
+  $ K_r = (\gamma -1) m_0 c^2 $
+  \item[Quantità di moto relativistica] 
+  $ \vec{p}_r = m \vec{v} = \gamma m_0 \vec{v} $
+  \item[Quantità di moto della luce] 
+  $ p = \dfrac{E}{c} $
+  
+  \item[Costante di Planck]
+  $ h = 6,63 \times 10^{-34} \, J\cdot s $
+  
+  \item[Energia di un fotone] $ E=hf $  
+  
+  \item[Relazione di De Broglie] 
+  $ \lambda = \dfrac{h}{p} $
+  
+  
+  \item[Costante di Planck ridotta] 
+  $ \hbar = \dfrac{h}{2 \pi} \simeq 10^{-34} \, J\cdot s $
+  
+  \item[Principio di indeterminazione di Heisenberg] $ \Delta x \Delta p \simeq \hbar $~~~~~~~~~~~~~~$ \Delta t \Delta E \simeq \hbar $
+  
+\end{description}
+   
+% \section{Derivate e integrali notevoli}
+% \begin{description}
+  
+%   \item[Derivate e cinematica] $ s'(t) = \displaystyle \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t} = \frac{ds}{dt} = v(t) $~~~~~~~~~~~$ s''(t) = v'(t) = \displaystyle \lim_{\Delta t \to 0} \frac{\Delta v}{\Delta t} = \frac{dv}{dt} = a(t) $
+  
+  
+%   \item[Derivate notevoli] ~
+  
+%   \begin{table}[hbtp]\centering
+%   \begin{tabular}{llll}\toprule
+%     \textbf{Funzione} & \textbf{Derivata di} & \textbf{Rispetto a} & \textbf{Formula} \\\midrule
+%     velocità          & posizione            & tempo               & $ v(t) = \dfrac{ds}{dt} $ \\\addlinespace[.8em]
+%     accelerazione     & velocità             & tempo               & $ a(t) = \dfrac{dv}{dt} $ \\\addlinespace[.8em]
+%     forza             & quantità di moto     & tempo               & $ F(t) = \dfrac{dp}{dt} $ \\\addlinespace[.8em]
+%     forza             & energia              & posizione           & $ F(s) = \dfrac{dU}{ds} $ \\\addlinespace[.8em]
+%     intensità di corrente & carica           & tempo               & $ i(t) = \dfrac{dq}{dt} $ \\\addlinespace[.8em]
+%     potenza           & energia              & tempo               & $ P(t) = \dfrac{dU}{dt} $ \\\addlinespace[.8em]
+%     $ \textrm{f}_{\textrm{em}} $ & flusso di $ B $ & tempo         & $ f_{em}(t) = -\dfrac{d\Phi(B)}{dt} $ \\\addlinespace[.8em]
+%     corrente di spostamento & flusso di $ E $ & tempo         & $ i_s(t) = \varepsilon_0 \dfrac{d\Phi(E)}{dt} $ \\\bottomrule
+%   \end{tabular}
+%   \end{table}
+  
+%   \item[Spazio percorso]
+%   $ \Delta s = \displaystyle\int_{t_0}^{t_1} v(t) dt $
+  
+%   \item[Lavoro di una forza]
+%   $ L = \Delta U = \displaystyle\int_{s_0}^{s_1} F(s) ds $
+  
+%   \item[Circuitazione] $ \displaystyle \Gamma_\mathscr{L}(E) = \oint_\mathscr{L} \vec{E} \cdot d\vec{\ell} $~~~~~~~~~~~~~~$ \displaystyle \Gamma_\mathscr{L}(B) = \oint_\mathscr{L} \vec{B} \cdot d\vec{\ell} $
+% \end{description}
+\end{document}
